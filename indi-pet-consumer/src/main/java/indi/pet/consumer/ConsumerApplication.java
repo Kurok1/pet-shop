@@ -20,6 +20,6 @@ public class ConsumerApplication {
 	public ElasticsearchOperations elasticsearchTemplate(){
 		NodeBuilder nodeBuilder=NodeBuilder.nodeBuilder();
 		nodeBuilder.settings().put("path.home",System.getenv("ES_HOME"));
-		return new ElasticsearchTemplate(nodeBuilder.local(true).node().client());
+		return new ElasticsearchTemplate(nodeBuilder.local(false).node().client());
 	}
 }

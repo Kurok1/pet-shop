@@ -23,6 +23,6 @@ public class ProducerApplication {
 	public ElasticsearchOperations elasticsearchTemplate(){
 		NodeBuilder nodeBuilder=nodeBuilder();
 		nodeBuilder.settings().put("path.home",System.getenv("ES_HOME"));
-		return new ElasticsearchTemplate(nodeBuilder.local(true).build().client());
+		return new ElasticsearchTemplate(nodeBuilder.local(false).node().client());
 	}
 }
