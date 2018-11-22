@@ -39,6 +39,16 @@ public class Shopkeeper implements Serializable {
      */
     private String logo;
 
+    /**
+     * 经度
+     */
+    private double longitude;
+
+    /**
+     * 纬度
+     */
+    private double latitude;
+
     public String getId() {
         return id;
     }
@@ -95,6 +105,22 @@ public class Shopkeeper implements Serializable {
         this.logo = logo;
     }
 
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
     @Override
     public String toString() {
         return "Shopkeeper{" +
@@ -105,6 +131,8 @@ public class Shopkeeper implements Serializable {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", logo='" + logo + '\'' +
+                ", longitude=" + longitude +
+                ", latitude=" + latitude +
                 '}';
     }
 }

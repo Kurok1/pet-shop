@@ -42,8 +42,9 @@ public class ShopkeeperController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable("id")String id){
+    public boolean deleteById(@PathVariable("id")String id){
         getShopkeeperService().deleteById(id);
+        return true;
     }
 
     @PostMapping("/login")

@@ -12,32 +12,22 @@ public class Pet {
     @Id
     private String id;
 
-    private String keeper;
+    private User user;
 
     private String name;
-
-    /**
-     * 出售价格
-     */
-    private Float price;
-
-    /**
-     * 库存剩余数量
-     */
-    private Integer count;
 
     private String description;
 
     private String img;
 
+    private Integer age;
+
     @Override
     public String toString() {
         return "Pet{" +
                 "id='" + id + '\'' +
-                ", keeper='" + keeper + '\'' +
+                ", user=" + user +
                 ", name='" + name + '\'' +
-                ", price=" + price +
-                ", count=" + count +
                 ", description='" + description + '\'' +
                 ", img='" + img + '\'' +
                 '}';
@@ -51,12 +41,20 @@ public class Pet {
         this.id = id;
     }
 
-    public String getKeeper() {
-        return keeper;
+    public User getUser() {
+        return user;
     }
 
-    public void setKeeper(String keeper) {
-        this.keeper = keeper;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -65,22 +63,6 @@ public class Pet {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Float getPrice() {
-        return price;
-    }
-
-    public void setPrice(Float price) {
-        this.price = price;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
     }
 
     public String getDescription() {

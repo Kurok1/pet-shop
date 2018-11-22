@@ -16,16 +16,18 @@ public class Order implements Serializable {
     private String id;
 
     /**
-     * 买方id
+     * 买方
      */
-    private String buyer;
+    private String user;
 
     /**
-     * 卖家id
+     * 卖方
      */
-    private String seller;
+    private String shopkeeper;
 
     private Long createTimeStamp;
+
+    private Pet pet;
 
     /**
      * 订单状态
@@ -36,11 +38,20 @@ public class Order implements Serializable {
     public String toString() {
         return "Order{" +
                 "id='" + id + '\'' +
-                ", buyer='" + buyer + '\'' +
-                ", seller='" + seller + '\'' +
+                ", user='" + user + '\'' +
+                ", shopkeeper='" + shopkeeper + '\'' +
                 ", createTimeStamp=" + createTimeStamp +
+                ", pet=" + pet +
                 ", status=" + status +
                 '}';
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public String getId() {
@@ -51,20 +62,20 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public String getBuyer() {
-        return buyer;
+    public String getUser() {
+        return user;
     }
 
-    public void setBuyer(String buyer) {
-        this.buyer = buyer;
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    public String getSeller() {
-        return seller;
+    public String getShopkeeper() {
+        return shopkeeper;
     }
 
-    public void setSeller(String seller) {
-        this.seller = seller;
+    public void setShopkeeper(String shopkeeper) {
+        this.shopkeeper = shopkeeper;
     }
 
     public Long getCreateTimeStamp() {
