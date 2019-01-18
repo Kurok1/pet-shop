@@ -12,7 +12,7 @@ public class Pet {
     @Id
     private String id;
 
-    private User user;
+    private String userId;
 
     private String name;
 
@@ -22,16 +22,6 @@ public class Pet {
 
     private Integer age;
 
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "id='" + id + '\'' +
-                ", user=" + user +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", img='" + img + '\'' +
-                '}';
-    }
 
     public String getId() {
         return id;
@@ -41,12 +31,12 @@ public class Pet {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Integer getAge() {

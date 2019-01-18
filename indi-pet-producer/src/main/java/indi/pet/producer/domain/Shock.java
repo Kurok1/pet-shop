@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 库存类
@@ -16,7 +17,7 @@ public class Shock implements Serializable {
     /**
      * 具体描述，图片视频都行
      */
-    private Resource description;
+    private List<String> resources;
 
     private String title;
 
@@ -25,7 +26,7 @@ public class Shock implements Serializable {
      */
     private String text;
 
-    private Shopkeeper shopkeeper;
+    private String shopkeeperId;
 
     /**
      * 进货时的数量
@@ -41,20 +42,6 @@ public class Shock implements Serializable {
 
     private long timestamp;
 
-    @Override
-    public String toString() {
-        return "Shock{" +
-                "id='" + id + '\'' +
-                ", description=" + description +
-                ", title='" + title + '\'' +
-                ", text='" + text + '\'' +
-                ", shopkeeper=" + shopkeeper +
-                ", amount=" + amount +
-                ", last=" + last +
-                ", price=" + price +
-                ", timestamp=" + timestamp +
-                '}';
-    }
 
     public String getId() {
         return id;
@@ -64,12 +51,12 @@ public class Shock implements Serializable {
         this.id = id;
     }
 
-    public Resource getDescription() {
-        return description;
+    public List<String> getResources() {
+        return resources;
     }
 
-    public void setDescription(Resource description) {
-        this.description = description;
+    public void setResources(List<String> resources) {
+        this.resources = resources;
     }
 
     public String getTitle() {
@@ -88,12 +75,12 @@ public class Shock implements Serializable {
         this.text = text;
     }
 
-    public Shopkeeper getShopkeeper() {
-        return shopkeeper;
+    public String getShopkeeperId() {
+        return shopkeeperId;
     }
 
-    public void setShopkeeper(Shopkeeper shopkeeper) {
-        this.shopkeeper = shopkeeper;
+    public void setShopkeeperId(String shopkeeperId) {
+        this.shopkeeperId = shopkeeperId;
     }
 
     public int getAmount() {
@@ -126,5 +113,20 @@ public class Shock implements Serializable {
 
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public String toString() {
+        return "Shock{" +
+                "id='" + id + '\'' +
+                ", resources=" + resources +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", shopkeeperId='" + shopkeeperId + '\'' +
+                ", amount=" + amount +
+                ", last=" + last +
+                ", price=" + price +
+                ", timestamp=" + timestamp +
+                '}';
     }
 }

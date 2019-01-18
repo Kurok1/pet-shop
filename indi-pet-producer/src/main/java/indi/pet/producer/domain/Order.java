@@ -18,41 +18,31 @@ public class Order implements Serializable {
     /**
      * 买方
      */
-    private String user;
+    private String userId;
 
     /**
      * 卖方
      */
-    private String shopkeeper;
+    private String shopkeeperId;
 
     private Long createTimeStamp;
 
-    private Pet pet;
+    /**
+     * 购买的物品id
+     */
+    private String shockId;
+
+    /**
+     * 数量
+     */
+    private int count;
 
     /**
      * 订单状态
      */
     private Integer status;
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id='" + id + '\'' +
-                ", user='" + user + '\'' +
-                ", shopkeeper='" + shopkeeper + '\'' +
-                ", createTimeStamp=" + createTimeStamp +
-                ", pet=" + pet +
-                ", status=" + status +
-                '}';
-    }
 
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
 
     public String getId() {
         return id;
@@ -62,20 +52,12 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getShopkeeper() {
-        return shopkeeper;
-    }
-
-    public void setShopkeeper(String shopkeeper) {
-        this.shopkeeper = shopkeeper;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Long getCreateTimeStamp() {
@@ -92,5 +74,42 @@ public class Order implements Serializable {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public String getShopkeeperId() {
+        return shopkeeperId;
+    }
+
+    public void setShopkeeperId(String shopkeeperId) {
+        this.shopkeeperId = shopkeeperId;
+    }
+
+    public String getShockId() {
+        return shockId;
+    }
+
+    public void setShockId(String shockId) {
+        this.shockId = shockId;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", userId='" + userId + '\'' +
+                ", shopkeeperId='" + shopkeeperId + '\'' +
+                ", createTimeStamp=" + createTimeStamp +
+                ", shockId='" + shockId + '\'' +
+                ", count=" + count +
+                ", status=" + status +
+                '}';
     }
 }

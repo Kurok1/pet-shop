@@ -8,11 +8,13 @@ import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 
 @SpringBootApplication
 @EnableElasticsearchRepositories
+@EnableSwagger2
 public class ProducerApplication {
 
 	public static void main(String[] args) {

@@ -4,16 +4,16 @@ import indi.pet.producer.domain.Pet;
 import indi.pet.producer.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
  * @since 2018.11.05
  */
-@Service
+@Service("petService")
 public class PetService {
 
     private PetRepository petRepository;
@@ -31,11 +31,13 @@ public class PetService {
         return getPetRepository().save(entity);
     }
 
-    public void delete(Pet entity){
-        getPetRepository().delete(entity);
+    public void delete(List<String> ids){
+        getPetRepository().deletePetsByIdIn(ids);
     }
 
-    public List<Pet> search(String name,String lower,String upper){
-        Pageable
+
+
+    public Pet findById(String id){
+        return getPetRepository().findOne(id);
     }
 }

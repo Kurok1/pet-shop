@@ -17,7 +17,7 @@ public class Comment implements Serializable {
      */
     private String parent;
 
-    private User user;
+    private String userId;
 
     /**
      * 所属消息id
@@ -50,12 +50,12 @@ public class Comment implements Serializable {
         this.parent = parent;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getMessage() {
@@ -80,7 +80,7 @@ public class Comment implements Serializable {
                 "id='" + id + '\'' +
                 ", content='" + content + '\'' +
                 ", parent='" + parent + '\'' +
-                ", user=" + user +
+                ", userId='" + userId + '\'' +
                 ", message='" + message + '\'' +
                 ", timestamp=" + timestamp +
                 '}';

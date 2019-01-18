@@ -28,14 +28,18 @@ public class PetController {
     }
 
     @PostMapping("/save")
-    @PutMapping("/update")
     public Pet save(@RequestBody Pet pet){
         return getPetService().save(pet);
     }
 
+    @PutMapping("/update")
+    public Pet update(@RequestBody Pet pet){
+        return getPetService().save(pet);
+    }
+
     @DeleteMapping("/")
-    public boolean delete(@RequestBody List<Pet> pets){
-        getPetService().delete(pets);
+    public boolean delete(@RequestBody List<String> ids){
+        getPetService().delete(ids);
         return true;
     }
 
@@ -44,9 +48,6 @@ public class PetController {
         return getPetService().findById(id);
     }
 
-    @GetMapping("/search")
-    public List<Pet> searchByNameAndPrice(String name,float lower,float upper){
-        return getPetService().searchByNameAndPrice(name,lower,upper);
-    }
+
 
 }

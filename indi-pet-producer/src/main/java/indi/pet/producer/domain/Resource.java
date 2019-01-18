@@ -73,6 +73,8 @@ public class Resource implements Serializable {
                 "id='" + id + '\'' +
                 ", path='" + path + '\'' +
                 ", timestamp=" + timestamp +
+                ", type='" + type + '\'' +
+                ", hasUsed=" + hasUsed +
                 '}';
     }
 }

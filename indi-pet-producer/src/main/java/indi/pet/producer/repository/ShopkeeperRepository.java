@@ -1,6 +1,7 @@
 package indi.pet.producer.repository;
 
 import indi.pet.producer.domain.Shopkeeper;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
@@ -19,7 +20,7 @@ public interface ShopkeeperRepository extends ElasticsearchRepository<Shopkeeper
      * @param name 要搜索的宠物店名称
      * @return 返回符合结果的所有实体类集合
      */
-    public List<Shopkeeper> findShopkeepersByNameLike(String name, Pageable pageable);
+    public Page<Shopkeeper> findShopkeepersByNameContaining(String name, Pageable pageable);
 
     /**
      * 登录操作
@@ -29,4 +30,12 @@ public interface ShopkeeperRepository extends ElasticsearchRepository<Shopkeeper
      */
     public Shopkeeper findFirstByEmailEqualsAndPasswordEquals(String email,String password);
 
+
+    /**
+     * 根据id和密码查询对应用户，用于修改密码
+     * @param id 用户id
+     * @param password 旧密码
+     * @return 如果存在返回对应的实体，否则返回null
+     */
+    public Shopkeeper findByIdAndPassword(String id,String password);
 }
