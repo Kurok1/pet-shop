@@ -3,12 +3,14 @@ package indi.pet.producer.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
+import java.io.Serializable;
+
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
  * @since 2018.11.05
  */
 @Document(indexName = "pet",type = "p")
-public class Pet {
+public class Pet implements Serializable {
     @Id
     private String id;
 

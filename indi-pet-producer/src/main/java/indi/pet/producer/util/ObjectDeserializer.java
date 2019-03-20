@@ -11,22 +11,22 @@ import java.util.Map;
  * @author <a href="maimengzzz@gmail.com">韩超</a>
  * @since 2018.11.05
  */
-public class ObjectDeserializer implements Deserializer<Serializable> {
+public class ObjectDeserializer implements Deserializer<Object> {
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {
 
     }
 
     @Override
-    public Serializable deserialize(String topic, byte[] data) {
-        Serializable object = null;
+    public Object deserialize(String topic, byte[] data) {
+        Object object = null;
 
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
 
         try {
-            ObjectInputStream inputStream = new ObjectInputStream(byteArrayInputStream);
+            ObjectInputStream inputStream = new OrderObjectInputStream(byteArrayInputStream);
 
-            object = (Serializable) inputStream.readObject();
+            object = inputStream.readObject();
 
         } catch (Exception e) {
             throw new RuntimeException(e);

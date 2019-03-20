@@ -1,4 +1,4 @@
-package indi.pet.producer.util;
+package indi.pet.consumer.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

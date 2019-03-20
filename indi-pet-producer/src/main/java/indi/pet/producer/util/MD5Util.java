@@ -1,4 +1,4 @@
-package indi.pet.consumer.util;
+package indi.pet.producer.util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

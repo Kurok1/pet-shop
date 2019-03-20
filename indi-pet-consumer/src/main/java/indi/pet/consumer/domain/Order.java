@@ -1,4 +1,4 @@
-package indi.pet.producer.domain;
+package indi.pet.consumer.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -12,6 +12,9 @@ import java.io.Serializable;
  */
 @Document(indexName = "petshop",type = "order")
 public class Order implements Serializable {
+
+    private static final long serialVersionUID = 123456L;
+
     @Id
     private String id;
 

@@ -11,7 +11,7 @@ import java.util.Map;
  * @author <a href="maimengzzz@gmail.com">韩超</a>
  * @since 2018.11.05
  */
-public class ObjectDeserializer implements Deserializer<Serializable> {
+public class ObjectDeserializer implements Deserializer<Object> {
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {
 
