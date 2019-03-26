@@ -32,9 +32,15 @@ public class UserController {
     @PostMapping("/register")
     public Map<String,Object> register(@RequestBody User user){
         Map<String,Object> data=new HashMap<>();
+        if(getUserService().exist(user.getUsername())){
+            data.put("flag",false);
+            data.put("message","注册失败,用户名已经被使用");
+            return data;
+        }
         User savedUser = getUserService().save(user);
         data.put("flag",true);
         data.put("user",savedUser);
+        data.put("token",TokenUtil.generateToken(savedUser));
         data.put("message","注册成功");
         return data;
     }
@@ -49,6 +55,7 @@ public class UserController {
     public Map<String,Object> loginWithPass(@RequestParam("username") String username,@RequestParam("password") String password){
         Map<String,Object> data=new HashMap<>();
         User login = getUserService().login(username, password);
+        login.setPassword(null);
         if(login!=null){
             data.put("flag",true);
             data.put("message","登录成功");
@@ -61,10 +68,11 @@ public class UserController {
         return data;
     }
 
-    @PutMapping("login")
+    @PutMapping("/login")
     public Map<String,Object> loginWithToken(@RequestParam("token")String token){
         Map<String,Object> data=new HashMap<>();
         User login = TokenUtil.validateToken(token);
+        login.setPassword(null);
         if(login!=null){
             data.put("flag",true);
             data.put("message","登录成功");
@@ -72,7 +80,7 @@ public class UserController {
             data.put("user",login);
         }else {
             data.put("flag",false);
-            data.put("message","登录失败，请检查用户名和密码");
+            data.put("message","token过期,请重新登录");
         }
         return data;
     }

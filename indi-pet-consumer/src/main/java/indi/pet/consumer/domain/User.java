@@ -1,5 +1,6 @@
 package indi.pet.consumer.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -18,7 +19,7 @@ public class User implements Serializable {
 
     private String username;
 
-    private String password;
+    private transient String password;
 
     private String logo;
 

@@ -37,7 +37,7 @@ public class Shopkeeper implements Serializable {
     /**
      * 登录密码
      */
-    private String password;
+    private transient String password;
 
     /**
      * logo图片,用图片id代替

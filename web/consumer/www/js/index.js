@@ -19,11 +19,17 @@
 // import Framework7 from './js/framework7.min.js';
 var $$=Dom7;
 
+var host="http://localhost/"
+
 var app = new Framework7({
     // App root element
     root: '#app',
     // App Name
     name: 'My App',
+    //侧滑菜单栏
+    panel: {
+        swipe: 'left'
+    },
     // App id
     id: 'com.myapp.test',
     // Enable swipe panel
@@ -42,23 +48,9 @@ var app = new Framework7({
             url: 'about.html',
         },
         {
-            name: 'login',
-            path: '/login/',
-            url: 'login.html'
-            // content: '<div class="page no-navbar no-toolbar no-swipeback"><div class="page-content login-screen-content">'+
-            //             '<div class="login-screen-title">My App</div>'+
-            //             '<form>'+
-            //             '<div class="list">'+
-            //             '...'+
-            //             '</div>'+
-            //             '<div class="list">'+
-            //             '<ul>'+
-            //                 '<li><a href="#" class="item-link list-button">Sign In</a></li>'+
-            //             '</ul>'+
-            //             '<div class="block-footer">'+
-            //             '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>'+
-            //             '<p><a href="#" class="link back">Close Login Screen</a></p>'+
-            //             '</div></div></form></div></div>'
+            name:'user',
+            path:'/user/',
+            url:'pages/user.html'
         }
     ],
     // ... other parameters
@@ -67,11 +59,89 @@ var app = new Framework7({
 var mainView = app.views.create('.view-main');
 // mainView.router.navigate({name:'about'})
 // //
-// app.loginScreen.create("#login-screen").open(true);
-// $$("#login").on('click',function () {
-//
-//     var login=app.loginScreen.create("#login-screen");
-//     console.log(login);
-//     login.open(true)
-// })
 
+var dialog=app.dialog;
+
+if(!localStorage.hasOwnProperty("currentUserToken"))
+    app.loginScreen.open("#login",true)
+else{
+    app.request({url:host+"/user/login?token="+localStorage.getItem("currentUserToken"),
+                            method:"PUT",
+                            success(data, status, xhr) {
+                                data=JSON.parse(data)
+                                if(data.flag==false)
+                                    app.dialog.alert(data.message,"请重新登录",function () {
+                                        app.loginScreen.open("#login",true)
+                                    });
+                                else {
+                                    localStorage.setItem("currentUserToken",data.token);
+                                }
+                            }})
+}
+
+$$('#login #login-btn').on('click', function () {
+    var username = $$('#login [name="username"]').val();
+    var password = $$('#login [name="password"]').val();
+
+    app.request({url:host+"/user/login?username="+username+"&password="+password,
+                            method:"POST",
+                            success:function(data, status, xhr){
+                                data=JSON.parse(data);//转json
+                                if(data.flag==false)
+                                    app.dialog.alert(data.message);
+                                //存储数据
+                                localStorage.setItem("currentUserToken",data.token);
+                            }
+                            })
+
+    // Close login screen
+    app.loginScreen.close('#login',true);
+
+});
+
+console.log()
+
+$$('#register #register-btn').on('click',function () {
+    var username = $$('#register [name="username"]').val();
+    var password = $$('#register [name="password"]').val();
+    var repassword=$$('#register [name="re-password"]').val();
+
+    if(repassword!=password){
+        $$('#register [name="password"]').val("");
+        $$('#register [name="re-password"]').val("")
+        app.dialog.alert("两次密码不一致,请重新输入!!!");
+
+        return;
+    }
+    if (username==null || ""==username){
+        $$('#register [name="username"]').val("");
+        $$('#register [name="password"]').val("");
+        $$('#register [name="repassword"]').val("");
+        app.dialog.alert("用户名不能为空,请重新输入");
+        return
+    }
+
+
+    app.request({url:host+"/user/register",
+        data:JSON.stringify({
+            "username":username,
+            "password":password,
+            "logo":"",
+            "friends":[],
+            "pets":[],
+            "shopkeepers":[]
+        }),
+        processData:false,
+        method:"POST",
+        dataType:"json",
+        contentType:"application/json",
+        success:function(data, status, xhr){
+            // data=JSON.parse(data);//转json
+            if(data.flag==false)
+                app.dialog.alert(data.message);
+            else localStorage.setItem("currentUserToken",data.token);//存储token
+        }
+    })
+    app.loginScreen.close("#register",true);
+    app.loginScreen.close('#login',true);
+})

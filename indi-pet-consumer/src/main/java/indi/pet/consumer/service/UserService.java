@@ -42,4 +42,8 @@ public class UserService {
     public User login(String username,String password){
         return getUserRepository().findByUsernameAndPassword(username, password);
     }
+
+    public boolean exist(String username){
+        return getUserRepository().findByUsername(username)!=null;
+    }
 }

@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository("commentRepository")
 public interface CommentRepository extends ElasticsearchRepository<Comment,String> {
 
-    Page<Comment> findByMessageId(String id, Pageable pageable);
+    Page<Comment> findByMessage(String message, Pageable pageable);
 
 }
