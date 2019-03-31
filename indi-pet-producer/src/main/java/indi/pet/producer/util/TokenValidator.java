@@ -1,42 +1,72 @@
 package indi.pet.producer.util;
 
+import indi.pet.producer.domain.Shopkeeper;
 import indi.pet.producer.exception.TokenAndIdNotEqualsException;
 import indi.pet.producer.exception.TokenExpiredException;
+import indi.pet.producer.service.ShopkeeperService;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.TimeUnit;
+
 /**
- * æä¾›é™æ€æ–¹æ³•ç”¨äºéªŒè¯tokenæ˜¯å¦è¿‡æœŸ<br/>
- * å¦‚æœæ²¡æœ‰è¿‡æœŸ,è¿”å›redisä¸­å¯¹åº”çš„idï¼Œå¦åˆ™æŠ›å‡ºå¼‚å¸¸
- * @author <a href="maimengzzz@gmail.com">éŸ©è¶…</a>
+ * Ìá¹©¾²Ì¬·½·¨ÓÃÓÚÑéÖ¤tokenÊÇ·ñ¹ıÆÚ<br/>
+ * Èç¹ûÃ»ÓĞ¹ıÆÚ,·µ»ØredisÖĞ¶ÔÓ¦µÄid£¬·ñÔòÅ×³öÒì³£
+ * @author <a href="maimengzzz@gmail.com">º«³¬</a>
  * @since 2018.11.05
  */
 public class TokenValidator {
+
+    private static ShopkeeperService shopkeeperService;
 
     private static RedisTemplate<String,String> redisTemplate;
 
     static {
         redisTemplate= BeanUtil.getBean("redisTemplate",RedisTemplate.class);
+        shopkeeperService=BeanUtil.getBean("shopkeeperService",ShopkeeperService.class);
     }
 
     /**
-     * éªŒè¯å®¢æˆ·ç«¯ä¼ æ¥çš„tokenå€¼æ˜¯å¦æœ‰æ•ˆ
-     * @param token å®¢æˆ·ç«¯ä¼ é€’çš„token
-     * @return å¦‚æœtokenæœªè¿‡æœŸ,è¿”å›tokenå¯¹åº”çš„id,å¦åˆ™æŠ›å‡ºä¸€ä¸ª<code>TokenExpiredException</code>å¼‚å¸¸
+     * ÎªÊ×´ÎµÇÂ¼µÄÓÃ»§µÄÉú³Étoken²¢´æ´¢ÔÚRedisÖĞ
+     * @param shopkeeper Ê×´ÎµÇÂ¼µÄÓÃ»§bean
+     * @return ·µ»ØÉú³ÉµÄtoken
+     */
+    public static String generateToken(Shopkeeper shopkeeper){
+        String id=shopkeeper.getId();
+        Long timestamp=System.currentTimeMillis()/1000;
+        String token=null;
+        try {
+            token=MD5Util.getMD5Code(id+timestamp);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        redisTemplate.opsForValue().set(token,id,60*24*7, TimeUnit.MINUTES);
+        return token;
+    }
+
+    /**
+     * ÑéÖ¤¿Í»§¶Ë´«À´µÄtokenÖµÊÇ·ñÓĞĞ§
+     * @param token ¿Í»§¶Ë´«µİµÄtoken
+     * @return Èç¹ûtokenÎ´¹ıÆÚ,·µ»Øtoken¶ÔÓ¦µÄid,·ñÔòÅ×³öÒ»¸ö<code>TokenExpiredException</code>Òì³£
      * @see TokenExpiredException
      */
     public static String validate(String token){
+
         if(!redisTemplate.hasKey(token))
             throw new TokenExpiredException();
         else return redisTemplate.opsForValue().get(token);
     }
 
     /**
-     * éªŒè¯å®¢æˆ·ç«¯ä¼ æ¥çš„tokenå’Œidæ˜¯å¦å¯¹åº”
-     * @param token å®¢æˆ·ç«¯ä¼ æ¥çš„token
-     * @param id å®¢æˆ·ç«¯ä¼ æ¥çš„id
-     * @return å¦‚æœtokenè¿‡æœŸ,æŠ›å‡º<code>TokenExpiredException</code>å¼‚å¸¸<br/>
-     *          å¦‚æœæ²¡æœ‰å¯¹åº”,æŠ›å‡º<code>TokenAndIdNotEqualsException</code>å¼‚å¸¸<br/>
-     *          å¦‚æœæ²¡æœ‰è¿‡æœŸå¹¶ä¸”tokenå’Œidä¸€ä¸€å¯¹åº”,è¿”å›id
+     * ÑéÖ¤¿Í»§¶Ë´«À´µÄtokenºÍidÊÇ·ñ¶ÔÓ¦
+     * @param token ¿Í»§¶Ë´«À´µÄtoken
+     * @param id ¿Í»§¶Ë´«À´µÄid
+     * @return Èç¹ûtoken¹ıÆÚ,Å×³ö<code>TokenExpiredException</code>Òì³£<br/>
+     *          Èç¹ûÃ»ÓĞ¶ÔÓ¦,Å×³ö<code>TokenAndIdNotEqualsException</code>Òì³£<br/>
+     *          Èç¹ûÃ»ÓĞ¹ıÆÚ²¢ÇÒtokenºÍidÒ»Ò»¶ÔÓ¦,·µ»Øid
      * @see TokenExpiredException
      * @see TokenAndIdNotEqualsException
      */
@@ -49,5 +79,14 @@ public class TokenValidator {
                 return object;
             else throw new TokenAndIdNotEqualsException();
         }
+    }
+
+    public static Shopkeeper validateToken(String token){
+        if(redisTemplate.hasKey(token)){
+            String id=redisTemplate.opsForValue().get(token);
+            Shopkeeper shopkeeper=shopkeeperService.getById(id);
+            redisTemplate.opsForValue().set(token,id,60*24*7, TimeUnit.MINUTES);
+            return shopkeeper;
+        }else return null;
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 // import Framework7 from './js/framework7.min.js';
+
 var $$=Dom7;
 
 var host="http://localhost/"
@@ -51,6 +52,31 @@ var app = new Framework7({
             name:'user',
             path:'/user/',
             url:'pages/user.html'
+        },
+        {
+            name:'chat',
+            path:'/chat',
+            url:'pages/chat/single.html'
+        },
+        {
+            name:'moment',
+            path:'/moment',
+            url:"pages/moment/detail.html"
+        },
+        {
+            name:'moment-add',
+            path:'/moment/add',
+            url:'pages/moment/add.html'
+        },
+        {
+            name:'user',
+            path:'/profile',
+            url:'pages/user.html'
+        },
+        {
+            name:'friends',
+            path:'/friends',
+            url:'pages/friends.html'
         }
     ],
     // ... other parameters
@@ -60,10 +86,16 @@ var mainView = app.views.create('.view-main');
 // mainView.router.navigate({name:'about'})
 // //
 
+$$('.moment-card').on('click',function () {
+    mainView.router.navigate({
+        name:'moment'
+    })
+});
+
 var dialog=app.dialog;
 
 if(!localStorage.hasOwnProperty("currentUserToken"))
-    app.loginScreen.open("#login",true)
+    app.loginScreen.open("#login",true);
 else{
     app.request({url:host+"/user/login?token="+localStorage.getItem("currentUserToken"),
                             method:"PUT",
@@ -79,6 +111,11 @@ else{
                             }})
 }
 
+$$('#submit_file').on('click',function () {
+    var fd = new FormData(document.forms.namedItem("files"));
+    console.log(fd)
+})
+
 $$('#login #login-btn').on('click', function () {
     var username = $$('#login [name="username"]').val();
     var password = $$('#login [name="password"]').val();
@@ -88,18 +125,20 @@ $$('#login #login-btn').on('click', function () {
                             success:function(data, status, xhr){
                                 data=JSON.parse(data);//转json
                                 if(data.flag==false)
-                                    app.dialog.alert(data.message);
-                                //存储数据
-                                localStorage.setItem("currentUserToken",data.token);
+                                    app.dialog.alert(data.message==null?"用户名和密码不正确，请重试":data.message);
+                                else{
+                                    localStorage.setItem("currentUserToken",data.token);
+                                    // Close login screen
+                                    app.loginScreen.close('#login',true);
+                                }
+
                             }
                             })
 
-    // Close login screen
-    app.loginScreen.close('#login',true);
+
 
 });
 
-console.log()
 
 $$('#register #register-btn').on('click',function () {
     var username = $$('#register [name="username"]').val();
@@ -137,11 +176,16 @@ $$('#register #register-btn').on('click',function () {
         contentType:"application/json",
         success:function(data, status, xhr){
             // data=JSON.parse(data);//转json
-            if(data.flag==false)
+            if(data.flag==false){
                 app.dialog.alert(data.message);
-            else localStorage.setItem("currentUserToken",data.token);//存储token
-        }
-    })
-    app.loginScreen.close("#register",true);
-    app.loginScreen.close('#login',true);
+                $$('#register [name="username"]').val("");
+            }
+            else {
+                localStorage.setItem("currentUserToken",data.token);//存储token
+                app.loginScreen.close("#register",true);
+                app.loginScreen.close('#login',true);
+            }
+        }}
+    )
+
 })

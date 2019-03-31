@@ -2,20 +2,865 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f9dbbb-88a0-4dc3-9831-c3f138d530bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/pages/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/css/framework7-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/fonts/Framework7Icons-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/fonts/Framework7Icons-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/fonts/Framework7Icons-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/fonts/Framework7Icons-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/js/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/chat/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/friends.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/moment/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/moment/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/css/framework7-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion/accordion-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion/accordion-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion/accordion-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion/accordion.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion/accordion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/accordion/accordion.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/actions/actions.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/app-class.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/app-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/app-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/app-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/app-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/app.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/app/load-module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/autocomplete/autocomplete.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/badge/badge-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/badge/badge-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/badge/badge-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/badge/badge.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/badge/badge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/badge/badge.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/block/block-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/block/block-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/block/block-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/block/block.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/block/block.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/block/block.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/button/button-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/button/button-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/button/button-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/button/button.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/button/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/button/button.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/calendar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/idate/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/calendar/idate/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card/card-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card/card-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card/card-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card/card.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/card/card.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox/checkbox-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox/checkbox-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox/checkbox-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox/checkbox.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/checkbox/checkbox.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip/chip-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip/chip-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip/chip-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip/chip.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip/chip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/chip/chip.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list/contacts-list-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list/contacts-list-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list/contacts-list-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list/contacts-list.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list/contacts-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/contacts-list/contacts-list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/data-table/data-table.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/dialog/dialog.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation/elevation-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation/elevation-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation/elevation-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation/elevation.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation/elevation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/elevation/elevation.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab/fab-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab/fab-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab/fab-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab/fab.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab/fab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/fab/fab.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form/form-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form/form-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form/form.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/form/form.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge/gauge-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge/gauge-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge/gauge-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge/gauge.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge/gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/gauge/gauge.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid/grid-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid/grid-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid/grid-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid/grid.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid/grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/grid/grid.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/icon/icon-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/icon/icon-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/icon/icon.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/icon/icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/icon/icon.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll/infinite-scroll-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll/infinite-scroll-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll/infinite-scroll.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll/infinite-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/infinite-scroll/infinite-scroll.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input/input-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input/input-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input/input-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input/input.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/input/input.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy/lazy-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy/lazy-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy/lazy.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy/lazy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/lazy/lazy.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/link/link-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/link/link-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/link/link-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/link/link.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/link/link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/link/link.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list-index/list-index.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list/list-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list/list-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list/list-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list/list.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list/list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/list/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/login-screen/login-screen.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu/menu-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu/menu-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu/menu-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu/menu.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/menu/menu.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messagebar/messagebar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/messages/messages.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/modal/custom-modal-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/modal/modal-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/modal/modal.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/modal/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/modal/modal.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/navbar/navbar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/navbar/navbar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/navbar/navbar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/navbar/navbar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/navbar/navbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/navbar/navbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/notification/notification.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/page/page-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/page/page-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/page/page-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/page/page.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/page/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/page/page.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/panel.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/panel/swipe-panel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/photo-browser/photo-browser.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker-column.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/picker/picker.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popover/popover.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/popup/popup.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader/preloader-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader/preloader-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader/preloader-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader/preloader.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader/preloader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/preloader/preloader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar/progressbar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar/progressbar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar/progressbar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar/progressbar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar/progressbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/progressbar/progressbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/pull-to-refresh/pull-to-refresh.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio/radio-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio/radio-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio/radio-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio/radio.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio/radio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/radio/radio.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/range/range.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/searchbar/searchbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sheet/sheet.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton/skeleton-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton/skeleton-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton/skeleton-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton/skeleton.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton/skeleton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/skeleton/skeleton.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/smart-select/smart-select.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable/sortable-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable/sortable-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable/sortable-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable/sortable.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable/sortable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/sortable/sortable.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/statusbar/statusbar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/statusbar/statusbar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/statusbar/statusbar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/statusbar/statusbar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/statusbar/statusbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/statusbar/statusbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/stepper/stepper.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/subnavbar/subnavbar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/subnavbar/subnavbar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/subnavbar/subnavbar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/subnavbar/subnavbar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/subnavbar/subnavbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/subnavbar/subnavbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout/swipeout-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout/swipeout-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout/swipeout-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout/swipeout.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout/swipeout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swipeout/swipeout.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/a11y/a11y.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/a11y/a11y.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/a11y/a11y.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/autoplay/autoplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/controller/controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/controller/controller.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/controller/controller.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/breakpoints/getBreakpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/breakpoints/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/breakpoints/setBreakpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/check-overflow/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/classes/addClasses.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/classes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/classes/removeClasses.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/core-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/defaults.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/events/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/events/onClick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/events/onResize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/events/onTouchEnd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/events/onTouchMove.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/events/onTouchStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/grab-cursor/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/grab-cursor/setGrabCursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/grab-cursor/unsetGrabCursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/images/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/images/loadImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/images/preloadImages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/loop/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/loop/loopCreate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/loop/loopDestroy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/loop/loopFix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/manipulation/addSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/manipulation/appendSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/manipulation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/manipulation/prependSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/manipulation/removeAllSlides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/manipulation/removeSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slideNext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slidePrev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slideReset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slideTo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slideToClickedSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slideToClosest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/slide/slideToLoop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/transition/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/transition/setTransition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/transition/transitionEnd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/transition/transitionStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/translate/getTranslate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/translate/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/translate/maxTranslate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/translate/minTranslate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/translate/setTranslate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateActiveIndex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateAutoHeight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateClickedSlide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateProgress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateSize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateSlides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateSlidesClasses.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateSlidesOffset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/core/update/updateSlidesProgress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-coverflow/effect-coverflow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-coverflow/effect-coverflow.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-coverflow/effect-coverflow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-cube/effect-cube.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-cube/effect-cube.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-cube/effect-cube.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-fade/effect-fade.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-fade/effect-fade.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-fade/effect-fade.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-flip/effect-flip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-flip/effect-flip.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/effect-flip/effect-flip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/hash-navigation/hash-navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/history/history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/keyboard/keyboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/lazy/lazy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/lazy/lazy.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/lazy/lazy.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/mousewheel/mousewheel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/navigation/navigation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/navigation/navigation.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/navigation/navigation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/pagination/pagination.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/pagination/pagination.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/pagination/pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/parallax/parallax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/scrollbar/scrollbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/scrollbar/scrollbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/scrollbar/scrollbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/thumbs/thumbs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/thumbs/thumbs.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/thumbs/thumbs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/virtual/virtual.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/zoom/zoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/zoom/zoom.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/components/zoom/zoom.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/modules/browser/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/modules/device/device.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/modules/observer/observer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/modules/resize/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/modules/resize/resize.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/modules/support/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/swiper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/swiper.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/swiper.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/utils/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/utils/class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/utils/device.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/utils/dom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/utils/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-class/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/swiper/swiper.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs/tabs-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs/tabs-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs/tabs.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tabs/tabs.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline/timeline-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline/timeline-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline/timeline-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline/timeline.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline/timeline.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/timeline/timeline.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toast/toast.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toggle/toggle.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toolbar/toolbar-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toolbar/toolbar-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toolbar/toolbar-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toolbar/toolbar.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toolbar/toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/toolbar/toolbar.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/tooltip/tooltip.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/touch-ripple/touch-ripple.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography/typography-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography/typography-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography/typography-vars.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography/typography.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography/typography.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/typography/typography.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi/vi-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi/vi-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi/vi-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi/vi.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/vi/vi.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/view/view-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/view/view-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/view/view-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/view/view.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/view/view.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/view/view.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list/virtual-list-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list/virtual-list-ios.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list/virtual-list-md.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list/virtual-list.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list/virtual-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/components/virtual-list/virtual-list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.bundle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.bundle.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.bundle.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.bundle.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/framework7.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/framework7.bundle.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/framework7.esm.bundle.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/framework7.esm.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/framework7.esm.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/framework7.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/framework7.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.bundle.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/js/framework7.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/less/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/clicks/clicks.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/clicks/clicks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/component-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/eventslisteners.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/parse-component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/patch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/h.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/h.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/h.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/helpers/attachto.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/helpers/attachto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/helpers/attachto.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/hooks.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/hooks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/hooks.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/htmldomapi.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/htmldomapi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/htmldomapi.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/is.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/is.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/is.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/attributes.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/attributes.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/class.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/class.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/dataset.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/dataset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/dataset.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/eventlisteners.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/eventlisteners.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/eventlisteners.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/hero.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/hero.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/hero.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/module.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/module.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/props.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/props.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/props.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/style.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/modules/style.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/snabbdom.bundle.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/snabbdom.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/snabbdom.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/snabbdom.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/snabbdom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/snabbdom.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/thunk.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/thunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/thunk.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/tovnode.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/tovnode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/tovnode.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/vnode.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/vnode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/snabbdom/vnode.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/component/vdom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/demo-module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/device/device.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/device/device.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/history/history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/request/request.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/request/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/resize/resize.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/resize/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/app-router-check.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/back.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/clear-previous-history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/component-loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/navigate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/process-route-queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/redirect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/router-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/router.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/swipe-back.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/router/template-loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/service-worker/service-worker.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/service-worker/service-worker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/storage/storage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/support/support.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/support/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/touch/touch.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/touch/touch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/utils/utils.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/modules/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/bezier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/constructor-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/device.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/device.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/events-class.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/history.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/modal-methods.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/request.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/support.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/utils.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/js/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/auth/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/chats/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/chats/single.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/order/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/order/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/shock/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../productor/www/page/shock/manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ResourceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/Shopkeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/Shopkeeper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/HandleExceptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/HandleExceptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ShopkeeperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ShopkeeperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/domain/Shock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/domain/Shock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/ShopkeeperRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/ShopkeeperRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/ShopkeeperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/ShopkeeperService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/TokenValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/TokenValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/pages/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/pages/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/hooks/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/android/icon-36-ldpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/android/icon-48-mdpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/android/icon-72-hdpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/android/icon-96-xhdpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/bada-wac/icon-48-type5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/bada-wac/icon-50-type3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/bada-wac/icon-80-type4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/bada/icon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/blackberry/icon-80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/blackberry10/icon-80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/ios/icon-57-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/ios/icon-57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/ios/icon-72-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/ios/icon-72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/tizen/icon-128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/webos/icon-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/windows-phone/icon-173-tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/windows-phone/icon-48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/icon/windows-phone/icon-62-tile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-hdpi-landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-hdpi-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-ldpi-landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-ldpi-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-mdpi-landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-mdpi-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-xhdpi-landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/android/screen-xhdpi-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/bada-wac/screen-type3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/bada-wac/screen-type4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/bada-wac/screen-type5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/bada/screen-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/blackberry/screen-225.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/blackberry10/splash-1280x768.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/blackberry10/splash-720x720.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/blackberry10/splash-768x1280.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-ipad-landscape-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-ipad-landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-ipad-portrait-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-ipad-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-iphone-landscape-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-iphone-landscape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-iphone-portrait-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-iphone-portrait-568h-2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/ios/screen-iphone-portrait.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/tizen/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/webos/screen-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/res/screen/windows-phone/screen-portrait.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/www/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/www/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/www/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/myApp/www/js/index.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,13 +871,58 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-340986928">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="35" />
+          <entry key="html" value="736" />
+          <entry key="js" value="856" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="35" />
+          <entry key="HTML" value="738" />
+          <entry key="JavaScript" value="854" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="html" value="8" />
+          <entry key="js" value="3" />
+          <entry key="ts" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="8" />
+          <entry key="JavaScript" value="3" />
+          <entry key="TypeScript" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="1449">
+              <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -43,8 +933,57 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+            <state relative-caret-position="368">
+              <caret line="116" column="51" selection-start-line="116" selection-start-column="51" selection-end-line="116" selection-end-column="51" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/friends.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/moment/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="164" lean-forward="true" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="164" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/user.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2343">
+              <caret line="116" selection-start-line="116" selection-end-line="116" />
             </state>
           </provider>
         </entry>
@@ -54,6 +993,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -64,6 +1004,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -73,15 +1014,36 @@
         <option value="$PROJECT_DIR$/www/framework7.esm.bundle.js" />
         <option value="$PROJECT_DIR$/www/login.html" />
         <option value="$PROJECT_DIR$/www/about.html" />
+        <option value="$PROJECT_DIR$/www/js/css/index.css" />
+        <option value="$PROJECT_DIR$/www/pages/map.html" />
+        <option value="$PROJECT_DIR$/www/pages/chat/single.html" />
+        <option value="$PROJECT_DIR$/www/pages/moment/detail.html" />
+        <option value="$PROJECT_DIR$/www/pages/moment/add.html" />
         <option value="$PROJECT_DIR$/www/pages/user.html" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
+        <option value="$PROJECT_DIR$/www/pages/friends.html" />
+        <option value="$PROJECT_DIR$/www/js/map.js" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="625" />
-    <option name="y" value="95" />
+    <option name="x" value="55" />
+    <option name="y" value="130" />
     <option name="width" value="1750" />
     <option name="height" value="1010" />
   </component>
@@ -103,6 +1065,31 @@
               <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="moment" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -115,14 +1102,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="null# tab | space" />
     <property name="js.phonegap.settings.workdir" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/npm/cordova.cmd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="E:\JetBrains\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\pet-shop\web\consumer\www\css" />
+      <recent name="F:\pet-shop\web\consumer\www" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\pet-shop\web\consumer\www\js\css" />
       <recent name="F:\pet-shop\web\consumer\www" />
       <recent name="F:\pet-shop\web\consumer\www\js" />
     </key>
@@ -167,11 +1159,16 @@
       <workItem from="1552720041414" duration="11102000" />
       <workItem from="1553138569984" duration="10237000" />
       <workItem from="1553511434765" duration="9476000" />
+      <workItem from="1553695810620" duration="3374000" />
+      <workItem from="1553913048134" duration="27000" />
+      <workItem from="1553919721354" duration="691000" />
+      <workItem from="1553923795206" duration="17000" />
+      <workItem from="1553999814237" duration="13076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30815000" />
+    <option name="totallyTimeSpent" value="52484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -220,6 +1217,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.npmignore">
@@ -270,18 +1270,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/components/app/app-class.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="10" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="42" selection-end-column="10" />
-        </state>
+        <state relative-caret-position="-456" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/framework7.esm.js">
@@ -323,27 +1312,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/user.html">
+    <entry file="file://$PROJECT_DIR$/www/pages/map.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="221">
+          <caret line="5367" column="4" selection-start-line="5367" selection-start-column="4" selection-end-line="5367" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
+    <entry file="file://$PROJECT_DIR$/www/pages/chat/single.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="2990">
+          <caret line="130" column="6" selection-start-line="130" selection-start-column="6" selection-end-line="130" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#5;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#8;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#9;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#10;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#11;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/framework7-icons.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/about.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/moment/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="41" column="92" selection-start-line="41" selection-start-column="92" selection-end-line="41" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2343">
+          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="1449">
+          <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/holder.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="116" column="51" selection-start-line="116" selection-start-column="51" selection-end-line="116" selection-end-column="51" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/friends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/moment/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="164" lean-forward="true" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
         </state>
       </provider>
     </entry>

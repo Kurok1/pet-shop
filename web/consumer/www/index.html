@@ -36,22 +36,88 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" href="js/css/framework7.bundle.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- Path to Framework7 Library Bundle JS-->
+        <script src="js/js/framework7.bundle.js"></script>
+        <!--腾讯地图-->
+        <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=6LLBZ-QMLCX-HNA4L-T3ADN-4O3V5-BFFLB"></script>
+        <script src="js/map.js"></script>
+        <link rel="stylesheet" href="css/framework7-icons.css">
+        <script src="js/holder.min.js"></script>
         <title>Hello World</title>
+        <style>
+            #container{
+                min-width:600px;
+                min-height:767px;
+            }
+
+            .logo{
+                border-radius: 50%;
+            }
+            .profile .name{
+                font-weight: bold;
+                font-size: 24px;
+            }
+            .side-bar{
+                background: rgb(46,46,46);
+            }
+            .fab[class*="-bottom"] {
+                position: fixed;
+                z-index: 999;
+                bottom: 55px;
+            }
+            .moment-card .card-header {
+                display: block;
+                padding: 10px;
+            }
+            .moment-card .demo-facebook-avatar {
+                float: left;
+            }
+            .moment-card .demo-facebook-name {
+                margin-left: 44px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .moment-card .demo-facebook-date {
+                margin-left: 44px;
+                font-size: 13px;
+                color: #8e8e93;
+            }
+            .moment-card .card-content{
+                max-height: 300px;
+                overflow: hidden;
+            }
+            .moment-card .card-footer a {
+                color: #81848b;
+                font-weight: 500;
+            }
+            .moment-card .card-content img {
+                display: block;
+            }
+            .card-content-padding>p:first-child {
+                margin-top: 0;
+                font-size: 14px;
+            }
+            .tab .block{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        </style>
     </head>
-    <body>
+    <body class="color-theme-deeporange">
         <!-- App root element -->
         <div id="app">
-            <div class="panel panel-left panel-reveal">
-                <div class="block">
-                    <p>Left Panel content here</p>
-                    <p><a class="panel-close" href="#">Close me</a></p>
-                    <p><a class="panel-open" href="#" data-panel="right">Open Right Panel</a></p>
+            <div class="panel panel-left panel-cover side-bar theme-dark">
+                <div class="block profile">
+                    <p><img src="holder.js/75x75" class="logo" alt=""></p>
+                    <p class="block color-gray name">用户名</p>
                 </div>
                 <div class="list links-list">
                     <ul>
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
+                        <li><a href="/profile">用户资料</a></li>
+                        <li><a href="/friends">好友列表</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">关于此APP</a></li>
+                        <li><a href="#"><span class="color-red">退出登录</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -60,28 +126,110 @@
             <!-- Your main view, should have "view-main" class -->
             <div class="view view-main">
                 <!-- Initial Page, "data-name" contains page name -->
-                <div data-name="home" class="page">
-
-                    <!-- Top Navbar -->
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <div class="title">Awesome App</div>
+                <div class="page">
+                    <div class="subnavbar">
+                        <div class="subnavbar-inner">
+                            <div class="segmented segmented-raised">
+                                 <a class="button tab-link tab-link-active" href="#nearby">附件的店</a>
+                                 <a class="button tab-link" href="#chats">消息</a>
+                                 <a class="button tab-link" href="#moment">好友动态</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="page-content hide-navbar-on-scroll">
+                        <div class="tabs">
+                            <div class="tab tab-active" id="nearby">
 
-                    <!-- Bottom Toolbar -->
-                    <div class="toolbar toolbar-bottom">
-                        <div class="toolbar-inner">
-                            <!-- Toolbar links -->
-                            <a href="#" class="link">Link 2</a>
+                                <!--   定义地图显示容器   -->
+                                <div id="container"></div>
+                                <div id="info">
+                                    <button id="mapM" class="btn">setMap</button>
+                                    <button id="setP" class="btn">setPosition</button>
+                                </div>
+                            </div>
+                            <div class="tab" id="chats">
+                                <div class="list media-list sortable">
+                                    <ul>
+                                        <li>
+                                            <a href="/chat" class="item-link item-content">
+                                                <div class="item-media"><img src="https://cdn.framework7.io/placeholder/fashion-88x88-1.jpg" width="44"/></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">Yellow Submarine</div>
+                                                    </div>
+                                                    <div class="item-subtitle">Beatles</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chat" class="item-link item-content">
+                                                <div class="item-media"><img src="https://cdn.framework7.io/placeholder/fashion-88x88-2.jpg" width="44"/></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">Don't Stop Me Now</div>
+                                                    </div>
+                                                    <div class="item-subtitle">Queen</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/chat" class="item-link item-content">
+                                                <div class="item-media"><img src="https://cdn.framework7.io/placeholder/fashion-88x88-3.jpg" width="44"/></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title-row">
+                                                        <div class="item-title">Billie Jean</div>
+                                                    </div>
+                                                    <div class="item-subtitle">Michael Jackson</div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tab" id="moment">
+                                <div class="block">
+                                    <!-- Extended FAB Center Bottom (Red) -->
+                                    <div class="fab fab-extended fab-right-bottom color-green add-shock-btn">
+                                        <a href="/moment/add">
+                                            <i class="icon f7-icons if-not-md">add</i>
+                                            <i class="icon material-icons md-only">add</i>
+                                        </a>
+                                    </div>
+                                    <div class="card moment-card">
+                                        <div class="card-header">
+                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
+                                            <div class="demo-facebook-name">John Doe</div>
+                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
+                                        </div>
+                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
+                                    </div>
+                                    <div class="card moment-card">
+                                        <div class="card-header">
+                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
+                                            <div class="demo-facebook-name">John Doe</div>
+                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
+                                        </div>
+                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
+                                    </div>
+                                    <div class="card moment-card">
+                                        <div class="card-header">
+                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
+                                            <div class="demo-facebook-name">John Doe</div>
+                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
+                                        </div>
+                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
+                                    </div>
+                                    <div class="card moment-card">
+                                        <div class="card-header">
+                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
+                                            <div class="demo-facebook-name">John Doe</div>
+                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
+                                        </div>
+                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Scrollable page content -->
-                    <div class="page-content">
-                        <p>Page content goes here</p>
-                        <!-- Link to another page -->
-                        <a href="/about/">About app</a>
                     </div>
                 </div>
             </div>
@@ -169,9 +317,10 @@
                 </div>
             </div>
         </div>
-        <!-- Path to Framework7 Library Bundle JS-->
-        <script src="js/js/framework7.bundle.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+
+
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>
+
     </body>
 </html>

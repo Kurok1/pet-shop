@@ -22,10 +22,10 @@ public class HandleExceptionController {
     public Map<String,Object> handle(Exception e, HttpServletResponse response){
         logger.error(e.getMessage(),e);
         Map<String,Object> map=new HashMap<>();
+        map.put("flag",false);
         map.put("timestamp",System.currentTimeMillis()/1000);
         map.put("message",e.getMessage());
         map.put("cause",e.getCause());
-        response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         return map;
     }
 

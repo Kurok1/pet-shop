@@ -27,17 +27,6 @@ import java.util.concurrent.TimeUnit;
 public class ShopkeeperController {
     private ShopkeeperService shopkeeperService;
 
-    private RedisTemplate<String,String> redisTemplate;
-
-    public RedisTemplate<String, String> getRedisTemplate() {
-        return redisTemplate;
-    }
-
-    @Autowired
-    public void setRedisTemplate(RedisTemplate<String, String> redisTemplate) {
-        this.redisTemplate = redisTemplate;
-    }
-
     public ShopkeeperService getShopkeeperService() {
         return shopkeeperService;
     }
@@ -48,17 +37,37 @@ public class ShopkeeperController {
     }
 
     @PostMapping(path = "/save")
-    public Shopkeeper save(@RequestBody Shopkeeper shopkeeper){
+    public Map<String,Object> save(@RequestBody Shopkeeper shopkeeper){
+        Map<String,Object> map=new HashMap<>();
+        if(getShopkeeperService().existsByEmail(shopkeeper.getEmail())){
+            map.put("flag",false);
+            map.put("message","注册失败，该邮箱已经被注册");
+            return map;
+        }
         String password=shopkeeper.getPassword();//加密处理
+        String code=null;
+        Shopkeeper saved=null;
         try {
             password= MD5Util.getMD5Code(password);
+            shopkeeper.setPassword(password);
+            saved=getShopkeeperService().save(shopkeeper);
+            code=TokenValidator.generateToken(saved);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        shopkeeper.setPassword(password);
-        return getShopkeeperService().save(shopkeeper);
+        if(code!=null){
+            shopkeeper.setPassword(password);
+            map.put("keeper",saved);
+            map.put("flag",true);
+            map.put("message","注册成功，将为您自动登录");
+            map.put("token",code);
+            return map;
+        }
+        map.put("flag",false);
+        map.put("message","注册失败，请稍后再试");
+        return map;
     }
 
     @PutMapping(path="/update")
@@ -89,10 +98,9 @@ public class ShopkeeperController {
         if(shopkeeper!=null){
             //生成一个登陆code,并保存在redis中，返回给用户当做令牌
             long timestamp=System.currentTimeMillis()/1000;
-            String code=MD5Util.getMD5Code(shopkeeper.getId()+timestamp);
-            getRedisTemplate().opsForValue().set(code,shopkeeper.getId(),60*24*7, TimeUnit.MINUTES);
+            String code=TokenValidator.generateToken(shopkeeper);
             map.put("token",code);
-            map.put("user",shopkeeper);
+            map.put("keeper",shopkeeper);
             map.put("timestamp",timestamp);
             map.put("flag",true);
         }else {
@@ -102,15 +110,14 @@ public class ShopkeeperController {
         return map;
     }
 
-    @PostMapping("/validate")
+    @PutMapping("/login")
     public Map<String,Object> loginWithoutPassword(@RequestParam("token")String token){
         Assert.notNull(token,"token值不能为空");
         String id=TokenValidator.validate(token);
         Shopkeeper shopkeeper = getShopkeeperService().getById(id);
         Map<String,Object> map=new HashMap<>();
-        getRedisTemplate().opsForValue().set(token,shopkeeper.getId(),60*24*7, TimeUnit.MINUTES);
         map.put("flag",true);
-        map.put("user",shopkeeper);
+        map.put("keeper",TokenValidator.validateToken(token));
         map.put("message","可以免密登录");
         return map;
     }

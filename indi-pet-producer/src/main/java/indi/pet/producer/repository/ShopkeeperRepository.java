@@ -16,11 +16,11 @@ import java.util.List;
 public interface ShopkeeperRepository extends ElasticsearchRepository<Shopkeeper,String> {
 
     /**
-     * 根据Name模糊查找
-     * @param name 要搜索的宠物店名称
-     * @return 返回符合结果的所有实体类集合
+     * 根据Email准确查找
+     * @param email 要搜索的宠物店邮箱
+     * @return 返回符合结果的所有实体类
      */
-    public Page<Shopkeeper> findShopkeepersByNameContaining(String name, Pageable pageable);
+    public Shopkeeper findByEmail(String email);
 
     /**
      * 登录操作

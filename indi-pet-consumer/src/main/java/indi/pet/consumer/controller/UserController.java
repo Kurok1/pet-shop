@@ -2,6 +2,7 @@ package indi.pet.consumer.controller;
 
 import indi.pet.consumer.domain.User;
 import indi.pet.consumer.service.UserService;
+import indi.pet.consumer.util.MD5Util;
 import indi.pet.consumer.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,13 +31,14 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public Map<String,Object> register(@RequestBody User user){
+    public Map<String,Object> register(@RequestBody User user)throws Exception{
         Map<String,Object> data=new HashMap<>();
         if(getUserService().exist(user.getUsername())){
             data.put("flag",false);
             data.put("message","注册失败,用户名已经被使用");
             return data;
         }
+        user.setPassword(MD5Util.getMD5Code(user.getPassword()));
         User savedUser = getUserService().save(user);
         data.put("flag",true);
         data.put("user",savedUser);
@@ -72,7 +74,6 @@ public class UserController {
     public Map<String,Object> loginWithToken(@RequestParam("token")String token){
         Map<String,Object> data=new HashMap<>();
         User login = TokenUtil.validateToken(token);
-        login.setPassword(null);
         if(login!=null){
             data.put("flag",true);
             data.put("message","登录成功");

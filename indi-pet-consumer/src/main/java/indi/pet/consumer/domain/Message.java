@@ -15,7 +15,7 @@ public class Message implements Serializable {
     @Id
     private  String id;
 
-    private String petId;
+    private String title;
 
     private String content;
 
@@ -39,12 +39,12 @@ public class Message implements Serializable {
         this.id = id;
     }
 
-    public String getPetId() {
-        return petId;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPetId(String petId) {
-        this.petId = petId;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -83,7 +83,7 @@ public class Message implements Serializable {
     public String toString() {
         return "Message{" +
                 "id='" + id + '\'' +
-                ", petId='" + petId + '\'' +
+                ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", longitude=" + longitude +
                 ", latitude=" + latitude +

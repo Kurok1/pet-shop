@@ -19,6 +19,8 @@ public class Shock implements Serializable {
      */
     private List<String> resources;
 
+    private String logo;
+
     private String title;
 
     /**
@@ -29,11 +31,6 @@ public class Shock implements Serializable {
     private String shopkeeperId;
 
     /**
-     * 进货时的数量
-     */
-    private int amount;
-
-    /**
      * 剩余数量
      */
     private int last;
@@ -42,6 +39,13 @@ public class Shock implements Serializable {
 
     private long timestamp;
 
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
 
     public String getId() {
         return id;
@@ -83,14 +87,6 @@ public class Shock implements Serializable {
         this.shopkeeperId = shopkeeperId;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public int getLast() {
         return last;
     }
@@ -120,10 +116,10 @@ public class Shock implements Serializable {
         return "Shock{" +
                 "id='" + id + '\'' +
                 ", resources=" + resources +
+                ", logo='" + logo + '\'' +
                 ", title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", shopkeeperId='" + shopkeeperId + '\'' +
-                ", amount=" + amount +
                 ", last=" + last +
                 ", price=" + price +
                 ", timestamp=" + timestamp +

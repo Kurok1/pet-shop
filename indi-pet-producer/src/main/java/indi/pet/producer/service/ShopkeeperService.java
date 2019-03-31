@@ -37,9 +37,8 @@ public class ShopkeeperService {
         return getRepository().save(entity);
     }
 
-    public Page<Shopkeeper> searchByName(String name, int page){
-        Pageable pageable=new PageRequest(page,10);
-        return getRepository().findShopkeepersByNameContaining(name,pageable);
+    public boolean existsByEmail(String email){
+        return getRepository().findByEmail(email)!=null;
     }
 
     public Shopkeeper getById(String id){
