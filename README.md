@@ -43,7 +43,7 @@ consumer：
 - 地图的展现，地图已经能在APP中展现（3-28）
 - 聊天消息界面&好友动态界面&个人资料界面&好友列表界面（3-31）
 
-![](https://github.com/Kurok1/pet-shop/blob/master/images/1.png)
+![](https://github.com/Kurok1/pet-shop/blob/master/images/2.png)
 
 **下周计划(4-1至4-7)：**
 
