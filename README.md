@@ -35,7 +35,7 @@ productor：
 - 订单页面，用于查看管理订单（3-30）
 - 信息页面，宠物店主的信息的查看修改（3-30） 
 
-![images/](./images/1.png)
+![images/](https://github.com/Kurok1/pet-shop/blob/master/images/1.png)
 
 consumer：
 
@@ -43,7 +43,7 @@ consumer：
 - 地图的展现，地图已经能在APP中展现（3-28）
 - 聊天消息界面&好友动态界面&个人资料界面&好友列表界面（3-31）
 
-![](/images/2.png)
+![](https://github.com/Kurok1/pet-shop/blob/master/images/1.png)
 
 **下周计划(4-1至4-7)：**
 
