@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.util.Collection;
 
 /**
@@ -36,8 +37,16 @@ public class ResourceService {
 
     public void deleteByIds(Collection<String> ids){
         for(String id : ids){
-            getResourceRepository().delete(id);
+            deleteById(id);
         }
+    }
+
+    public void deleteById(String id){
+        Resource resource=findById(id);
+        File file=new File(resource.getPath());
+        if (file.exists())
+            file.delete();
+        getResourceRepository().delete(id);
     }
 
 }

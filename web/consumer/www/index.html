@@ -42,6 +42,7 @@
         <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=6LLBZ-QMLCX-HNA4L-T3ADN-4O3V5-BFFLB"></script>
         <script src="js/map.js"></script>
         <link rel="stylesheet" href="css/framework7-icons.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/holder.min.js"></script>
         <title>Hello World</title>
         <style>
@@ -64,6 +65,9 @@
                 position: fixed;
                 z-index: 999;
                 bottom: 55px;
+            }
+            .fab[class*="refresh-shock-btn"]{
+                bottom: 110px;
             }
             .moment-card .card-header {
                 display: block;
@@ -108,8 +112,8 @@
         <div id="app">
             <div class="panel panel-left panel-cover side-bar theme-dark">
                 <div class="block profile">
-                    <p><img src="holder.js/75x75" class="logo" alt=""></p>
-                    <p class="block color-gray name">用户名</p>
+                    <p><img src="holder.js/75x75" class="logo" id="panel_user_logo" alt=""></p>
+                    <p class="block color-gray name" id="panel_user_name">用户名</p>
                 </div>
                 <div class="list links-list">
                     <ul>
@@ -187,46 +191,20 @@
                                 </div>
                             </div>
                             <div class="tab" id="moment">
-                                <div class="block">
+                                <div class="fab fab-extended fab-right-bottom color-green add-shock-btn">
+                                    <a href="/moment/add">
+                                        <i class="icon f7-icons if-not-md">add</i>
+                                        <i class="icon material-icons md-only">add</i>
+                                    </a>
+                                </div>
+                                <div class="fab fab-extended fab-right-bottom color-green refresh-shock-btn">
+                                    <a href="javascript:" title="加载更多" id="loadMoreMoment">
+                                        <i class="icon f7-icons if-not-md">refresh</i>
+                                        <i class="icon material-icons md-only">refresh</i>
+                                    </a>
+                                </div>
+                                <div class="page-content" id="moments">
                                     <!-- Extended FAB Center Bottom (Red) -->
-                                    <div class="fab fab-extended fab-right-bottom color-green add-shock-btn">
-                                        <a href="/moment/add">
-                                            <i class="icon f7-icons if-not-md">add</i>
-                                            <i class="icon material-icons md-only">add</i>
-                                        </a>
-                                    </div>
-                                    <div class="card moment-card">
-                                        <div class="card-header">
-                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
-                                            <div class="demo-facebook-name">John Doe</div>
-                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
-                                        </div>
-                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
-                                    </div>
-                                    <div class="card moment-card">
-                                        <div class="card-header">
-                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
-                                            <div class="demo-facebook-name">John Doe</div>
-                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
-                                        </div>
-                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
-                                    </div>
-                                    <div class="card moment-card">
-                                        <div class="card-header">
-                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
-                                            <div class="demo-facebook-name">John Doe</div>
-                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
-                                        </div>
-                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
-                                    </div>
-                                    <div class="card moment-card">
-                                        <div class="card-header">
-                                            <div class="demo-facebook-avatar"><img src="https://cdn.framework7.io/placeholder/people-68x68-1.jpg" width="34" height="34"/></div>
-                                            <div class="demo-facebook-name">John Doe</div>
-                                            <div class="demo-facebook-date">Monday at 3:47 PM</div>
-                                        </div>
-                                        <div class="card-content card-content-padding"><p> 标题标题标题标题标题标题</p><img src="https://cdn.framework7.io/placeholder/nature-1000x700-8.jpg" width="100%"/></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -45,19 +45,6 @@ var app = new Framework7({
             url: 'index.html',
         },
         {
-            name:'info',
-            path: '/info/:userId/:postId',
-            url: 'page/auth/info.html',
-            on: {
-                pageAfterIn: function test (e, page) {
-                    // do something after page gets into the view
-                },
-                pageInit: function (e, page) {
-                    console.log(page);
-                },
-            }
-        },
-        {
             name:"add-shock",
             path:'/add-shock',
             url:'page/shock/add.html'
@@ -99,20 +86,147 @@ var app = new Framework7({
         {
             name:'profile',
             path:"/profile",
-            url:"page/profile.html"
+            url:"page/profile.html",
+            on:{
+                pageInit:function () {
+
+                    var keeper=JSON.parse(localStorage.getItem("currentKeeper"));
+                    document.querySelector("#profile_logo_img").src=host + '/res/' + keeper.logo;
+                    document.querySelector("#profile_description").innerHTML=keeper.description;
+                    $$("#profile_name").val(keeper.name);
+                    document.querySelector("#profile_location").innerHTML=keeper.address==null?"":keeper.address;
+                    /**
+                     * 修改用户头像绑定事件
+                     */
+                    $$('#profile_logo').on('change', function () {
+                        var keeper=JSON.parse(localStorage.getItem("currentKeeper"));
+                        var imgList = asyncUploadFiles("#profile_logo_form");
+                        if (imgList.length !== 0) {
+                            var resource=imgList.pop()[0];
+                            if(resource instanceof String)
+                                resource = JSON.parse(resource);
+                            document.querySelector("#profile_logo_img").src=host + '/res/' + resource.id;
+                            document.querySelector("#keeper_logo").src=host + '/res/' + resource.id;
+                            keeper.logo =  resource.id;
+                            localStorage.setItem("currentKeeper",JSON.stringify(keeper))
+                        }
+                        document.querySelector("#profile_logo").value="";
+                    });
+
+                    /**
+                     * 用户修改事件绑定
+                     */
+                    $$('#update-user-btn').on('click',function () {
+                        var keeper=JSON.parse(localStorage.getItem("currentKeeper"));
+                        //获取用户名
+                        var newName=$$("#profile_name").val();
+                        keeper.name=newName;
+                        keeper.description=document.querySelector("#profile_description").innerHTML;
+                        var token=localStorage.getItem("currentKeeperToken");
+                        if(keeper.address!==null)
+                            keeper.authenticated=true;
+                        app.request({url:host+"/keeper/update?token="+token,
+                            data:JSON.stringify(keeper),
+                            processData:false,
+                            method:"PUT",
+                            dataType:"json",
+                            contentType:"application/json",
+                            async:false,
+                            beforeSend: function () {
+                                app.dialog.preloader('请稍等');
+                            },
+                            success:function(data, status, xhr){
+                                app.dialog.close();
+                                if(data instanceof String)
+                                    data=JSON.parse(data);//转json
+                                localStorage.setItem("currentKeeper",JSON.stringify(data));
+                                afterLogin(data);
+                                app.dialog.alert("修改完成");
+                            }}
+                        )
+                    })
+                },
+                pageReinit:function () {
+                    var keeper=JSON.parse(localStorage.getItem("currentKeeper"));
+                    document.querySelector("#profile_logo_img").src=host + '/res/' + keeper.logo;
+                    document.querySelector("#profile_description").innerHTML=keeper.description;
+                    $$("#profile_name").val(keeper.name);
+                    document.querySelector("#profile_location").innerHTML=keeper.address==null?"":keeper.address;
+                }
+            }
+        },
+        {
+            name:'location',
+            path:'/location',
+            url:'page/location.html',
+            on:{
+                pageInit:function(e,page){
+                    $$("#mapPage").attr("height",document.querySelector("body").clientHeight);
+                    window.addEventListener('message', function(event) {
+                        // 接收位置信息，用户选择确认位置点后选点组件会触发该事件，回传用户的位置信息
+                        var loc = event.data;
+                        if (loc && loc.module == 'locationPicker') {//防止其他应用也会向该页面post信息，需判断module是否为'locationPicker'
+                            console.log('location', loc);
+                            app.dialog.confirm("选好了吗？",function(){
+                                var keeper=JSON.parse(localStorage.getItem("currentKeeper"));
+                                keeper.address=loc.poiaddress+"--"+loc.poiname;
+                                keeper.latitude=loc.latlng.lat;
+                                keeper.longitude=loc.latlng.lng;
+                                localStorage.setItem("currentKeeper",JSON.stringify(keeper));
+                                mainView.router.back();
+                            },function () {
+
+                            })
+                        }
+                    }, false);
+                }
+            }
         }
 
     ],
     // ... other parameters
 });
 
-
+function afterLogin(keeper) {
+    document.querySelector("#keeper_logo").src=host + '/res/' + keeper.logo;
+    document.querySelector("#keeper_name").innerHTML=keeper.name;
+}
 
 var mainView = app.views.create('.view-main');
 // mainView.router.navigate({name:'about'})
 // //
 
 var dialog=app.dialog;
+
+
+function asyncUploadFiles(ele){
+    var formEle=document.querySelector(ele);
+    var formData=new FormData(formEle);
+    var list=[];
+    jQuery.ajax({
+        url: host+"/res/upload",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        cache: false,
+        async: false,
+        beforeSend: function () {
+            app.dialog.preloader('正在上传，请稍后');
+        },
+        complete: function (data, status, xhr) {
+            app.dialog.close();
+            data=data.responseJSON;
+            if (data instanceof String)
+                data = JSON.parse(data);
+            if (data.flag == true) {
+                list.push(data.data);
+            }
+            app.dialog.alert(data.message);
+        }
+    });
+    return list;
+}
 
 if(!localStorage.hasOwnProperty("currentKeeperToken"))
     app.loginScreen.open("#login",true);
@@ -121,13 +235,14 @@ else{
                             method:"PUT",
                             success(data, status, xhr) {
                                 data=JSON.parse(data);
-                                console.log(status)
-                                if(data.flag==false || status!=200)
+                                if(data.flag===false)
                                     app.dialog.alert(data.message,"请重新登录",function () {
                                         app.loginScreen.open("#login",true)
                                     });
                                 else {
-
+                                    localStorage.setItem("currentKeeperToken",data.token);
+                                    localStorage.setItem("currentKeeper",JSON.stringify(data.keeper));
+                                    afterLogin(data.keeper)
                                 }
                             },
                             statusCode: {
@@ -159,7 +274,6 @@ $$('#login #login-btn').on('click', function () {
     app.request({url:host+"/keeper/login?email="+email+"&password="+password,
                             method:"POST",
                             success:function(data, status, xhr){
-                                console.log(data)
                                 data=JSON.parse(data);//转json
                                 if(data.flag==false)
                                     app.dialog.alert(data.message==null?"用户名和密码不正确，请重试":data.message);
@@ -167,6 +281,7 @@ $$('#login #login-btn').on('click', function () {
                                     localStorage.setItem("currentKeeperToken",data.token);
                                     localStorage.setItem("currentKeeper",JSON.stringify(data.keeper));
                                     // Close login screen
+                                    afterLogin(data.keeper)
                                     app.loginScreen.close('#login',true);
                                 }
 
@@ -220,7 +335,8 @@ $$('#register #register-btn').on('click',function () {
                 $$('#register [name="email"]').val("")
             }else {
                 localStorage.setItem("currentKeeperToken",data.token);
-                localStorage.setItem("currentKeeper",data.keeper);
+                localStorage.setItem("currentKeeper",JSON.stringify(data.keeper));
+                afterLogin(data.keeper);
                 app.loginScreen.close("#register",true);
                 app.loginScreen.close('#login',true);
                 

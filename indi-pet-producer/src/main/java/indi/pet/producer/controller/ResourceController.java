@@ -15,7 +15,9 @@ import java.io.*;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static javax.servlet.http.HttpServletResponse.SC_NOT_FOUND;
 
@@ -41,7 +43,8 @@ public class ResourceController {
 
     @PostMapping(path = "/upload")
     @ResponseBody
-    public List<Resource> upload(@RequestParam("files") MultipartFile[] files){
+    public Map<String,Object> upload(@RequestParam("files") MultipartFile[] files){
+        Map<String,Object> map=new HashMap<>();
         List<Resource> list=new ArrayList<>();
         if(files!=null && files.length!=0){
             for(MultipartFile file:files){
@@ -81,8 +84,15 @@ public class ResourceController {
                     }
                 }
             }
+        }else {
+            map.put("flag",false);
+            map.put("message","没有任何内容");
+            return map;
         }
-        return list;
+        map.put("flag",true);
+        map.put("message","上传成功");
+        map.put("data",list);
+        return map;
     }
 
     @PostMapping(path = "/save")

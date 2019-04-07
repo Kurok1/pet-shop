@@ -118,6 +118,7 @@ public class ShopkeeperController {
         Map<String,Object> map=new HashMap<>();
         map.put("flag",true);
         map.put("keeper",TokenValidator.validateToken(token));
+        map.put("token",token);
         map.put("message","可以免密登录");
         return map;
     }

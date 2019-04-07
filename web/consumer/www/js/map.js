@@ -45,7 +45,7 @@ window.onload = function () {
                 origin,
                 anchor
             );
-        marker.setIcon(markerIcon);
+        // marker.setIcon(markerIcon);
     }
     //调用初始化函数
     init();

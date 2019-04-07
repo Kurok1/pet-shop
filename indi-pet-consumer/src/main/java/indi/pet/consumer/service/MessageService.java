@@ -4,7 +4,12 @@ import indi.pet.consumer.domain.Message;
 import indi.pet.consumer.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
@@ -36,7 +41,13 @@ public class MessageService {
         getMessageRepository().delete(id);
     }
 
-    /**
-     * to do:根据地理位置获取附件消息列表
-     */
+    public List<Message> findByUserIn(Iterable<String> users,int currentPage){
+        Pageable pageable=new PageRequest(currentPage,10);
+        Page<Message> messages=getMessageRepository().findByUserIn(users,pageable);
+        return messages.getContent();
+    }
+
+    public Long countByUserIn(Iterable<String> users){
+        return getMessageRepository().countByUserIn(users);
+    }
 }

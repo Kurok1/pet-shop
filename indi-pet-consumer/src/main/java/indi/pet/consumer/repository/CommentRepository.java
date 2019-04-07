@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
  * @since 2019.03.04
@@ -13,6 +15,6 @@ import org.springframework.stereotype.Repository;
 @Repository("commentRepository")
 public interface CommentRepository extends ElasticsearchRepository<Comment,String> {
 
-    Page<Comment> findByMessage(String message, Pageable pageable);
+    List<Comment> findByMessage(String message);
 
 }

@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 普通客户的动态消息
@@ -19,17 +20,19 @@ public class Message implements Serializable {
 
     private String content;
 
-    /**
-     * 经度
-     */
-    private double longitude;
+    private String user;
 
-    /**
-     * 纬度
-     */
-    private double latitude;
+    private List<String> imgs;
 
     private long timestamp;
+
+    public List<String> getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(List<String> imgs) {
+        this.imgs = imgs;
+    }
 
     public String getId() {
         return id;
@@ -55,22 +58,6 @@ public class Message implements Serializable {
         this.content = content;
     }
 
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
     public long getTimestamp() {
         return timestamp;
     }
@@ -79,14 +66,22 @@ public class Message implements Serializable {
         this.timestamp = timestamp;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Message{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", longitude=" + longitude +
-                ", latitude=" + latitude +
+                ", user='" + user + '\'' +
+                ", imgs=" + imgs +
                 ", timestamp=" + timestamp +
                 '}';
     }

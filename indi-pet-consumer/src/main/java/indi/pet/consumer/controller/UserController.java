@@ -54,10 +54,9 @@ public class UserController {
      * @return 返回相应数据
      */
     @PostMapping("/login")
-    public Map<String,Object> loginWithPass(@RequestParam("username") String username,@RequestParam("password") String password){
+    public Map<String,Object> loginWithPass(@RequestParam("username") String username,@RequestParam("password") String password)throws Exception{
         Map<String,Object> data=new HashMap<>();
-        User login = getUserService().login(username, password);
-        login.setPassword(null);
+        User login = getUserService().login(username, MD5Util.getMD5Code(password));
         if(login!=null){
             data.put("flag",true);
             data.put("message","登录成功");
@@ -86,10 +85,19 @@ public class UserController {
         return data;
     }
 
+    @PutMapping("/update")
+    public User update(@RequestBody User user,@RequestParam("token") String token){
+        User login = TokenUtil.validateToken(token);
+        return login==null?null:getUserService().save(user);
+    }
+
     @GetMapping("/{id}")
     public User get(@PathVariable("id")String id){
         return getUserService().getOne(id);
     }
 
-
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id")String id){
+        getUserService().delete(id);
+    }
 }

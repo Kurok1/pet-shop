@@ -6,7 +6,11 @@
                     <div class="item-inner">
                         <div class="item-title item-label">头像（点击头像即可修改）</div>
                         <div class="item-input-wrap">
-                            <img src="holder.js/75x75" class="logo" alt="">
+                            
+                            <form id="profile_logo_form" enctype="multipart/form-data">
+                                <label for="profile_logo" style="display: block;width: 75px;height: 75px"><img id="profile_logo_img" width="75" height="75" src="http://localhost/res/AWnZMyLbriJvVEJa90O3" class="logo" alt=""></label>
+                                <input type="file" name="files" multiple id="profile_logo" style="display: none;">
+                            </form>
                         </div>
                     </div>
                 </li>
@@ -14,7 +18,7 @@
                     <div class="item-inner">
                         <div class="item-title item-label">用户名：</div>
                         <div class="item-input-wrap">
-                            <input type="text" name="user" value="用户名" placeholder="密码">
+                            <input type="text" name="user" id="profile_user_name" value="用户名" placeholder="">
                         </div>
                     </div>
                 </li>
@@ -23,7 +27,7 @@
         <div class="list">
             <ul>
                 <li>
-                    <a href="#" id="login-btn" class="item-link list-button update-button">修改</a>
+                    <a href="#" id="update-user-btn" class="item-link list-button update-button">修改</a>
                 </li>
             </ul>
         </div>

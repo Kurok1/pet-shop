@@ -1,6 +1,7 @@
 package indi.pet.consumer.controller;
 
 import indi.pet.consumer.domain.Comment;
+import indi.pet.consumer.domain.User;
 import indi.pet.consumer.exception.TokenExpiredException;
 import indi.pet.consumer.service.CommentService;
 import indi.pet.consumer.util.TokenUtil;
@@ -32,12 +33,18 @@ public class CommentController {
 
     @PostMapping("/publish")
     public Map<String,Object> publish(@RequestParam("token")String token, @RequestBody Comment comment){
+        comment.setTimestamp(System.currentTimeMillis()/1000);
         Map<String,Object> map=new HashMap<>();
-        if(TokenUtil.validate(token)){
+        User user=TokenUtil.validateToken(token);
+        if(user!=null){
             Comment save = getCommentService().save(comment);
+            Map<String,Object> data=new HashMap<>();
+            data.put("logo",user.getLogo());
+            data.put("content",save.getContent());
+            data.put("id",save.getId());
             map.put("flag",true);
             map.put("message","发表评论成功~");
-            map.put("data",save);
+            map.put("data",data);
         }else throw new TokenExpiredException();
         return map;
     }

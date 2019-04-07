@@ -1,8 +1,10 @@
 package indi.pet.consumer.controller;
 
 import indi.pet.consumer.domain.Resource;
+import indi.pet.consumer.exception.TokenExpiredException;
 import indi.pet.consumer.service.ResourceService;
 import indi.pet.consumer.util.MD5Util;
+import indi.pet.consumer.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -19,7 +21,9 @@ import java.nio.file.StandardOpenOption;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static javax.servlet.http.HttpServletResponse.SC_NOT_FOUND;
 
@@ -46,7 +50,8 @@ public class ResourceController {
 
     @PostMapping(path = "/upload")
     @ResponseBody
-    public List<Resource> upload(@RequestParam("files") MultipartFile[] files){
+    public Map<String,Object> upload(@RequestParam("files") MultipartFile[] files){
+        Map<String,Object> map=new HashMap<>();
         List<Resource> list=new ArrayList<>();
         if(files!=null && files.length!=0){
             for(MultipartFile file:files){
@@ -86,8 +91,15 @@ public class ResourceController {
                     }
                 }
             }
+        }else {
+            map.put("flag",false);
+            map.put("message","没有任何内容");
+            return map;
         }
-        return list;
+        map.put("flag",true);
+        map.put("message","上传成功");
+        map.put("data",list);
+        return map;
     }
 
     @PostMapping(path = "/save")
@@ -116,5 +128,17 @@ public class ResourceController {
             stream.close();
 
         }else response.sendError(SC_NOT_FOUND);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseBody
+    public Map<String,Object> delete(@RequestParam("token")String token,@PathVariable("id")String id){
+        if(TokenUtil.validate(token)){
+            getResourceService().delete(id);
+        }else throw new TokenExpiredException();
+        Map<String,Object> map=new HashMap<>();
+        map.put("flag",true);
+        map.put("message","删除成功");
+        return map;
     }
 }

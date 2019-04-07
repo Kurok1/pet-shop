@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
+
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
  * @since 2019.02.24
@@ -31,6 +33,12 @@ public class ResourceService {
     }
 
     public void delete(String id){
+        //删除文件
+        Resource resource=this.findOne(id);
+        File file=new File(resource.getPath());
+        if(file.exists()) {
+            file.delete();
+        }
         getResourceRepository().delete(id);
     }
 

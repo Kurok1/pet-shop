@@ -46,4 +46,8 @@ public class UserService {
     public boolean exist(String username){
         return getUserRepository().findByUsername(username)!=null;
     }
+
+    public void delete(String id){
+        getUserRepository().delete(id);
+    }
 }

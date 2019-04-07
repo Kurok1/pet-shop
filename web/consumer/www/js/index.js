@@ -16,11 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-// import Framework7 from './js/framework7.min.js';
 
 var $$=Dom7;
 
-var host="http://localhost/"
+var host="http://localhost/";
 
 var app = new Framework7({
     // App root element
@@ -49,29 +48,208 @@ var app = new Framework7({
             url: 'about.html',
         },
         {
-            name:'user',
-            path:'/user/',
-            url:'pages/user.html'
-        },
-        {
             name:'chat',
             path:'/chat',
             url:'pages/chat/single.html'
         },
         {
             name:'moment',
-            path:'/moment',
-            url:"pages/moment/detail.html"
+            path:'/moment/:id',
+            url:"pages/moment/detail.html",
+            on:{
+                pageInit:function (e,page) {
+                    var messageId=page.route.params.id;
+                    console.log(messageId);
+                    app.request({
+                        url: host + "/message/" + messageId + "?token=" + localStorage.getItem("currentUserToken"),
+                        method: "GET",
+                        dataType: "json",
+                        contentType: "application/json",
+                        async: false,
+                        success: function (data, status, xhr) {
+                            if (data instanceof String)
+                                data = JSON.parse(data);//转json
+                            if (data.flag === true){
+                                var message=data.message;
+                                var date = new Date(message.timestamp);
+                                var Y = date.getFullYear() + '-';
+                                var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                                var D = date.getDate() + ' ';
+                                var h = date.getHours() + ':';
+                                var m = date.getMinutes() + ':';
+                                var s = date.getSeconds();
+                                var template="<div class='card-header'>" +
+                                    "<div class='demo-facebook-avatar'><img src='"+host+"/res/"+message.logo+"' width='34' height='34'/></div>" +
+                                    "<div class='demo-facebook-name'>"+message.username+"</div>" +
+                                    "<div class='demo-facebook-date'>"+Y+M+D+h+m+s+"</div>" +
+                                    "</div>" +
+                                    "<div class='card-content card-content-padding'><h5> "+message.title+"</h5>" +
+                                    "<p>"+message.content+"</p>";
+                                for (var i in message.imgs){
+                                    var img=message.imgs[i];
+                                    template+="<img src='"+host+"/res/"+img+"' width='100%'/>"
+                                }
+
+                                    template+="</div>";
+                                $$('#message-body').append(template);
+                                renderComments(data.comments);
+                            }
+
+                        }
+                    });
+
+
+                    $$('#add-root-comment').on('click',function () {
+                        addComment(null,messageId,$("#root-comments ul"))
+                    });
+
+                    $$('.comments').on('click',function () {
+                        var id=$$(this).attr("data-id");
+                        var appendObj=$$(this).find("ul");
+                        addComment(id,messageId,appendObj);
+                    });
+
+                }
+            }
         },
         {
             name:'moment-add',
             path:'/moment/add',
-            url:'pages/moment/add.html'
+            url:'pages/moment/add.html',
+            on:{
+                pageInit:function (e,page) {
+                    $$('#moment-append-image').on('change',function () {
+                        var imgList = asyncUploadFiles("#moment-add-image").pop();
+                        for (var i in imgList){
+                            var resource=imgList[i];
+                            if(resource instanceof String)
+                                resource=JSON.parse(resource);
+                            var img=document.createElement('img');
+                            img.setAttribute("width",75);
+                            img.setAttribute("src",host+"/res/"+resource.id);
+                            img.setAttribute("data-id",resource.id);
+                            img.className="moment-imgs"
+                            document.querySelector("#moment-append-imgs").appendChild(img)
+                        }
+                        $$('.moment-imgs').on('click',function () {
+                            var id=$$(this).attr("data-id");
+                            app.dialog.confirm("确定要删除吗？", function(){
+                                app.request({
+                                        url: host + "/res/"+id+"?token=" + localStorage.getItem("currentUserToken"),
+                                        method: "DELETE",
+                                        dataType: "json",
+                                        contentType: "application/json",
+                                        async: false,
+                                        success: function (data, status, xhr) {
+                                            if (data instanceof String)
+                                                data = JSON.parse(data);//转json
+                                            if(data.flag===true){
+                                                $$("#moment-append-imgs").find('img[data-id='+id+']').remove();
+                                            }
+                                        }
+                                    }
+                                )
+
+                            }, function () {
+
+                            })
+                        })
+                    });
+                    
+                    $$('#moment-publish-btn').on('click',function () {
+                        var title=$$("#moment-add-title").val();
+                        var content=$$("#moment-add-content").html();
+                        var list=[];
+                        $$("#moment-append-imgs img").each(function (index,ele) {
+                            list.push($$("#moment-append-imgs img").eq(index).attr("data-id"));
+                        });
+                        user=JSON.parse(localStorage.getItem("currentUser"));
+                        var data={
+                            user:user.id,
+                            imgs:list,
+                            title:title,
+                            content:content
+                        };
+                        app.request({url:host+"/message/publish?token="+localStorage.getItem("currentUserToken"),
+                            data:JSON.stringify(data),
+                            processData:false,
+                            method:"POST",
+                            dataType:"json",
+                            contentType:"application/json",
+                            async:false,
+                            beforeSend: function () {
+                                app.dialog.preloader('请稍等');
+                            },
+                            success:function(data, status, xhr){
+                                app.dialog.close();
+                                if(data instanceof String)
+                                    data=JSON.parse(data);//转json
+                                app.dialog.alert(data.message);
+                                mainView.router.back();
+                            }}
+                        )
+                    })
+                }
+            }
         },
         {
-            name:'user',
-            path:'/profile',
-            url:'pages/user.html'
+            name: 'user',
+            path: '/profile',
+            url: 'pages/user.html',
+            on: {
+                pageInit: function (e, page) {
+                    var user = localStorage.getItem("currentUser");
+                    user = JSON.parse(user);
+                    // 渲染数据
+                    document.querySelector("#profile_logo_img").src=host + '/res/' +user.logo;
+                    document.querySelector("#profile_user_name").value=user.username;
+                        /**
+                     * 修改用户头像绑定事件
+                     */
+                    $$('#profile_logo').on('change', function () {
+                        var imgList = asyncUploadFiles("#profile_logo_form");
+                        if (imgList.length !== 0) {
+                            var resource=imgList.pop()[0];
+                            if(resource instanceof String)
+                                resource = JSON.parse(resource);
+                            document.querySelector("#profile_logo_img").src=host + '/res/' + resource.id;
+                            document.querySelector("#panel_user_logo").src=host + '/res/' + resource.id;
+                            user.logo =  resource.id;
+                            localStorage.setItem("currentUser",JSON.stringify(user))
+                        }
+                        document.querySelector("#profile_logo").value="";
+                    });
+
+                    /**
+                     * 用户修改事件绑定
+                     */
+                    $$('#update-user-btn').on('click',function () {
+                        //获取用户名
+                        var newUserName=$$("#profile_user_name").val();
+                        user.username=newUserName;
+                        var token=localStorage.getItem("currentUserToken");
+                        app.request({url:host+"/user/update?token="+token,
+                            data:JSON.stringify(user),
+                            processData:false,
+                            method:"PUT",
+                            dataType:"json",
+                            contentType:"application/json",
+                            async:false,
+                            beforeSend: function () {
+                                app.dialog.preloader('请稍等');
+                            },
+                            success:function(data, status, xhr){
+                                app.dialog.close();
+                                if(data instanceof String)
+                                    data=JSON.parse(data);//转json
+                                localStorage.setItem("currentUser",JSON.stringify(data));
+                                afterLogin(data);
+                                app.dialog.alert("修改完成");
+                            }}
+                        )
+                    })
+                },
+            },
         },
         {
             name:'friends',
@@ -82,9 +260,138 @@ var app = new Framework7({
     // ... other parameters
 });
 
+
+function loadMessage(page) {
+    var rtn={};
+    app.request({url:host+"/message/get?token="+localStorage.getItem("currentUserToken")+"&currentPage="+page,
+        processData:false,
+        method:"GET",
+        dataType:"json",
+        contentType:"application/json",
+        async:false,
+        beforeSend: function () {
+            app.dialog.preloader('请稍等');
+        },
+        success:function(data, status, xhr){
+            app.dialog.close();
+            if(data instanceof String)
+                data=JSON.parse(data);//转json
+            if(data.flag===true){
+                rtn.data=data.data;
+                rtn.hasNext=data.hasNext;
+            }
+
+        }}
+    );
+    return rtn;
+}
+
+function asyncUploadFiles(ele){
+    var formEle=document.querySelector(ele);
+    var formData=new FormData(formEle);
+    var list=[];
+    jQuery.ajax({
+        url: host+"/res/upload",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        cache: false,
+        async: false,
+        beforeSend: function () {
+            app.dialog.preloader('正在上传，请稍后');
+        },
+        complete: function (data, status, xhr) {
+            app.dialog.close();
+            data=data.responseJSON;
+            if (data instanceof String)
+                data = JSON.parse(data);
+            if (data.flag == true) {
+                list.push(data.data);
+            }
+            app.dialog.alert(data.message);
+        }
+    });
+    return list;
+}
+
+function addComment(root,messageId,ele) {//root为父级评论id
+    app.dialog.prompt("说出你想说的",function (value) {
+        var data={};
+        data.userId=JSON.parse(localStorage.getItem("currentUser")).id;
+        data.message=messageId;
+        data.content=value;
+        data.parent=root;
+        app.request({url:host+"/comment/publish?token="+localStorage.getItem("currentUserToken"),
+            data:JSON.stringify(data),
+            processData:false,
+            method:"POST",
+            dataType:"json",
+            contentType:"application/json",
+            async:false,
+            success:function(data, status, xhr){
+                app.dialog.close();
+                if(data instanceof String)
+                    data=JSON.parse(data);//转json
+                if(data.flag===true){
+                    var data=data.data;
+                    var html="<li "+(root==null?"class='comments' data-id='"+data.id+"'":"")+">" +
+                        "<a href='javascript:' class='item-content "+(root==null?"item-link":"")+"'>" +
+                        "<div class='item-media'><img src='"+host+"/res/"+data.logo+"' width='34'/></div>" +
+                        "<div class='item-inner'>" +
+                        "<div class='item-title'>"+data.content+"</div>" +
+                        "</div>" +
+                        "</a>";
+                    if(root!=null)
+                        html+="</li>";
+                    else
+                        html+="<ul></ul></li>";
+                    ele.append(html);
+                }
+                app.dialog.alert(data.message);
+            }}
+        );
+    },function (value) {
+        
+    },"")
+}
+
+function renderComments(data) {
+    var dom="";
+    for (var index in data){
+        var parent=data[index];
+        var template="<li class='comments' data-id='"+parent.id+"'>" +
+            "<a href='javascript:' class='item-link item-content'>" +
+            "<div class='item-media'><img src='"+host+"/res/"+parent.logo+"' width='34'/></div>" +
+            "<div class='item-inner'>" +
+            "<div class='item-title'>"+parent.content+"</div>" +
+            "</div>" +
+            "</a>" +
+            "<ul>";
+        for (var j in parent.children) {
+            var ch=parent.children[j];
+            var html="<li>" +
+                "<a href='javascript:' class='item-content'>" +
+                "<div class='item-media'><img src='"+host+"/res/"+ch.logo+"' width='34'/></div>" +
+                "<div class='item-inner'>" +
+                "<div class='item-title'>"+ch.content+"</div>" +
+                "</div>" +
+                "</a>" +
+                "</li>"
+            template+=html;
+        }
+        template+="</ul></li>";
+        dom+=template;
+    }
+    $$('#root-comments ul').append(dom)
+}
+
+function afterLogin(user) {
+    document.querySelector("#panel_user_logo").src=host + '/res/' + user.logo;
+    document.querySelector("#panel_user_name").innerHTML=user.username;
+}
+
 var mainView = app.views.create('.view-main');
-// mainView.router.navigate({name:'about'})
-// //
 
 $$('.moment-card').on('click',function () {
     mainView.router.navigate({
@@ -99,22 +406,24 @@ if(!localStorage.hasOwnProperty("currentUserToken"))
 else{
     app.request({url:host+"/user/login?token="+localStorage.getItem("currentUserToken"),
                             method:"PUT",
+                            beforeSend: function () {
+                                app.dialog.preloader('正在登录，请稍后');
+                            },
                             success(data, status, xhr) {
-                                data=JSON.parse(data)
+                                app.dialog.close();
+                                data=JSON.parse(data);
                                 if(data.flag==false)
                                     app.dialog.alert(data.message,"请重新登录",function () {
                                         app.loginScreen.open("#login",true)
                                     });
                                 else {
                                     localStorage.setItem("currentUserToken",data.token);
+                                    localStorage.setItem("currentUser",JSON.stringify(data.user));
+                                    afterLogin(data.user)
                                 }
                             }})
 }
 
-$$('#submit_file').on('click',function () {
-    var fd = new FormData(document.forms.namedItem("files"));
-    console.log(fd)
-})
 
 $$('#login #login-btn').on('click', function () {
     var username = $$('#login [name="username"]').val();
@@ -122,14 +431,20 @@ $$('#login #login-btn').on('click', function () {
 
     app.request({url:host+"/user/login?username="+username+"&password="+password,
                             method:"POST",
+                            beforeSend: function () {
+                                app.dialog.preloader('正在登录，请稍后');
+                            },
                             success:function(data, status, xhr){
+                                app.dialog.close();
                                 data=JSON.parse(data);//转json
                                 if(data.flag==false)
                                     app.dialog.alert(data.message==null?"用户名和密码不正确，请重试":data.message);
                                 else{
                                     localStorage.setItem("currentUserToken",data.token);
+                                    localStorage.setItem("currentUser",JSON.stringify(data.user));
                                     // Close login screen
                                     app.loginScreen.close('#login',true);
+                                    afterLogin(data.user)
                                 }
 
                             }
@@ -174,18 +489,81 @@ $$('#register #register-btn').on('click',function () {
         method:"POST",
         dataType:"json",
         contentType:"application/json",
+        beforeSend: function () {
+            app.dialog.preloader('请稍等');
+        },
         success:function(data, status, xhr){
             // data=JSON.parse(data);//转json
+            app.dialog.close();
             if(data.flag==false){
                 app.dialog.alert(data.message);
                 $$('#register [name="username"]').val("");
             }
             else {
                 localStorage.setItem("currentUserToken",data.token);//存储token
+                localStorage.setItem("currentUser",JSON.stringify(data.user));
+                afterLogin(data.user)
                 app.loginScreen.close("#register",true);
                 app.loginScreen.close('#login',true);
             }
         }}
     )
 
-})
+});
+
+var iconTooltip = app.tooltip.create({
+    targetEl: '#loadMoreMoment',
+    text: '加载更多',
+});
+
+var currentMessagePage=1;//当前为第一页
+var hasNext=true;
+function renderMessage() {
+    var messages=loadMessage(currentMessagePage);
+    hasNext=messages.hasNext;
+    var messageData=messages.data;
+
+    for (var i in messageData){
+        var message=messageData[i];
+        var date = new Date(message.timestamp);
+        var Y = date.getFullYear() + '-';
+        var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+        var D = date.getDate() + ' ';
+        var h = date.getHours() + ':';
+        var m = date.getMinutes() + ':';
+        var s = date.getSeconds();
+        var html="<div class='card moment-card' data-id='"+message.id+"'>" +
+            "<div class='card-header'>" +
+            "<div class='demo-facebook-avatar'><img src='"+host+"/res/"+message.logo+"' width='34' height='34'/></div>" +
+            "<div class='demo-facebook-name'>"+message.username+"</div>" +
+            "<div class='demo-facebook-date'>"+Y+M+D+h+m+s+"</div>" +
+            "</div>" +
+            "<div class='card-content card-content-padding'><p>"+message.title+"</p><p>"+message.content;
+        if(message.imgs.length===0)
+            html+="</p></div></div>";
+        else
+            html+="<img src='"+host+"/res/"+message.imgs[0]+"' alt='' width='100%'></p></div></div>";
+        $$('#moments').append(html);
+    }
+}
+
+renderMessage();
+
+$$('#loadMoreMoment').on('click',function () {
+    if(hasNext===false){
+        app.dialog.alert("没有更多数据了");
+    }else {
+        app.dialog.preloader('加载中');
+        currentMessagePage++;
+        renderMessage();
+        app.dialog.close();
+    }
+});
+
+$$('.moment-card').on('click',function () {
+    var id=$$(this).attr("data-id");
+    mainView.router.navigate({
+        name: 'moment',
+        params: { id:id },
+    });
+});

@@ -4,9 +4,16 @@
         <div class="fab fab-right-bottom color-yellow">
             <!-- FAB speed dial actions -->
             <div class="fab-buttons fab-buttons-top">
+
                 <a href="" id="addByCamera"><i class="icon f7-icons if-not-md">camera</i><i class="icon material-icons md-only">camera</i></a>
-                <a href="" id="addByFile"><i class="icon f7-icons if-not-md">folder</i><i class="icon material-icons md-only">folder</i></a>
+                <a href="javascript:" id="addByFile">
+                    <form id="moment-add-image" method="post" enctype="multipart/form-data">
+                        <label for="moment-append-image"><i class="icon f7-icons if-not-md">folder</i><i class="icon material-icons md-only">folder</i></label>
+                        <input type="file" name="files" multiple id="moment-append-image" style="display: none;">
+                    </form>
+                </a>
             </div>
+
             <a href="#">
                 <!-- Icons For iOS Theme -->
                 <i class="icon f7-icons if-not-md">images</i>
@@ -23,14 +30,21 @@
                     <div class="item-inner">
                         <div class="item-title item-label">标题</div>
                         <div class="item-input-wrap">
-                            <input type="text" name="title" placeholder="标题">
+                            <input type="text" name="title" id="moment-add-title" placeholder="标题">
                         </div>
                     </div>
                 </li>
                 <li class="item-content item-input">
                     <div class="item-inner">
                         <div class="item-input-wrap">
-                            <textarea placeholder="说点什么吧。"></textarea>
+                            <div id="moment-add-content" contentEditable="true"> 说点什么吧.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-input-wrap" id="moment-append-imgs">
                         </div>
                     </div>
                 </li>
@@ -39,7 +53,7 @@
         <div class="list">
             <ul>
                 <li>
-                    <a href="#" id="login-btn" class="item-link list-button login-button">发 布</a>
+                    <a href="#" id="moment-publish-btn" class="item-link list-button login-button">发 布</a>
                 </li>
             </ul>
         </div>
