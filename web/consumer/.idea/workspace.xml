@@ -2,38 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f9dbbb-88a0-4dc3-9831-c3f138d530bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ShockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/util/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/wrapper/LocationInfoWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/wrapper/ShockWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/wrapper/ShocksApiWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/pages/shock/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/ShockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/ShockRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/ShopkeeperRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/ShopkeeperRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/ShockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/ShockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/ShopkeeperService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/ShopkeeperService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/test/java/indi/pet/consumer/ConsumerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/test/java/indi/pet/consumer/ConsumerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ResourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ShockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ShockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/ResourceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/ResourceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/ShockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/ShockRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/ResourceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/ResourceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/ShockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/ShockService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/FileUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/shock/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/pages/moment/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/pages/moment/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/www/page/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/page/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/www/page/shock/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/page/shock/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/www/page/shock/manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/page/shock/manage.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,21 +19,21 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="35" />
-          <entry key="html" value="1803" />
+          <entry key="html" value="1848" />
           <entry key="js" value="7149" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="35" />
-          <entry key="HTML" value="1812" />
+          <entry key="HTML" value="1857" />
           <entry key="JavaScript" value="7140" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="19" />
+          <entry key="html" value="21" />
           <entry key="js" value="5" />
           <entry key="ts" value="3" />
         </counts>
@@ -71,7 +41,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="19" />
+          <entry key="HTML" value="21" />
           <entry key="JavaScript" value="5" />
           <entry key="TypeScript" value="3" />
         </counts>
@@ -84,12 +54,13 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -104,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2573">
+            <state relative-caret-position="6716">
               <caret line="309" column="55" selection-start-line="309" selection-start-column="55" selection-end-line="309" selection-end-column="55" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -114,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="53" column="99" selection-start-line="53" selection-start-column="99" selection-end-line="53" selection-end-column="99" />
+            <state relative-caret-position="460">
+              <caret line="20" column="14" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -127,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/www/pages/chat/single.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="12" column="10" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+              <caret line="12" column="10" selection-start-line="1" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -135,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
+            <state relative-caret-position="3059">
               <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -146,11 +117,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+            <state relative-caret-position="273">
+              <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/shock/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -197,6 +177,8 @@
         <option value="$PROJECT_DIR$/www/js/map.js" />
         <option value="$PROJECT_DIR$/www/pages/shock/detail.html" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
+        <option value="$PROJECT_DIR$/www/pages/keeper.html" />
+        <option value="$PROJECT_DIR$/www/pages/shock/list.html" />
       </list>
     </option>
   </component>
@@ -221,8 +203,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="213" />
-    <option name="y" value="27" />
+    <option name="x" value="212" />
+    <option name="y" value="26" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
   </component>
@@ -232,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,11 +253,17 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="moment" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="shock" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,11 +340,12 @@
       <workItem from="1554559588549" duration="132000" />
       <workItem from="1554611437090" duration="13000" />
       <workItem from="1555220811703" duration="13635000" />
+      <workItem from="1555239909034" duration="605000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105827000" />
+    <option name="totallyTimeSpent" value="106432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,6 +358,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -574,16 +565,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6716">
+          <caret line="309" column="55" selection-start-line="309" selection-start-column="55" selection-end-line="309" selection-end-column="55" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#asyncUploadFiles#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/pages/chat/single.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+          <caret line="12" column="10" selection-start-line="1" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
+        <state relative-caret-position="3059">
           <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -593,28 +595,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
+    <entry file="file://$PROJECT_DIR$/www/pages/keeper.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="53" column="99" selection-start-line="53" selection-start-column="99" selection-end-line="53" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2573">
-          <caret line="309" column="55" selection-start-line="309" selection-start-column="55" selection-end-line="309" selection-end-column="55" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#!!block;n#asyncUploadFiles#0" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+        <state relative-caret-position="273">
+          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/shock/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="14" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="14" />
         </state>
       </provider>
     </entry>
