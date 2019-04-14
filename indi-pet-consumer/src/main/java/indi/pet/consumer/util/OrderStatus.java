@@ -1,9 +1,8 @@
-package indi.pet.producer.util;
+package indi.pet.consumer.util;
 
 /**
- * 订单状态类
- * @author <a href="maimengzzz@gmail.com">韩超</a>
- * @since 2018.11.05
+ * @author <a href="chan@ittx.com.cn">韩超</a>
+ * @version 2019.04.14
  */
 public class OrderStatus {
 
@@ -18,4 +17,6 @@ public class OrderStatus {
     final public static Integer ORDER_FINISHED=100;//订单正常完成
 
     final public static Integer ORDER_CANCEL=99;   //订单被取消
+
 }
+

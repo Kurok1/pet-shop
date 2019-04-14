@@ -18,6 +18,5 @@ public interface ShockRepository extends ElasticsearchRepository<Shock,String> {
 
     Page<Shock> findShocksByShopkeeperId(String id,Pageable pageable);
 
-    void deleteById(String id);
-
+    Long countByShopkeeperId(String shopkeeper);
 }

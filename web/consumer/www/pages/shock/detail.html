@@ -1,0 +1,58 @@
+
+<div class="page">
+    <style>
+        .demo-swiper{
+            height: 400px;
+            max-height: 400px;
+        }
+    </style>
+    <div class="page-content">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left">
+                    <a class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Back</span>
+                    </a>
+                </div>
+                <div class="title" id="shock-title"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <input type="hidden" name="" id="shock-shopkeeper">
+        <input type="hidden" name="" id="shock-price">
+        <div class="swiper-container swiper-init demo-swiper">
+            <div class="swiper-wrapper" id="shock-slider">
+            </div>
+        </div>
+        <div class="block-title" id="shock-time"></div>
+        <!-- Inset content block -->
+        <div class="block block-strong inset">
+            <p id="shock-text"></p>
+        </div>
+        <div class="block">
+            <div class="row">
+                <div class="col">
+                    <h4>单价: <span id="shock_price"></span></h4>
+                </div>
+                <div class="col">
+                    <div class="stepper stepper-fill stepper-init">
+                        <div class="stepper-button-minus"></div>
+                        <div class="stepper-input-wrap">
+                            <input type="text" value="1" min="1" max="1000" step="1" id="shock-amount" readonly>
+                        </div>
+                        <div class="stepper-button-plus"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block">
+            <p class="row">
+                <h3 id="shock-price-total">共计：￥1004.1</h3>
+            </p>
+            <p class="row">
+                <button class="col button button-fill button-large button-raised" id="order-publish">提交订单</button>
+            </p>
+        </div>
+    </div>
+</div>

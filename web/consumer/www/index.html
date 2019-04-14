@@ -40,7 +40,6 @@
         <script src="js/js/framework7.bundle.js"></script>
         <!--腾讯地图-->
         <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=6LLBZ-QMLCX-HNA4L-T3ADN-4O3V5-BFFLB"></script>
-        <script src="js/map.js"></script>
         <link rel="stylesheet" href="css/framework7-icons.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/holder.min.js"></script>
@@ -112,7 +111,7 @@
         <div id="app">
             <div class="panel panel-left panel-cover side-bar theme-dark">
                 <div class="block profile">
-                    <p><img src="holder.js/75x75" class="logo" id="panel_user_logo" alt=""></p>
+                    <p><img src="" width="75" height="75" class="logo" id="panel_user_logo" alt=""></p>
                     <p class="block color-gray name" id="panel_user_name">用户名</p>
                 </div>
                 <div class="list links-list">
@@ -131,7 +130,7 @@
             <div class="view view-main">
                 <!-- Initial Page, "data-name" contains page name -->
                 <div class="page">
-                    <div class="subnavbar">
+                    <div class="subnavbar" id="bar-title">
                         <div class="subnavbar-inner">
                             <div class="segmented segmented-raised">
                                  <a class="button tab-link tab-link-active" href="#nearby">附件的店</a>
@@ -146,10 +145,6 @@
 
                                 <!--   定义地图显示容器   -->
                                 <div id="container"></div>
-                                <div id="info">
-                                    <button id="mapM" class="btn">setMap</button>
-                                    <button id="setP" class="btn">setPosition</button>
-                                </div>
                             </div>
                             <div class="tab" id="chats">
                                 <div class="list media-list sortable">
@@ -299,6 +294,6 @@
 
         <!--<script type="text/javascript" src="cordova.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>
-
+        <script src="js/map.js"></script>
     </body>
 </html>

@@ -59,7 +59,6 @@ var app = new Framework7({
             on:{
                 pageInit:function (e,page) {
                     var messageId=page.route.params.id;
-                    console.log(messageId);
                     app.request({
                         url: host + "/message/" + messageId + "?token=" + localStorage.getItem("currentUserToken"),
                         method: "GET",
@@ -177,9 +176,6 @@ var app = new Framework7({
                             dataType:"json",
                             contentType:"application/json",
                             async:false,
-                            beforeSend: function () {
-                                app.dialog.preloader('请稍等');
-                            },
                             success:function(data, status, xhr){
                                 app.dialog.close();
                                 if(data instanceof String)
@@ -235,9 +231,6 @@ var app = new Framework7({
                             dataType:"json",
                             contentType:"application/json",
                             async:false,
-                            beforeSend: function () {
-                                app.dialog.preloader('请稍等');
-                            },
                             success:function(data, status, xhr){
                                 app.dialog.close();
                                 if(data instanceof String)
@@ -255,6 +248,85 @@ var app = new Framework7({
             name:'friends',
             path:'/friends',
             url:'pages/friends.html'
+        },
+        {
+            name:'shock-detail',
+            path:'/shock/detail/:id',
+            url:'pages/shock/detail.html',
+            on:{
+                pageInit:function (e,page) {
+                    var id = page.route.params.id;
+                    app.request({
+                            url: host + "/shock/" + id + "?token=" + localStorage.getItem("currentUserToken"),
+                            processData: false,
+                            method: "GET",
+                            dataType: "json",
+                            contentType: "application/json",
+                            async: false,
+                            success: function (data, status, xhr) {
+                                app.dialog.close();
+                                if (data instanceof String)
+                                    data = JSON.parse(data);//转json
+                                var shock = data.shock;
+                                $$('#shock-title').html(shock.title);
+                                $$('#shock-shopkeeper').val(shock.shopkeeperId);
+                                $$('#shock_price').html("￥" + shock.price);
+                                $$('#shock-price-total').html("共计：￥"+shock.price);
+                                $$('#shock-price').val(shock.price);
+                                $$('#shock-amount').attr("max", shock.last);
+                                $$('#shock-text').html(shock.text);
+                                var date = new Date(shock.timestamp);
+                                var Y = date.getFullYear() + '-';
+                                var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+                                var D = date.getDate() + ' ';
+                                var h = date.getHours() + ':';
+                                var m = date.getMinutes() + ':';
+                                var s = date.getSeconds();
+                                $$('#shock-time').html(Y + M + D + h + m + s);
+                                for (var i in shock.resources) {
+                                    var resource = shock.resources[i];
+                                    var template = "<div class='swiper-slide'><img src='" + host + "/res/" + resource + "' alt='' height='400'></div>";
+                                    $$('#shock-slider').append(template);
+                                }
+                            }
+                        }
+                    );
+                    $$('#shock-amount').on('change',function () {
+                       var amount= $$('#shock-amount').val();
+                       var total=$$('#shock-price').val()*amount;
+                       $$('#shock-price-total').html("共计：￥"+total);
+                    });
+
+                    $$('#order-publish').on('click',function () {
+                       //collect data
+                        var order={};
+                        var user=JSON.parse(localStorage.getItem("currentUser"));
+                        order.userId=user.id;
+                        order.shopkeeperId=$$('#shock-shopkeeper').val();
+                        order.shockId=id;
+                        order.count=$$('#shock-amount').val();
+                        app.dialog.preloader("正在提交订单");
+                        app.request({url:host+"/order/create?token="+localStorage.getItem("currentUserToken"),
+                            data:JSON.stringify(order),
+                            processData:false,
+                            method:"POST",
+                            dataType:"json",
+                            contentType:"application/json",
+                            async:false,
+                            success:function(data, status, xhr){
+                                if(data instanceof String)
+                                    data=JSON.parse(data);//转json
+                                if(data.flag===true){
+                                    setTimeout(function () {
+                                        app.dialog.close();
+                                        app.dialog.alert("订单提交成功~");
+                                    },3000)
+                                }
+                            }}
+                        );
+                    });
+                }
+            }
         }
     ],
     // ... other parameters
@@ -269,9 +341,6 @@ function loadMessage(page) {
         dataType:"json",
         contentType:"application/json",
         async:false,
-        beforeSend: function () {
-            app.dialog.preloader('请稍等');
-        },
         success:function(data, status, xhr){
             app.dialog.close();
             if(data instanceof String)
@@ -298,9 +367,6 @@ function asyncUploadFiles(ele){
         contentType: false,
         cache: false,
         async: false,
-        beforeSend: function () {
-            app.dialog.preloader('正在上传，请稍后');
-        },
         complete: function (data, status, xhr) {
             app.dialog.close();
             data=data.responseJSON;
@@ -406,9 +472,6 @@ if(!localStorage.hasOwnProperty("currentUserToken"))
 else{
     app.request({url:host+"/user/login?token="+localStorage.getItem("currentUserToken"),
                             method:"PUT",
-                            beforeSend: function () {
-                                app.dialog.preloader('正在登录，请稍后');
-                            },
                             success(data, status, xhr) {
                                 app.dialog.close();
                                 data=JSON.parse(data);
@@ -431,9 +494,6 @@ $$('#login #login-btn').on('click', function () {
 
     app.request({url:host+"/user/login?username="+username+"&password="+password,
                             method:"POST",
-                            beforeSend: function () {
-                                app.dialog.preloader('正在登录，请稍后');
-                            },
                             success:function(data, status, xhr){
                                 app.dialog.close();
                                 data=JSON.parse(data);//转json
@@ -489,9 +549,6 @@ $$('#register #register-btn').on('click',function () {
         method:"POST",
         dataType:"json",
         contentType:"application/json",
-        beforeSend: function () {
-            app.dialog.preloader('请稍等');
-        },
         success:function(data, status, xhr){
             // data=JSON.parse(data);//转json
             app.dialog.close();

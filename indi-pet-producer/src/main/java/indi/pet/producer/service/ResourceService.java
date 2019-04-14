@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
@@ -49,4 +50,13 @@ public class ResourceService {
         getResourceRepository().delete(id);
     }
 
+    public void batchDeleteUnusedRes(){
+        List<Resource> resources=getResourceRepository().findResourcesByHasUsed(false);
+        for (Resource resource:resources){
+            File file=new File(resource.getPath());
+            if(file.exists())
+                file.delete();
+        }
+        getResourceRepository().delete(resources);
+    }
 }

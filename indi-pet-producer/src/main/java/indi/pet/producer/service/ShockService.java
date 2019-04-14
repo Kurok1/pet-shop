@@ -39,11 +39,19 @@ public class ShockService {
     }
 
     public void delete(String id){
-        getShockRepository().deleteById(id);
+        getShockRepository().delete(id);
     }
 
     public Page<Shock> getShocks(String id,int page){
         Pageable pageable=new PageRequest(page,10);
         return getShockRepository().findShocksByShopkeeperId(id,pageable);
+    }
+
+    public Long getCountByShopkeeper(String keeper){
+        return getShockRepository().countByShopkeeperId(keeper);
+    }
+
+    public Shock findById(String id){
+        return getShockRepository().findOne(id);
     }
 }

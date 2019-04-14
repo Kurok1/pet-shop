@@ -134,7 +134,9 @@ public class ResourceController {
     @ResponseBody
     public Map<String,Object> delete(@RequestParam("token")String token,@PathVariable("id")String id){
         if(TokenUtil.validate(token)){
-            getResourceService().delete(id);
+            Resource one = getResourceService().findOne(id);
+            one.setHasUsed(false);
+            getResourceService().save(one);
         }else throw new TokenExpiredException();
         Map<String,Object> map=new HashMap<>();
         map.put("flag",true);

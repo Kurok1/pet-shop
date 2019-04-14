@@ -4,6 +4,8 @@ import indi.pet.consumer.domain.Shopkeeper;
 import indi.pet.consumer.repository.ShopkeeperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,5 +35,10 @@ public class ShopkeeperService {
 
     public Iterable<Shopkeeper> getByIds(Iterable<String> ids){
         return getShopkeeperRepository().findAll(ids);
+    }
+
+    public List<Shopkeeper> findByLocationInfo(double minLat, double maxLat, double minLng, double maxLng,int size){
+        Pageable pageable=new PageRequest(0,size);
+        return getShopkeeperRepository().findByLatitudeBetweenAndLongitudeBetween(minLat,maxLat,minLng,maxLng,pageable).getContent();
     }
 }

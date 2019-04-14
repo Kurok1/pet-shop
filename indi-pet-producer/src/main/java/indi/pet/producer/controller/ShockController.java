@@ -30,20 +30,29 @@ public class ShockController {
     }
 
     @PostMapping(path = "/save")
-    public Shock save(@RequestParam("token")String token,@RequestParam("id")String id, @RequestBody Shock shock){
-        TokenValidator.validate(token,id);
-        return getShockService().save(shock);
+    public Map<String,Object> save(@RequestParam("token")String token, @RequestBody Shock shock){
+        TokenValidator.validate(token);
+        Map<String,Object> map=new HashMap<>();
+        shock.setTimestamp(System.currentTimeMillis()/1000);
+        getShockService().save(shock);
+        map.put("flag",true);
+        map.put("message","发布成功~");
+        return map;
     }
 
     @PutMapping(path = "/update")
-    public Shock update(@RequestParam("token")String token,@RequestParam("id")String id, @RequestBody Shock shock){
-        TokenValidator.validate(token,id);
-        return getShockService().save(shock);
+    public Map<String,Object> update(@RequestParam("token")String token, @RequestBody Shock shock){
+        TokenValidator.validate(token);
+        Map<String,Object> map=new HashMap<>();
+        getShockService().save(shock);
+        map.put("flag",true);
+        map.put("message","修改成功~");
+        return map;
     }
 
     @DeleteMapping("/{shockId}")
-    public Map<String,Object> delete(@RequestParam("token")String token,@RequestParam("id")String id,@PathVariable("shockId")String shockId){
-        TokenValidator.validate(token,id);
+    public Map<String,Object> delete(@RequestParam("token")String token,@PathVariable("shockId")String shockId){
+        TokenValidator.validate(token);
         getShockService().delete(shockId);
         Map<String,Object> map=new HashMap<>();
         map.put("flag",true);
@@ -52,31 +61,34 @@ public class ShockController {
     }
 
     @GetMapping("/{page}")
-    public Map<String,Object> getShocks(@RequestParam("token")String token,@RequestParam("id")String id,@PathVariable("page")int page){
-        TokenValidator.validate(token,id);
-        Page<Shock> shocks=getShockService().getShocks(id,page-1);
+    public Map<String,Object> getShocks(@RequestParam("token")String token,@PathVariable("page")int page){
+        String keeper=TokenValidator.validate(token);
+        Page<Shock> shocks=getShockService().getShocks(keeper,page-1);
         Map<String,Object> rtn=new HashMap<>();
         rtn.put("data",shocks.getContent());
-        rtn.put("current",shocks.getNumber());
-        rtn.put("size",shocks.getSize());//每一页的元素数量
-        rtn.put("totalPage",shocks.getTotalPages());//总共页数
-        rtn.put("count",shocks.getNumberOfElements());
+        rtn.put("hasNext",page*10<getShockService().getCountByShopkeeper(keeper));
+        rtn.put("flag",true);
+        rtn.put("message","OK");
+        return rtn;
+    }
+    @GetMapping("/search/{name}/{page}")
+    public Map<String,Object> getShocksByName(@RequestParam("token")String token,@PathVariable("page")int page,@PathVariable("name")String name){
+        TokenValidator.validate(token);
+//        Page<Shock> shocks=getShockService().searchByName(name,id,page-1);
+        Map<String,Object> rtn=new HashMap<>();
+//        rtn.put("data",shocks.getContent());
+//        rtn.put("current",shocks.getNumber());
+//        rtn.put("size",shocks.getSize());//每一页的元素数量
+//        rtn.put("totalPage",shocks.getTotalPages());//总共页数
+//        rtn.put("count",shocks.getNumberOfElements());
         rtn.put("flag",true);
 
         return rtn;
     }
-    @GetMapping("/search/{name}/{page}")
-    public Map<String,Object> getShocksByName(@RequestParam("token")String token,@RequestParam("id")String id,@PathVariable("page")int page,@PathVariable("name")String name){
-        TokenValidator.validate(token,id);
-        Page<Shock> shocks=getShockService().searchByName(name,id,page-1);
-        Map<String,Object> rtn=new HashMap<>();
-        rtn.put("data",shocks.getContent());
-        rtn.put("current",shocks.getNumber());
-        rtn.put("size",shocks.getSize());//每一页的元素数量
-        rtn.put("totalPage",shocks.getTotalPages());//总共页数
-        rtn.put("count",shocks.getNumberOfElements());
-        rtn.put("flag",true);
 
-        return rtn;
+    @GetMapping("/single/{id}")
+    public Shock getById(@PathVariable("id")String id,@RequestParam("token")String token){
+        TokenValidator.validate(token);
+        return getShockService().findById(id);
     }
 }
