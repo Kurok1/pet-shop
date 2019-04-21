@@ -15,9 +15,11 @@ import org.springframework.stereotype.Repository;
 @Repository("orderRepository")
 public interface OrderRepository extends ElasticsearchRepository<Order,String> {
 
-    public Page<Order> findOrdersByShopkeeperId(String id, Pageable pageable);
+    public Page<Order> findOrdersByShopkeeperIdAndStatus(String id, Integer status,Pageable pageable);
 
     public Page<Order> findOrdersByUserId(String id,Pageable pageable);
 
     public Page<Order> findOrdersByShockId(String id,Pageable pageable);
+
+    public Long countByShopkeeperIdAndStatus(String shopkeeper,Integer status);
 }

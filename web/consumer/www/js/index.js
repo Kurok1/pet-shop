@@ -20,6 +20,42 @@
 var $$=Dom7;
 
 var host="http://localhost/";
+var ORDER_BEGIN=1;
+var ORDER_RECEIVED=2;
+var ORDER_HANDLED=4;
+var ORDER_WORKING=8;
+var ORDER_FINISHED=100;
+var ORDER_CANCEL=99;
+
+function statusTextMap(status){
+    var txt="";
+    switch (status) {
+        case ORDER_BEGIN:{txt="未接单"};break;
+        case ORDER_RECEIVED:{txt="已接单"};break;
+        case ORDER_HANDLED : {txt="拣货中"};break;
+        case ORDER_WORKING: {txt="等待用户取货确认"};break;
+        case ORDER_FINISHED: {txt="订单已完成"};break;
+        case ORDER_CANCEL: {txt="订单已取消"};break;
+        case 50:{txt="等待商家确认"};break;
+    }
+    return txt;
+}
+
+var basicHost="localhost";
+
+var orderCurrentPage=1;
+var orderHasNext=true;
+
+function timeUtil(timestamp) {
+    var date = new Date(timestamp*1000);
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    var D = date.getDate() + ' ';
+    var h = date.getHours() + ':';
+    var m = date.getMinutes() + ':';
+    var s = date.getSeconds();
+    return Y+M+D+h+m+s;
+}
 
 var app = new Framework7({
     // App root element
@@ -156,6 +192,7 @@ var app = new Framework7({
                     });
                     
                     $$('#moment-publish-btn').on('click',function () {
+                        var data;
                         var title=$$("#moment-add-title").val();
                         var content=$$("#moment-add-content").html();
                         var list=[];
@@ -163,7 +200,7 @@ var app = new Framework7({
                             list.push($$("#moment-append-imgs img").eq(index).attr("data-id"));
                         });
                         user=JSON.parse(localStorage.getItem("currentUser"));
-                        var data={
+                        data={
                             user:user.id,
                             imgs:list,
                             title:title,
@@ -187,6 +224,107 @@ var app = new Framework7({
                     })
                 }
             }
+        },
+        {
+            name: 'orders',
+            path: '/orders',
+            url: 'pages/order/list.html',
+            on: {
+                pageInit:function (e,page) {
+                    $$('#order-list').find("li").remove();
+                    renderOrders()
+
+                    $$('#loadMoreOrder').on('click',function () {
+                        if(orderHasNext===false){
+                            app.dialog.alert("没有更多数据了");
+                        }else {
+                            app.dialog.preloader('加载中');
+                            orderCurrentPage++;
+                            renderOrders();
+                            app.dialog.close();
+                        }
+
+                    })
+                },
+                pageReinit:function () {
+                    orderHasNext=true;
+                    orderCurrentPage=1;
+                    $$('#order-list').find("li").remove();
+                    renderOrders();
+                }
+            }
+        },
+        {
+            name:'order',
+            path:'/order/:id',
+            url:'pages/order/detail.html',
+            on:{
+                pageInit:function (e,page) {
+                    var id = page.route.params.id;
+                    token=localStorage.getItem("currentUserToken");
+                    app.request({url:host+"/order/"+id+"?token="+token,
+                        processData:false,
+                        method:"GET",
+                        dataType:"json",
+                        contentType:"application/json",
+                        async:false,
+                        success:function(data, status, xhr){
+                            app.dialog.close();
+                            if(data instanceof String)
+                                data=JSON.parse(data);//转json
+                            var timestamp=data.createTimeStamp;
+                            var id=data.id;
+                            var keeperId=data.shopkeeper.id;
+                            var amount=data.amount;
+                            var status=data.status;
+                            var shockName=data.shock.title;
+                            var price=data.shock.price;
+
+                            var currentStatusText=statusTextMap(status);
+
+                            $$('#order-detail-id').html(id);
+                            $$('#order-detail-shock').html(shockName);
+                            $$('#order-detail-price').html("￥ "+price);
+                            $$('#order-detail-amount').html(amount);
+                            $$('#order-detail-keeper').html('<a href="javascript:" data-keeper="'+keeperId+'">点击联系商家</a>');
+                            $$('#order-detail-createTime').html(timeUtil(timestamp));
+                            $$('#order-detail-status').html(currentStatusText);
+                            if(status===ORDER_WORKING){
+                                $$('#order-status-confirm').attr("data-order",id);
+                                $$('#order-status-confirm').show()
+                            }else{
+                                $$('#order-status-confirm').hide()
+                            }
+                        }
+                    }
+                        
+                        
+                    );
+                    $$('#order-status-confirm').on('click',function () {
+                        var id=$$('#order-status-confirm').attr("data-order");
+                        app.dialog.confirm("确定执行操作吗？", function(){
+                            app.request({
+                                    url: host + "/order/confirm/"+id+"?token=" + localStorage.getItem("currentUserToken"),
+                                    method: "PUT",
+                                    dataType: "json",
+                                    contentType: "application/json",
+                                    async: false,
+                                    success: function (data, status, xhr) {
+                                        if (data instanceof String)
+                                            data = JSON.parse(data);//转json
+                                        app.dialog.alert(data.message);
+                                        if(data.flag===true){
+                                            mainView.router.back();
+                                        }
+                                    }
+                                }
+                            )
+                        }, function () {
+                        });
+                    })
+                }
+            }
+            
         },
         {
             name: 'user',
@@ -320,7 +458,7 @@ var app = new Framework7({
                                     setTimeout(function () {
                                         app.dialog.close();
                                         app.dialog.alert("订单提交成功~");
-                                    },3000)
+                                    },1000)
                                 }
                             }}
                         );
@@ -452,9 +590,31 @@ function renderComments(data) {
     $$('#root-comments ul').append(dom)
 }
 
+function registerWebSocket(id) {
+    var ws=new WebSocket("ws://"+basicHost+"/user/order/"+id);
+
+    ws.onopen=function (event) {
+        console.log(">>>>>>>>>>>>>>>>>>>>>>");
+        console.log(id+": 连接WebSocket成功");
+        console.log("<<<<<<<<<<<<<<<<<<<<<<");
+    };
+
+    ws.onmessage=function (message) {
+        // Create full-layout notification
+        var notificationFull = app.notification.create({
+            title: '您有新的消息',
+            titleRightText: 'now',
+            text: message.data,
+            closeTimeout: 3000,
+        });
+        notificationFull.open()
+    };
+}
+
 function afterLogin(user) {
     document.querySelector("#panel_user_logo").src=host + '/res/' + user.logo;
     document.querySelector("#panel_user_name").innerHTML=user.username;
+    registerWebSocket(user.id);
 }
 
 var mainView = app.views.create('.view-main');
@@ -624,3 +784,42 @@ $$('.moment-card').on('click',function () {
         params: { id:id },
     });
 });
+
+var orderList=[];
+
+function loadMoreOrder() {
+    var token=localStorage.getItem("currentUserToken");
+    app.request({url:host+"/order/list/"+orderCurrentPage+"?token="+token,
+        processData:false,
+        method:"GET",
+        dataType:"json",
+        contentType:"application/json",
+        async:false,
+        success:function(data, status, xhr){
+            app.dialog.close();
+            if(data instanceof  String)
+                data=JSON.parse(data);
+            orderHasNext=data.hasNext;
+            orderList=data.data;
+        }}
+    );
+}
+
+function renderOrders(){
+    loadMoreOrder()
+    var list=orderList;
+    for (var i in list){
+        var order=list[i];
+        var template="<li>" +
+            "<a href='/order/"+order.id+"' data-order='"+order.id+"' class='item-link item-content'>" +
+            "<div class='item-media'><img src='"+host+"/res/"+order.shock.logo+"' width='80'/></div>" +
+            "<div class='item-inner'>" +
+            "<div class='item-title-row'>" +
+            "<div class='item-title'>店铺名称："+order.shopkeeper.name+"</div>" +
+            "</div>" +
+            "<div class='item-subtitle'>商品名称："+order.shock.title+"</div>" +
+            "<div class='item-text'>当前状态 &nbsp;&nbsp;：&nbsp;&nbsp; "+statusTextMap(order.status)+"</div>" +
+            "</div></a></li>";
+        $$('#order-list').append(template);
+    }
+}

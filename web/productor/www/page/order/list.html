@@ -1,61 +1,35 @@
 <div class="page">
-    <div class="navbar">
-        <div class="navbar-inner">
-            <div class="left"></div>
-            <div class="title">订单页面</div>
-            <div class="right"></div>
-            <div class="subnavbar">
-                <div class="subnavbar-inner">
-                    <div class="segmented segmented-raised">
-                        <a class="button tab-link tab-link-active" href="#wait">待处理</a>
-                        <a class="button tab-link" href="#work">处理中</a>
-                        <a class="button tab-link" href="#close">已完成</a>
+    <ul class="list">
+        <li>
+            <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                <select id="filter-status">
+                    <option value="0" selected>选择订单状态</option>
+                    <option value="1">未接收</option>
+                    <option value="2">已接单</option>
+                    <option value="4">准备中</option>
+                    <option value="8">待取货</option>
+                    <option value="50">待确认</option>
+                    <option value="100">已完成</option>
+                    <option value="999">已取消</option>
+                </select>
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div class="item-title">选择订单状态</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="page-content hide-navbar-on-scroll">
+            </a>
+        </li>
+    </ul>
 
+    <div class="page-content hide-navbar-on-scroll">
+        <div class="fab fab-extended fab-right-bottom color-green">
+            <a href="javascript:" title="加载更多" id="loadMoreOrder">
+                <i class="icon f7-icons if-not-md">refresh</i>
+                <i class="icon material-icons md-only">refresh</i>
+            </a>
+        </div>
         <div class="list media-list">
-            <ul>
-                <li>
-                    <a href="/order" class="item-link item-content">
-                        <div class="item-media"><img src="https://cdn.framework7.io/placeholder/people-160x160-1.jpg" width="80"/></div>
-                        <div class="item-inner">
-                            <div class="item-title-row">
-                                <div class="item-title">订单号：1321456789</div>
-                                <div class="item-after">￥15*1</div>
-                            </div>
-                            <div class="item-subtitle">商品名称：xxx</div>
-                            <div class="item-text">创建时间 &nbsp;&nbsp;：&nbsp;&nbsp; 2019-3-11</div>
-                        </div></a></li>
-                <li>
-                    <a href="/order" class="item-link item-content">
-                        <div class="item-media"><img src="https://cdn.framework7.io/placeholder/people-160x160-2.jpg" width="80"/></div>
-                        <div class="item-inner">
-                            <div class="item-title-row">
-                                <div class="item-title">订单号：1321456789</div>
-                                <div class="item-after">￥22*2</div>
-                            </div>
-                            <div class="item-subtitle">商品名称：xxx</div>
-                            <div class="item-text">创建时间 &nbsp;&nbsp;：&nbsp;&nbsp; 2019-3-11</div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/order" class="item-link item-content">
-                        <div class="item-media"><img src="https://cdn.framework7.io/placeholder/people-160x160-3.jpg" width="80"/></div>
-                        <div class="item-inner">
-                            <div class="item-title-row">
-                                <div class="item-title">订单号：1321456789</div>
-                                <div class="item-after">￥16*1</div>
-                            </div>
-                            <div class="item-subtitle">商品名称：xxx</div>
-                            <div class="item-text">创建时间 &nbsp;&nbsp;：&nbsp;&nbsp; 2019-3-11</div>
-                        </div>
-                    </a>
-                </li>
+            <ul id="order-list">
             </ul>
         </div>
     </div>

@@ -29,7 +29,7 @@ public class OrderService {
 
     public Page<Order> findOrdersByUserId(String id, int page){
         Pageable pageable=new PageRequest(page,10);
-        return getOrderRepository().findOrdersByUserId(id,pageable);
+        return getOrderRepository().findOrdersByUserIdOrderByCreateTimeStampDesc(id,pageable);
     }
 
     public Page<Order> findOrdersByShopkeeperId(String id,int page){
@@ -45,4 +45,11 @@ public class OrderService {
         getOrderRepository().delete(id);
     }
 
+    public Long countByUserId(String id){
+        return getOrderRepository().countByUserId(id);
+    }
+
+    public Order findById(String id){
+        return getOrderRepository().findOne(id);
+    }
 }

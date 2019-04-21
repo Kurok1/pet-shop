@@ -2,8 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f9dbbb-88a0-4dc3-9831-c3f138d530bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/www/pages/shock/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/endpoint/UserOrderServerPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/listener/OrderStatusListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/util/OrderObjectInputStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/wrapper/OrderWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/endpoint/OrderServerEndPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/wrapper/OrderStatusWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/wrapper/OrderWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/order/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/pages/order/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/ConsumerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/ConsumerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ResourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ResourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/Shock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/domain/Shock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/util/ObjectDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/util/ObjectDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/util/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/util/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/test/java/indi/pet/consumer/ConsumerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/ProducerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/ProducerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ToolsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/controller/ToolsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/listener/OrderListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/listener/OrderListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/util/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-producer/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/pages/shock/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/pages/shock/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/www/page/order/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/page/order/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../productor/www/page/order/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/page/order/list.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,48 +56,50 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="35" />
-          <entry key="html" value="1848" />
-          <entry key="js" value="7149" />
+          <entry key="html" value="1944" />
+          <entry key="js" value="8337" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="35" />
-          <entry key="HTML" value="1857" />
-          <entry key="JavaScript" value="7140" />
+          <entry key="HTML" value="1953" />
+          <entry key="JavaScript" value="8328" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="21" />
-          <entry key="js" value="5" />
+          <entry key="html" value="23" />
+          <entry key="js" value="7" />
           <entry key="ts" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="21" />
-          <entry key="JavaScript" value="5" />
+          <entry key="HTML" value="23" />
+          <entry key="JavaScript" value="7" />
           <entry key="TypeScript" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -72,24 +111,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6716">
-              <caret line="309" column="55" selection-start-line="309" selection-start-column="55" selection-end-line="309" selection-end-column="55" />
+            <state relative-caret-position="497">
+              <caret line="818" column="67" lean-forward="true" selection-start-line="818" selection-start-column="67" selection-end-line="818" selection-end-column="67" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#!!block;n#asyncUploadFiles#0" />
+                <element signature="e#285#291#0" expanded="true" />
+                <element signature="e#291#297#0" expanded="true" />
+                <element signature="e#298#304#0" expanded="true" />
+                <element signature="e#304#310#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/order/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="14" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="1196">
+              <caret line="52" column="75" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/order/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -106,31 +158,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3059">
-              <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+            <state relative-caret-position="618">
+              <caret line="120" column="50" selection-start-line="120" selection-start-column="50" selection-end-line="120" selection-end-column="50" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/pages/shock/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -173,12 +207,14 @@
         <option value="$PROJECT_DIR$/www/pages/user.html" />
         <option value="$PROJECT_DIR$/www/pages/moment/add.html" />
         <option value="$PROJECT_DIR$/www/pages/moment/detail.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/js/map.js" />
-        <option value="$PROJECT_DIR$/www/pages/shock/detail.html" />
-        <option value="$PROJECT_DIR$/www/js/index.js" />
         <option value="$PROJECT_DIR$/www/pages/keeper.html" />
         <option value="$PROJECT_DIR$/www/pages/shock/list.html" />
+        <option value="$PROJECT_DIR$/www/pages/shock/detail.html" />
+        <option value="$PROJECT_DIR$/www/js/map.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/pages/order/list.html" />
+        <option value="$PROJECT_DIR$/www/pages/order/detail.html" />
+        <option value="$PROJECT_DIR$/www/js/index.js" />
       </list>
     </option>
   </component>
@@ -203,10 +239,24 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="212" />
-    <option name="y" value="26" />
+    <option name="x" value="210" />
+    <option name="y" value="25" />
     <option name="width" value="1940" />
     <option name="height" value="1100" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -231,12 +281,6 @@
               <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
               <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -244,21 +288,7 @@
               <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="chat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="moment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="consumer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="shock" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -273,9 +303,18 @@
     <property name="editorconfig.notification" value="null# tab | space" />
     <property name="js.phonegap.settings.workdir" value="$PROJECT_DIR$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="ts.external.directory.path" value="E:\JetBrains\WebStorm 2018.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -340,12 +379,18 @@
       <workItem from="1554559588549" duration="132000" />
       <workItem from="1554611437090" duration="13000" />
       <workItem from="1555220811703" duration="13635000" />
-      <workItem from="1555239909034" duration="605000" />
+      <workItem from="1555239909034" duration="1734000" />
+      <workItem from="1555746603519" duration="55000" />
+      <workItem from="1555767454106" duration="1745000" />
+      <workItem from="1555818215849" duration="3946000" />
+      <workItem from="1555827664143" duration="3954000" />
+      <workItem from="1555833129458" duration="78000" />
+      <workItem from="1555840591791" duration="1716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106432000" />
+    <option name="totallyTimeSpent" value="119055000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,14 +610,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index.js">
+    <entry file="file://$PROJECT_DIR$/www/pages/keeper.html" />
+    <entry file="file://$PROJECT_DIR$/www/pages/shock/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6716">
-          <caret line="309" column="55" selection-start-line="309" selection-start-column="55" selection-end-line="309" selection-end-column="55" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#!!block;n#asyncUploadFiles#0" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/order/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -585,8 +648,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3059">
-          <caret line="133" column="51" selection-start-line="133" selection-start-column="51" selection-end-line="133" selection-end-column="51" />
+        <state relative-caret-position="618">
+          <caret line="120" column="50" selection-start-line="120" selection-start-column="50" selection-end-line="120" selection-end-column="50" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -595,31 +658,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/keeper.html">
+    <entry file="file://$PROJECT_DIR$/www/pages/order/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        <state relative-caret-position="1196">
+          <caret line="52" column="75" selection-start-line="52" selection-start-column="75" selection-end-line="52" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/map.js">
+    <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/shock/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="497">
+          <caret line="818" column="67" lean-forward="true" selection-start-line="818" selection-start-column="67" selection-end-line="818" selection-end-column="67" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#asyncUploadFiles#0" />
+            <element signature="e#285#291#0" expanded="true" />
+            <element signature="e#291#297#0" expanded="true" />
+            <element signature="e#298#304#0" expanded="true" />
+            <element signature="e#304#310#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -83,7 +83,7 @@ public class ResourceController {
                         }
                         Resource resource=new Resource();
                         resource.setPath(path);
-                        resource.setHasUsed(false);
+                        resource.setHasUsed(true);
                         resource.setTimestamp(System.currentTimeMillis()/1000);
                         resource.setType(file.getContentType());
                         resource=resourceService.save(resource);

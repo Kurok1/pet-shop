@@ -15,6 +15,8 @@ public interface OrderRepository extends ElasticsearchRepository<Order,String> {
 
     public Page<Order> findOrdersByShopkeeperId(String id, Pageable pageable);
 
-    public Page<Order> findOrdersByUserId(String id, Pageable pageable);
+    public Page<Order> findOrdersByUserIdOrderByCreateTimeStampDesc(String id, Pageable pageable);
+
+    public Long countByUserId(String id);
 
 }

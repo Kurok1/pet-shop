@@ -28,6 +28,7 @@ public class Shock implements Serializable {
 
     private String shopkeeperId;
 
+    private String logo;
     /**
      * 进货时的数量
      */
@@ -42,6 +43,13 @@ public class Shock implements Serializable {
 
     private long timestamp;
 
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
 
     public String getId() {
         return id;

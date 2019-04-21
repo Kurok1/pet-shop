@@ -20,9 +20,34 @@
 
 var $$=Dom7;
 
-var host="http://localhost:8080/"
+
+var ORDER_BEGIN=1;
+var ORDER_RECEIVED=2;
+var ORDER_HANDLED=4;
+var ORDER_WORKING=8;
+var ORDER_FINISHED=100;
+var ORDER_CANCEL=99;
+
+var host="http://localhost:8080/";
+var basicHost="127.0.0.1";
+var basicPort=8080
 var currentShocksPage=1;//当前为第一页
 var hasNext=true;
+
+orderHasNext=true;
+orderCurrentPage=1;
+
+function timeUtil(timestamp) {
+    var date = new Date(timestamp*1000);
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    var D = date.getDate() + ' ';
+    var h = date.getHours() + ':';
+    var m = date.getMinutes() + ':';
+    var s = date.getSeconds();
+    return Y+M+D+h+m+s;
+}
+
 var app = new Framework7({
     // App root element
     root: '#app',
@@ -249,12 +274,138 @@ var app = new Framework7({
         {
             name:'orders',
             path:"/orders",
-            url:'page/order/list.html'
+            url:'page/order/list.html',
+            on:{
+                pageInit:function (e,page) {
+                    $$('#filter-status').on('change',function(){
+                        orderCurrentPage=1;
+                        orderHasNext=true;
+                        token=localStorage.getItem("currentKeeperToken");
+                        var status=$$(this).val();
+                        var list=onChangeStatus(status,1);
+                        $$('#order-list').find("li").remove();
+                        for (var i in list.data){
+                            var order=list.data[i];
+                            var template="<li>" +
+                                "<a href='/order/"+order.id+"' class='item-link item-content'>" +
+                                "<div class='item-media'><img src='"+host+"/res/"+order.shock.logo+"' width='80'/></div>" +
+                                "<div class='item-inner'>" +
+                                "<div class='item-title-row'>" +
+                                "<div class='item-title'>订单号："+order.id+"</div>" +
+                                "</div>" +
+                                "<div class='item-subtitle'>商品名称："+order.shock.title+"</div>" +
+                                "<div class='item-text'>创建时间 &nbsp;&nbsp;：&nbsp;&nbsp; "+timeUtil(order.createTimeStamp)+"</div>" +
+                                "</div></a></li>";
+                            $$('#order-list').append(template);
+                        }
+                    });
+
+                    $$('#loadMoreOrder').on('click',function () {
+                        if(orderHasNext===false){
+                            app.dialog.alert("没有更多数据了");
+                        }else {
+                            app.dialog.preloader('加载中');
+                            orderCurrentPage++;
+                            onChangeStatus($$('#filter-status').val(),orderCurrentPage);
+                            app.dialog.close();
+                        }
+
+                    })
+                },
+                pageReinit:function (e,page) {
+                    orderCurrentPage=1;
+                    orderHasNext=true;
+                    token=localStorage.getItem("currentKeeperToken");
+                    var status=$$('#filter-status').val();
+                    var list=onChangeStatus(status,1);
+                    $$('#order-list').find("li").remove();
+                    for (var i in list.data){
+                        var order=list.data[i];
+                        var template="<li>" +
+                            "<a href='/order/"+order.id+"' class='item-link item-content'>" +
+                            "<div class='item-media'><img src='"+host+"/res/"+order.shock.logo+"' width='80'/></div>" +
+                            "<div class='item-inner'>" +
+                            "<div class='item-title-row'>" +
+                            "<div class='item-title'>订单号："+order.id+"</div>" +
+                            "</div>" +
+                            "<div class='item-subtitle'>商品名称："+order.shock.title+"</div>" +
+                            "<div class='item-text'>创建时间 &nbsp;&nbsp;：&nbsp;&nbsp; "+timeUtil(order.createTimeStamp)+"</div>" +
+                            "</div></a></li>";
+                        $$('#order-list').append(template);
+                    }
+                }
+            }
         },
         {
             name:'order',
-            path:"/order",
-            url:'page/order/detail.html'
+            path:"/order/:id",
+            url:'page/order/detail.html',
+            on:{
+                pageInit:function(e,page){
+                    var id = page.route.params.id;
+                    token=localStorage.getItem("currentKeeperToken");
+                    app.request({url:host+"/order/"+id+"?token="+token,
+                        processData:false,
+                        method:"GET",
+                        dataType:"json",
+                        contentType:"application/json",
+                        async:false,
+                        success:function(data, status, xhr){
+                            app.dialog.close();
+                            if(data instanceof String)
+                                data=JSON.parse(data);//转json
+                            var timestamp=data.createTimeStamp;
+                            var id=data.id;
+                            var userId=data.user.id;
+                            var amount=data.amount;
+                            var status=data.status;
+                            var shockName=data.shock.title;
+                            var price=data.shock.price;
+
+                            var nextStatusText=getStatusTextMap(status);
+                            var currentStatusText=statusTextMap(status);
+
+                            $$('#order-detail-id').html(id);
+                            $$('#order-detail-shock').html(shockName);
+                            $$('#order-detail-price').html("￥ "+price);
+                            $$('#order-detail-amount').html(amount);
+                            $$('#order-detail-user').html('<a href="javascript:" data-user="'+userId+'">点击联系用户</a>');
+                            $$('#order-detail-createTime').html(timeUtil(timestamp));
+                            $$('#order-detail-status').html(currentStatusText);
+                            $$('#order-status-update').html(nextStatusText).attr("data-status",status).attr("data-order",id);
+                        }}
+                    );
+
+                    $$('#order-status-update').on('click',function () {
+                        var orderId=$(this).attr("data-order");
+                        var status=$(this).attr("data-status");
+                        var nextStatus=getNextStatus(status);
+                        var json={id:orderId,status:nextStatus};
+                        app.dialog.confirm("确定执行操作吗？", function(){
+                            app.request({
+                                    url: host + "/order/update?token=" + localStorage.getItem("currentKeeperToken"),
+                                    data:JSON.stringify(json),
+                                    processData:false,
+                                    method: "PUT",
+                                    dataType: "json",
+                                    contentType: "application/json",
+                                    async: false,
+                                    success: function (data, status, xhr) {
+                                        if (data instanceof String)
+                                            data = JSON.parse(data);//转json
+                                        app.dialog.alert(data.message);
+                                        if(data.flag===true){
+                                            mainView.router.back();
+                                        }
+                                    }
+                                }
+                            )
+                        }, function () {
+                        });
+
+                    })
+                }
+            }
         },
         {
             name:'profile',
@@ -357,9 +508,32 @@ var app = new Framework7({
     // ... other parameters
 });
 
+
+function registerWebSocket(id) {
+    var ws=new WebSocket("ws://"+basicHost+":"+basicPort+"/server/order/"+id);
+    ws.onopen=function (event) {
+        console.log(">>>>>>>>>>>>>>>>>>>>>>");
+        console.log(id+": 连接WebSocket成功");
+        console.log("<<<<<<<<<<<<<<<<<<<<<<");
+    };
+
+    ws.onmessage=function (message) {
+        // Create full-layout notification
+        var notificationFull = app.notification.create({
+            title: '新的订单',
+            titleRightText: 'now',
+            text: message.data,
+            closeTimeout: 3000,
+        });
+        notificationFull.open()
+    };
+}
+
 function afterLogin(keeper) {
     document.querySelector("#keeper_logo").src=host + '/res/' + keeper.logo;
     document.querySelector("#keeper_name").innerHTML=keeper.name;
+    //注册websocket
+    registerWebSocket(keeper.id);
 }
 
 var mainView = app.views.create('.view-main');
@@ -367,7 +541,6 @@ var mainView = app.views.create('.view-main');
 var dialog=app.dialog;
 
 $$(document).on('page:init', '.page[data-name="shocks"]', function (e) {
-    console.log(111);
     hasNext=true;
     currentShocksPage=1;
     renderShocks(true);
@@ -604,4 +777,66 @@ function renderSingleShock(id) {
             $$("#shock-update-price").val(data.price);
         }}
     );
+}
+
+
+
+function getNextStatus(current){
+    if (current==ORDER_BEGIN)
+        return ORDER_RECEIVED;
+    else if(current==ORDER_RECEIVED)
+        return ORDER_HANDLED;
+    else if(current==ORDER_HANDLED)
+        return ORDER_WORKING;
+    else if(current==ORDER_WORKING)
+        return 50;
+    else if(current==50)
+        return ORDER_FINISHED;
+    else return -1;
+}
+
+function getStatusTextMap(current){
+    if (current==ORDER_BEGIN)
+        return "接单";
+    else if(current==ORDER_RECEIVED)
+        return "开始拣货";
+    else if(current==ORDER_HANDLED)
+        return "拣货完成，提醒取货";
+    else if(current>=ORDER_WORKING)
+        return "确认完成";
+    else return "";
+}
+
+function onChangeStatus(status,page) {
+    token=localStorage.getItem("currentKeeperToken");
+    var list={};
+    app.request({url:host+"/order/"+page+"/"+status+"?token="+token,
+        processData:false,
+        method:"GET",
+        dataType:"json",
+        contentType:"application/json",
+        async:false,
+        success:function(data, status, xhr){
+            app.dialog.close();
+            if(data instanceof String)
+                data=JSON.parse(data);//转json
+            list=data;
+            orderHasNext=data.hasNext;
+        }}
+    );
+    return list;
+}
+
+function statusTextMap(status){
+    var txt="";
+    switch (status) {
+        case ORDER_BEGIN:{txt="未接单"};break;
+        case ORDER_RECEIVED:{txt="已接单"};break;
+        case ORDER_HANDLED : {txt="拣货中"};break;
+        case ORDER_WORKING: {txt="等待用户取货确认"};break;
+        case ORDER_FINISHED: {txt="订单已完成"};break;
+        case 50:{txt="等待商家确认"};break;
+        case ORDER_CANCEL: {txt="订单已取消"};break;
+    }
+    return txt;
 }

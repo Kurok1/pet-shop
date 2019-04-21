@@ -25,7 +25,7 @@ public class ObjectDeserializer implements Deserializer<Object> {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(data);
 
         try {
-            ObjectInputStream inputStream = new ObjectInputStream(byteArrayInputStream);
+            ObjectInputStream inputStream = new OrderObjectInputStream(byteArrayInputStream);
 
             object = (Serializable) inputStream.readObject();
 
@@ -33,7 +33,6 @@ public class ObjectDeserializer implements Deserializer<Object> {
             throw new RuntimeException(e);
         }
 
-        System.out.println(" topic : " + topic + " , deserialized object :" + object);
 
         return object;
     }

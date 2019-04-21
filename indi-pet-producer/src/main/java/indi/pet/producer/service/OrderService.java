@@ -36,9 +36,13 @@ public class OrderService {
         return getOrderRepository().findOrdersByUserId(id,pageable);
     }
 
-    public Page<Order> findOrdersByShopkeeperId(String id,int page){
+    public Page<Order> findOrdersByShopkeeperIdAndStatus(String id,int status,int page){
         Pageable pageable=new PageRequest(page,10);
-        return getOrderRepository().findOrdersByShopkeeperId(id,pageable);
+        return getOrderRepository().findOrdersByShopkeeperIdAndStatus(id,status,pageable);
+    }
+
+    public Long getCountByShopkeeperAndStatus(String id,int status){
+        return getOrderRepository().countByShopkeeperIdAndStatus(id, status);
     }
 
     public Page<Order> findOrdersByShockId(String id,int page){
@@ -48,5 +52,9 @@ public class OrderService {
 
     public void delete(String id){
         getOrderRepository().delete(id);
+    }
+
+    public Order findById(String id){
+        return getOrderRepository().findOne(id);
     }
 }

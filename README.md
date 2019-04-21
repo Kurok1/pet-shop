@@ -193,3 +193,33 @@ public class Order implements Serializable {
 
 - [ ] 利用WebSocket技术进行商家实时接单，并且用户和商家可以进行聊天互动
 - [ ] 订单完整运行流程，从发起到结束
+
+***
+
+####  **本周项目完成情况 （4-15至4-21）**
+
+consumer&productor：
+
+1. 支持实时接收订单状态（利用websocket）
+2. 完整订单流程运行 ： 发起->接单->拣货->拣货完成->用户确认取货->商家确认完成
+
+完整订单流程图：
+![订单流程](https://github.com/Kurok1/pet-shop/blob/master/images/orderstream.png)
+用户订单发起&商家接收订单：
+![接收订单](https://github.com/Kurok1/pet-shop/blob/master/images/10.png)
+商家接单&用户提醒
+![接单](https://github.com/Kurok1/pet-shop/blob/master/images/7.png)
+商家拣货&用户提醒
+![拣货&通知](https://github.com/Kurok1/pet-shop/blob/master/images/8.png)
+订单完成
+![订单完成](https://github.com/Kurok1/pet-shop/blob/master/images/9.png)
+
+
+
+本周未完成：
+
+- [ ] 商家和用户之间聊天功能（可能需要单独的一套聊天系统）
+
+下周计划任务（4-22至4-26）
+
+- [ ] 搭建聊天系统
