@@ -43,7 +43,7 @@ public class MessageService {
 
     public List<Message> findByUserIn(Iterable<String> users,int currentPage){
         Pageable pageable=new PageRequest(currentPage,10);
-        Page<Message> messages=getMessageRepository().findByUserIn(users,pageable);
+        Page<Message> messages=getMessageRepository().findByUserInOrderByTimestampDesc(users,pageable);
         return messages.getContent();
     }
 

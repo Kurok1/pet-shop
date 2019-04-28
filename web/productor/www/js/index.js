@@ -127,8 +127,15 @@ var app = new Framework7({
                                 if(data instanceof String)
                                     data=JSON.parse(data);//转json
                                 app.dialog.alert(data.message);
-                                if(data.flag===true)
+                                if(data.flag===true){
+                                    currentShocksPage++;
+                                    $$('#shocks').find(".toManage").remove();
+                                    hasNext=true;
+                                    renderShocks();
+                                
                                     mainView.router.back();
+                                }
+                                    
                             }}
                         )
                     });
@@ -738,7 +745,7 @@ $$('#loadMoreShock').on('click',function () {
         app.dialog.alert("没有更多数据了");
     }else {
         app.dialog.preloader('加载中');
-        currentMessagePage++;
+        currentShocksPage++;
         renderShocks();
         app.dialog.close();
     }
@@ -789,7 +796,7 @@ function getNextStatus(current){
     else if(current==ORDER_HANDLED)
         return ORDER_WORKING;
     else if(current==ORDER_WORKING)
-        return 50;
+        return ORDER_FINISHED;
     else if(current==50)
         return ORDER_FINISHED;
     else return -1;

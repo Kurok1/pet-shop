@@ -77,6 +77,14 @@ var app = new Framework7({
         {
             path: '/',
             url: 'index.html',
+            on:{
+                pageInit:function (e,page) {
+                    alert(1);
+                },
+                pageReinit:function (e,page) {
+                    alert(1);
+                }
+            }
         },
         {
             name: 'about',
@@ -90,7 +98,7 @@ var app = new Framework7({
         },
         {
             name:'moment',
-            path:'/moment/:id',
+            path:'/moment/detail/:id',
             url:"pages/moment/detail.html",
             on:{
                 pageInit:function (e,page) {
@@ -106,7 +114,7 @@ var app = new Framework7({
                                 data = JSON.parse(data);//转json
                             if (data.flag === true){
                                 var message=data.message;
-                                var date = new Date(message.timestamp);
+                                var date = new Date(message.timestamp*1000);
                                 var Y = date.getFullYear() + '-';
                                 var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
                                 var D = date.getDate() + ' ';
@@ -218,6 +226,10 @@ var app = new Framework7({
                                 if(data instanceof String)
                                     data=JSON.parse(data);//转json
                                 app.dialog.alert(data.message);
+                                $$('#moments').find(".moment-card").remove();
+                                currentMessagePage=1;
+                                hasNext=true;
+                                renderMessage();
                                 mainView.router.back();
                             }}
                         )
@@ -314,6 +326,10 @@ var app = new Framework7({
                                             data = JSON.parse(data);//转json
                                         app.dialog.alert(data.message);
                                         if(data.flag===true){
+                                            orderHasNext = true;
+                                            orderCurrentPage = 1;
+                                            $$('#order-list').find("li").remove();
+                                            renderOrders();
                                             mainView.router.back();
                                         }
                                     }
@@ -742,7 +758,7 @@ function renderMessage() {
 
     for (var i in messageData){
         var message=messageData[i];
-        var date = new Date(message.timestamp);
+        var date = new Date(message.timestamp*1000);
         var Y = date.getFullYear() + '-';
         var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
         var D = date.getDate() + ' ';

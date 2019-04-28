@@ -7,7 +7,8 @@ window.onload = function () {
         var center = new qq.maps.LatLng(39.0920,117.39811);
         var map = new qq.maps.Map(document.getElementById('container'),{
             center: center,
-            zoom: 13
+            zoom: 13, 
+            draggable:false
         });
         var userLocationInfo={
             "latitude":39.09204,

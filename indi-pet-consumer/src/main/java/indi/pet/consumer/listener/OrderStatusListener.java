@@ -43,7 +43,7 @@ public class OrderStatusListener {
         msg.append("订单:").append(order.getId());
         switch (order.getStatus()){
             case OrderStatus.ORDER_RECEIVED: {msg.append(" 已经被商家查看");}break;
-            case OrderStatus.ORDER_HANDLED : {msg.append(" 正在备货中...");}break;
+            case OrderStatus.ORDER_WORKING : {msg.append(" 已经完成备货,请取货");}break;
             case OrderStatus.ORDER_CANCEL : {msg.append(" 已经被取消...");}break;
             case OrderStatus.ORDER_FINISHED: {msg.append(" 已经完成");}break;
         }

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository("messageRepository")
 public interface MessageRepository extends ElasticsearchRepository<Message,String> {
 
-    public Page<Message> findByUserIn(Iterable<String> users, Pageable pageable);
+    public Page<Message> findByUserInOrderByTimestampDesc(Iterable<String> users, Pageable pageable);
 
     public Long countByUserIn(Iterable<String> users);
 }
