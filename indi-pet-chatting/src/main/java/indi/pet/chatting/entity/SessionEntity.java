@@ -21,4 +21,7 @@ public interface SessionEntity extends Serializable {
 
     public Session getSession();
 
+    public boolean isLook();
+
+    public void setLook(boolean look);
 }

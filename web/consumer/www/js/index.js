@@ -20,12 +20,53 @@
 var $$=Dom7;
 
 var host="http://localhost/";
+var chatHost = "localhost";
+var chatPort = 9090;
+var connectionType=1;
 var ORDER_BEGIN=1;
 var ORDER_RECEIVED=2;
 var ORDER_HANDLED=4;
 var ORDER_WORKING=8;
 var ORDER_FINISHED=100;
 var ORDER_CANCEL=99;
+
+var userSocket = null;
+
+function initUserConnection(user) {
+    userSocket = new WebSocket("ws://" + chatHost + ":" + chatPort + "/socket/" + connectionType + "/" + user.id);
+    userSocket.onopen = function (event) {
+        console.log("<<<<<<<<<");
+        console.log(user.username + "已经连接成功");
+        console.log(">>>>>>>>>");
+    };
+}
+
+function registerChat(toType,toId) {
+    var user = JSON.parse(localStorage.getItem("currentUser"));
+    app.request({
+            url: "http://"+chatHost + ":" + chatPort + "/chat/"+toType+"/" + user.id + "/" + toId,
+            processData: false,
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            async: false,
+            success: function (data, status, xhr) {
+                if (data instanceof String)
+                    data = JSON.parse(data);
+
+                if (data.flag) {
+                    mainView.router.navigate({
+                        name: 'chat',
+                        params: {id: toId, type: toType},
+                    });
+                }else {
+                    app.dialog.alert(data.message);
+                }
+                
+            }
+        }
+    );
+}
 
 function statusTextMap(status){
     var txt="";
@@ -79,10 +120,10 @@ var app = new Framework7({
             url: 'index.html',
             on:{
                 pageInit:function (e,page) {
-                    alert(1);
+                   
                 },
                 pageReinit:function (e,page) {
-                    alert(1);
+                    init();
                 }
             }
         },
@@ -93,8 +134,116 @@ var app = new Framework7({
         },
         {
             name:'chat',
-            path:'/chat',
-            url:'pages/chat/single.html'
+            path:'/chat/:id/:type',
+            url:'pages/chat/single.html',
+            on:{
+                pageInit:function (e,page){
+                    var id = page.route.params.id;
+                    var type = page.route.params.type;
+                    var flag = false;
+                    app.request({
+                            url: "http://"+chatHost + ":" + chatPort + "/exist/" + type + "/" + id,
+                            processData: false,
+                            method: "GET",
+                            dataType: "json",
+                            contentType: "application/json",
+                            async: false,
+                            success: function (data, status, xhr) {
+                                if (data instanceof String)
+                                    data = JSON.parse(data);
+                                flag = data.flag;
+                                if (!data.flag) {
+                                    app.dialog.alert(data.message);
+                                    mainView.router.back();
+                                }
+
+                            }
+                        }
+                    );
+
+                    var name = "";
+                    var logo = "";
+                    if (flag) {//获取聊天对象信息
+                        app.request({
+                                url: "http://"+chatHost + ":" + chatPort + "/info/" + type + "/" + id,
+                                processData: false,
+                                method: "GET",
+                                dataType: "json",
+                                contentType: "application/json",
+                                async: false,
+                                success: function (data, status, xhr) {
+                                    if (data instanceof String)
+                                        data = JSON.parse(data);
+                                    if (data.flag) {
+                                        id = data.info.id;
+                                        name = data.info.name;
+                                        logo = data.info.logo;
+                                        type = data.info.type;
+                                        afterGetInfo();
+                                    }else {
+                                        app.dialog.alert("系统错误");
+                                        mainView.router.back();
+                                    }
+
+                                }
+                            }
+                        );
+                    }
+                    var messageRecords = $$('#message-record');
+                    //消息接受事件
+                    userSocket.onmessage=function(event){
+                        var data = JSON.parse(event.data);
+                        if(data.messageType===3){//文字消息
+                            var logoUrl = host+"/res/"+logo;
+                            var template="<div class='message message-received'>" +
+                                "<div class='message-avatar' style='background-image:url("+logoUrl+");'></div>" +
+                            "<div class='message-content'>" +
+                            "<div class='message-name'>"+name+"</div>" +
+                            "<div class='message-bubble'>" +
+                            "<div class='message-text'>"+data.content+"</div>" +
+                            "</div>" +
+                            "</div>" +
+                            "</div>";
+                            messageRecords.append(template);
+                        }else if(data.messageType===4){
+
+                        }else return;
+                    };
+                    function afterGetInfo() {
+                        $$('#name-title').html(name);
+                        $$('#send-chat-message').on('click',function () {
+                           var content = $$('#need-send-message').val();
+                           if(content == null || content === "")
+                               app.dialog.alert("消息不能为空！");
+                           else{
+                               var message={};
+                               var user=JSON.parse(localStorage.getItem("currentUser"));
+                               message.content=content;
+                               message.sender=user.id;
+                               message.senderType=1;
+                               message.receiver=id;
+                               message.receiverType=type;
+                               message.messageType=3;//文字
+                               message.resource="";
+                               userSocket.send(JSON.stringify(message));
+                               //消息展示
+                               var template="<div class='message message-sent'>" +
+                                   "<div class='message-content'>" +
+                                   "<div class='message-bubble'>" +
+                                   "<div class='message-text'>"+content+"</div>" +
+                                   "</div>" +
+                                   "</div>" +
+                                   "</div>";
+                               $$('#need-send-message').val("");
+                               $$('#message-record').append(template);
+                           }
+
+                        });
+                    }
+
+                    //TODO 图片发送事件
+                }
+            }
         },
         {
             name:'moment',
@@ -298,7 +447,7 @@ var app = new Framework7({
                             $$('#order-detail-shock').html(shockName);
                             $$('#order-detail-price').html("￥ "+price);
                             $$('#order-detail-amount').html(amount);
-                            $$('#order-detail-keeper').html('<a href="javascript:" data-keeper="'+keeperId+'">点击联系商家</a>');
+                            $$('#order-detail-keeper').html('<a href="javascript:" id="toChat" data-keeper="'+keeperId+'">点击联系商家</a>');
                             $$('#order-detail-createTime').html(timeUtil(timestamp));
                             $$('#order-detail-status').html(currentStatusText);
                             if(status===ORDER_WORKING){
@@ -307,6 +456,10 @@ var app = new Framework7({
                             }else{
                                 $$('#order-status-confirm').hide()
                             }
+                            $$('#toChat').on('click', function () {
+                                    var toId = $$(this).attr("data-keeper");
+                                    registerChat(2,toId);
+                                })
                         }
                     }
                         
@@ -631,6 +784,7 @@ function afterLogin(user) {
     document.querySelector("#panel_user_logo").src=host + '/res/' + user.logo;
     document.querySelector("#panel_user_name").innerHTML=user.username;
     registerWebSocket(user.id);
+    initUserConnection(user);
 }
 
 var mainView = app.views.create('.view-main');

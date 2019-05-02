@@ -6,12 +6,13 @@ package indi.pet.chatting.entity;
  */
 public class Type {
 
-    public final static int USER= 1;
+    public final static int USER = 1;
 
-    public final static int KEEPER=2;
+    public final static int KEEPER = 2;
 
-    public final static int TEXT_MESSAGE=3;
+    public final static int TEXT_MESSAGE = 3;
 
-    public final static int IMAGE_MESSAGE=4;
+    public final static int IMAGE_MESSAGE = 4;
 
+    public final static int SYSTEM_NOTIIFY = 5;
 }

@@ -1,7 +1,6 @@
 var keeperSize=5;
 var accurate=5.0;
-window.onload = function () {
-    function init() {
+function init() {
         // 创建地图
         document.getElementById('container').style.top=0;
         var center = new qq.maps.LatLng(39.0920,117.39811);
@@ -40,6 +39,8 @@ window.onload = function () {
         );
 
     }
+window.onload = function () {
+    
     //调用初始化函数
     init();
 

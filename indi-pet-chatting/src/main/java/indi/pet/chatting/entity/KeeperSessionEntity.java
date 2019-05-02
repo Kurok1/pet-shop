@@ -12,6 +12,8 @@ public class KeeperSessionEntity implements SessionEntity {
 
     private Session session;
 
+    private boolean isLook;
+
     @Override
     public String getId() {
         return keeperId;
@@ -40,5 +42,15 @@ public class KeeperSessionEntity implements SessionEntity {
     @Override
     public int getType() {
         return Type.KEEPER;
+    }
+
+    @Override
+    public boolean isLook() {
+        return this.isLook;
+    }
+
+    @Override
+    public void setLook(boolean look) {
+        this.isLook = look;
     }
 }

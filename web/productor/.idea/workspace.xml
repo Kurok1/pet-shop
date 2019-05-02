@@ -2,17 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dadd8c4-bd82-4977-931b-7b9c3a65460b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/endpoint/ChatEndPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/KeeperSessionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/LeaveInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/SessionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/UserSessionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/util/MessageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/controller/ResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/Shopkeeper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/repository/ResourceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/repository/ShopkeeperRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/util/MD5Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/wrapper/InfoWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/ChattingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/ChattingApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/endpoint/ChatEndPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/endpoint/ChatEndPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/KeeperSessionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/KeeperSessionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/SessionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/SessionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/UserSessionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/UserSessionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../indi-pet-producer/src/main/java/indi/pet/producer/domain/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-chatting/src/main/java/indi/pet/chatting/entity/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/www/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/www/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../consumer/www/pages/chat/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/../consumer/www/pages/chat/single.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/page/chats/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/page/chats/single.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,13 +42,13 @@
     <session id="-1529605458">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -42,13 +57,13 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="html" value="39" />
+          <entry key="html" value="40" />
           <entry key="js" value="5" />
           <entry key="json" value="1" />
           <entry key="md" value="1" />
@@ -58,7 +73,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="39" />
+          <entry key="HTML" value="40" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -67,14 +82,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2621" />
-          <entry key="js" value="6848" />
+          <entry key="html" value="2715" />
+          <entry key="js" value="8468" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2622" />
-          <entry key="JavaScript" value="6847" />
+          <entry key="HTML" value="2716" />
+          <entry key="JavaScript" value="8467" />
         </counts>
       </usages-collector>
     </session>
@@ -84,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-155">
-              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+            <state relative-caret-position="687">
+              <caret line="77" selection-start-line="77" selection-end-line="79" selection-end-column="9" />
               <folding>
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
@@ -94,16 +109,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="381" column="50" lean-forward="true" selection-start-line="381" selection-start-column="50" selection-end-line="381" selection-end-column="50" />
+            <state relative-caret-position="373">
+              <caret line="395" column="54" lean-forward="true" selection-start-line="395" selection-start-column="54" selection-end-line="395" selection-end-column="54" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#2662#2752#0" />
+                <element signature="e#2762#6645#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="e#6655#13304#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#12655#16098#0" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#270#276#0" expanded="true" />
                 <element signature="e#276#282#0" expanded="true" />
                 <element signature="e#283#289#0" expanded="true" />
@@ -112,11 +131,17 @@
                 <element signature="e#276#282#0" expanded="true" />
                 <element signature="e#283#289#0" expanded="true" />
                 <element signature="e#289#295#0" expanded="true" />
-                <element signature="e#19771#23497#0" />
-                <element signature="e#23507#24815#0" />
-                <element signature="e#23621#24805#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/page/chats/single.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -124,7 +149,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/page/order/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="1541">
               <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
             </state>
           </provider>
@@ -164,6 +189,7 @@
       <find>toManage</find>
       <find>shock-manage</find>
       <find>manage-shock</find>
+      <find>navigate</find>
       <find>\&quot;</find>
     </findStrings>
     <replaceStrings>
@@ -179,17 +205,17 @@
         <option value="$PROJECT_DIR$/www/page/cards.html" />
         <option value="$PROJECT_DIR$/www/page/auth/info.html" />
         <option value="$PROJECT_DIR$/www/page/chats/list.html" />
-        <option value="$PROJECT_DIR$/www/page/chats/single.html" />
         <option value="$PROJECT_DIR$/www/page/keeper.html" />
         <option value="$PROJECT_DIR$/www/map.html" />
         <option value="$PROJECT_DIR$/www/page/location.html" />
         <option value="$PROJECT_DIR$/www/page/profile.html" />
         <option value="$PROJECT_DIR$/www/page/shock/add.html" />
         <option value="$PROJECT_DIR$/www/page/shock/manage.html" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/page/order/detail.html" />
         <option value="$PROJECT_DIR$/www/page/order/list.html" />
+        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
+        <option value="$PROJECT_DIR$/www/page/chats/single.html" />
       </list>
     </option>
   </component>
@@ -238,6 +264,13 @@
               <item name="productor" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="productor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="productor" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="chats" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="productor" type="b2602c69:ProjectViewProjectNode" />
@@ -324,11 +357,12 @@
       <workItem from="1555833219218" duration="5164000" />
       <workItem from="1555842313136" duration="1315000" />
       <workItem from="1556628874641" duration="2868000" />
+      <workItem from="1556772675917" duration="14952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82793000" />
+    <option name="totallyTimeSpent" value="97745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -391,13 +425,6 @@
     <entry file="file://$PROJECT_DIR$/www/js/holder.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/page/chats/single.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="10" selection-start-line="1" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/page/location.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -433,6 +460,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/page/order/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/page/order/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1541">
+          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/page/shock/add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1748">
@@ -451,24 +492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/page/order/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/page/order/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+        <state relative-caret-position="687">
+          <caret line="77" selection-start-line="77" selection-end-line="79" selection-end-column="9" />
           <folding>
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
@@ -478,13 +505,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="381" column="50" lean-forward="true" selection-start-line="381" selection-start-column="50" selection-end-line="381" selection-end-column="50" />
+        <state relative-caret-position="373">
+          <caret line="395" column="54" lean-forward="true" selection-start-line="395" selection-start-column="54" selection-end-line="395" selection-end-column="54" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#2662#2752#0" />
+            <element signature="e#2762#6645#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="e#6655#13304#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#12655#16098#0" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="e#270#276#0" expanded="true" />
             <element signature="e#276#282#0" expanded="true" />
             <element signature="e#283#289#0" expanded="true" />
@@ -493,11 +524,15 @@
             <element signature="e#276#282#0" expanded="true" />
             <element signature="e#283#289#0" expanded="true" />
             <element signature="e#289#295#0" expanded="true" />
-            <element signature="e#19771#23497#0" />
-            <element signature="e#23507#24815#0" />
-            <element signature="e#23621#24805#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/page/chats/single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
         </state>
       </provider>
     </entry>

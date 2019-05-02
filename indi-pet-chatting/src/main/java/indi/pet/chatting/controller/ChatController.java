@@ -1,13 +1,21 @@
 package indi.pet.chatting.controller;
 
 import indi.pet.chatting.endpoint.ChatEndPoint;
+import indi.pet.chatting.entity.SessionEntity;
+import indi.pet.chatting.entity.Shopkeeper;
+import indi.pet.chatting.entity.Type;
+import indi.pet.chatting.entity.User;
+import indi.pet.chatting.repository.ShopkeeperRepository;
+import indi.pet.chatting.repository.UserRepository;
+import indi.pet.chatting.wrapper.InfoWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -18,6 +26,28 @@ import java.util.Map;
 public class ChatController {
 
     private ChatEndPoint chatEndPoint;
+
+    private UserRepository userRepository;
+
+    private ShopkeeperRepository shopkeeperRepository;
+
+    public UserRepository getUserRepository() {
+        return userRepository;
+    }
+
+    @Autowired
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public ShopkeeperRepository getShopkeeperRepository() {
+        return shopkeeperRepository;
+    }
+
+    @Autowired
+    public void setShopkeeperRepository(ShopkeeperRepository shopkeeperRepository) {
+        this.shopkeeperRepository = shopkeeperRepository;
+    }
 
     public ChatEndPoint getChatEndPoint() {
         return chatEndPoint;
@@ -63,5 +93,60 @@ public class ChatController {
             }
         }
         return map;
+    }
+
+    @GetMapping("/list/{type}/{id}")
+    public LinkedList<SessionEntity> list(@PathVariable("type") int type, @PathVariable("id") String id) {
+        return getChatEndPoint().getList(type, id);
+    }
+
+    @GetMapping("/exist/{type}/{id}")
+    public Map<String, Object> exist(@PathVariable("type") int type, @PathVariable("id") String id) {
+        Map<String, Object> map = new HashMap<>();
+        if (getChatEndPoint().exist(type, id) != null) {
+            map.put("flag", true);
+        } else {
+            map.put("flag", false);
+            map.put("message", "对方已下线");
+        }
+        return map;
+    }
+
+
+    @GetMapping("/info/{type}/{id}")
+    public Map<String, Object> getInfo(@PathVariable("type") int type, @PathVariable("id") String id) {
+        Map<String, Object> map = new HashMap<>();
+        if (type == Type.USER) {
+            map.put("info", translate(getUserRepository().findOne(id)));
+            map.put("type", "user");
+            map.put("flag", true);
+        } else if (type == Type.KEEPER) {
+            map.put("info", translate(getShopkeeperRepository().findOne(id)));
+            map.put("type", "keeper");
+            map.put("flag", true);
+        } else {
+            map.put("info", null);
+            map.put("type", "");
+            map.put("flag", false);
+        }
+        return map;
+    }
+
+    private InfoWrapper translate(User user) {
+        InfoWrapper wrapper = new InfoWrapper();
+        wrapper.setId(user.getId());
+        wrapper.setLogo(user.getLogo());
+        wrapper.setName(user.getUsername());
+        wrapper.setType(Type.USER);
+        return wrapper;
+    }
+
+    private InfoWrapper translate(Shopkeeper shopkeeper) {
+        InfoWrapper wrapper = new InfoWrapper();
+        wrapper.setId(shopkeeper.getId());
+        wrapper.setLogo(shopkeeper.getLogo());
+        wrapper.setName(shopkeeper.getName());
+        wrapper.setType(Type.KEEPER);
+        return wrapper;
     }
 }

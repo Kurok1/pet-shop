@@ -1,4 +1,4 @@
-package indi.pet.producer.entity;
+package indi.pet.chatting.entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;

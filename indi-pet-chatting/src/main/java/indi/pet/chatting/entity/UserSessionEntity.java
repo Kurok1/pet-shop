@@ -11,6 +11,8 @@ public class UserSessionEntity implements SessionEntity{
 
     private Session session;
 
+    private boolean isLook;
+
     @Override
     public String getId() {
         return userId;
@@ -39,5 +41,15 @@ public class UserSessionEntity implements SessionEntity{
     @Override
     public int getType() {
         return Type.USER;
+    }
+
+    @Override
+    public boolean isLook() {
+        return this.isLook;
+    }
+
+    @Override
+    public void setLook(boolean look) {
+        this.isLook = look;
     }
 }

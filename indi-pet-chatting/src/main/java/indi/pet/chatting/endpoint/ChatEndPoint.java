@@ -87,6 +87,12 @@ public class ChatEndPoint {
     }
 
     private void closeSession(SessionEntity sessionEntity) {
+        try {
+            if(sessionEntity.getSession().isOpen())
+                sessionEntity.getSession().close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         sessions.remove(sessionEntity);
     }
 
@@ -120,19 +126,22 @@ public class ChatEndPoint {
     @OnMessage
     public void onMessage(String message) {
         Message messageEntity = MessageUtil.toMessage(message);
+        messageEntity.setTimestamp(System.currentTimeMillis()/1000);
         if (messageEntity.getSenderType() == Type.USER) {//用户发起
             LinkedList<SessionEntity> list = userChatList.get(messageEntity.getSender());
             //查找对应的session
             if (list == null) {//对方已经下线
                 notifyLeaved(messageEntity.getSender(), Type.USER);
-            } else return;
+                return;
+            }
             SessionEntity entity = findSessionEntity(list, messageEntity.getReceiver(), messageEntity.getReceiverType());
             sendMessage(messageEntity, entity);
         } else if (messageEntity.getSenderType() == Type.KEEPER) {//商家发起
             LinkedList<SessionEntity> list = keeperChatList.get(messageEntity.getSender());
             if (list == null) {//对方已经下线
                 notifyLeaved(messageEntity.getSender(), Type.KEEPER);
-            } else return;
+                return;
+            }
             SessionEntity entity = findSessionEntity(list, messageEntity.getReceiver(), messageEntity.getReceiverType());
             sendMessage(messageEntity, entity);
         }
@@ -174,12 +183,15 @@ public class ChatEndPoint {
         LinkedList<SessionEntity> toList = userChatList.get(toId);
 
         synchronized (this) {//并发控制
-            if (findSessionEntity(fromList, toId, Type.USER) == null) {
+            SessionEntity entity = findSessionEntity(fromList, toId, Type.USER);
+            if (entity == null || !entity.isOpen()) {
+                fromList.remove(entity);
                 fromList.add(to);
                 userChatList.put(fromId, fromList);
             }
-
-            if (findSessionEntity(toList, fromId, Type.USER) == null) {
+            entity = findSessionEntity(toList, fromId, Type.USER);
+            if (entity == null || !entity.isOpen()) {
+                toList.remove(entity);
                 toList.add(from);
                 userChatList.put(toId, toList);
             }
@@ -190,24 +202,39 @@ public class ChatEndPoint {
 
     public boolean userConnectToKeeper(String fromId, String toId) {
         UserSessionEntity from = (UserSessionEntity) findSessionEntity(fromId, Type.USER);
-        UserSessionEntity to = (UserSessionEntity) findSessionEntity(toId, Type.KEEPER);
+        KeeperSessionEntity to = (KeeperSessionEntity) findSessionEntity(toId, Type.KEEPER);
         if (from == null && to == null)
             return false;
         LinkedList<SessionEntity> fromList = userChatList.get(fromId);
         LinkedList<SessionEntity> toList = keeperChatList.get(toId);
 
         synchronized (this) {//并发控制
-            if (findSessionEntity(fromList, toId, Type.USER) == null) {
+            SessionEntity entity = findSessionEntity(fromList, toId, Type.KEEPER);
+            if (entity == null || !entity.isOpen()) {
+                fromList.remove(entity);
                 fromList.add(to);
                 userChatList.put(fromId, fromList);
             }
-
-            if (findSessionEntity(toList, fromId, Type.USER) == null) {
+            entity = findSessionEntity(toList, fromId, Type.USER);
+            if (entity == null || !entity.isOpen()) {
+                toList.remove(entity);
                 toList.add(from);
                 keeperChatList.put(toId, toList);
             }
         }
 
         return true;
+    }
+
+    public LinkedList<SessionEntity> getList(int type,String id){
+        if(type==Type.USER)
+            return userChatList.get(id);
+        else if(type==Type.KEEPER)
+            return keeperChatList.get(id);
+        else return null;
+    }
+
+    public SessionEntity exist(int type,String id){
+        return findSessionEntity(id, type);
     }
 }
