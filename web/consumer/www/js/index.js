@@ -98,6 +98,7 @@ function timeUtil(timestamp) {
     return Y+M+D+h+m+s;
 }
 
+
 var app = new Framework7({
     // App root element
     root: '#app',
@@ -120,7 +121,7 @@ var app = new Framework7({
             url: 'index.html',
             on:{
                 pageInit:function (e,page) {
-                   
+                   init();
                 },
                 pageReinit:function (e,page) {
                     init();
@@ -206,8 +207,26 @@ var app = new Framework7({
                             "</div>";
                             messageRecords.append(template);
                         }else if(data.messageType===4){
-
-                        }else return;
+                            var logoUrl = host+"/res/"+logo;
+                            var imgUrl = host + '/res/' + data.resource
+                            var template="<div class='message message-received'>" +
+                                "<div class='message-avatar' style='background-image:url("+logoUrl+");'></div>" +
+                                "<div class='message-content'>" +
+                                "<div class='message-bubble'>" +
+                                "<div class='message-image'><img src='"+ imgUrl +"' style='max-width:200px;'></div>" +
+                                "</div>" +
+                                "</div>" +
+                                "</div>";
+                            messageRecords.append(template);
+                        }else if(data.leaved){
+                            var notifyLeaved = app.notification.create({
+                                title: '对方已下线',
+                                titleRightText: 'now',
+                                text: name+" 已经下线",
+                                closeTimeout: 3000,
+                            });
+                            notifyLeaved.open();
+                        }
                     };
                     function afterGetInfo() {
                         $$('#name-title').html(name);
@@ -239,9 +258,36 @@ var app = new Framework7({
                            }
 
                         });
+
+                        $$('#chat-add-img').on('change',function(){
+                            var imgList = asyncUploadFiles("#chat_img_form");
+                            if (imgList.length !== 0) {
+                                var resource = imgList.pop()[0];
+                                if (resource instanceof String)
+                                    resource = JSON.parse(resource);
+                                var message={};
+                               var user=JSON.parse(localStorage.getItem("currentUser"));
+                               message.content="";
+                               message.sender=user.id;
+                               message.senderType=1;
+                               message.receiver=id;
+                               message.receiverType=type;
+                               message.messageType=4;//图片
+                               message.resource=resource.id;
+                               userSocket.send(JSON.stringify(message));
+                                var template="<div class='message message-sent'>" +
+                                    "<div class='message-content'>" +
+                                    "<div class='message-bubble'>" +
+                                    "<div class='message-image'><img src='"+ host + '/res/' + resource.id +"' style='max-width:200px;'></div>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</div>";
+                                $$('#message-record').append(template);
+                            }
+                            document.querySelector("#chat-add-img").value = "";
+                        })
                     }
 
-                    //TODO 图片发送事件
                 }
             }
         },
@@ -682,7 +728,7 @@ function asyncUploadFiles(ele){
             if (data.flag == true) {
                 list.push(data.data);
             }
-            app.dialog.alert(data.message);
+            // app.dialog.alert(data.message);
         }
     });
     return list;

@@ -42,6 +42,6 @@ function init() {
 window.onload = function () {
     
     //调用初始化函数
-    init();
+    // init();
 
 };

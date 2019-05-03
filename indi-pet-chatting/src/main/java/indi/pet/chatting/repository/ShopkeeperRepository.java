@@ -12,5 +12,5 @@ import java.util.stream.Stream;
  */
 @Repository
 public interface ShopkeeperRepository extends ElasticsearchRepository<Shopkeeper,String> {
-
+    Stream<Shopkeeper> findByIdIn(Iterable<String> ids);
 }

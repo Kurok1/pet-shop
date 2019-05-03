@@ -16,6 +16,16 @@ public class InfoWrapper implements Serializable {
 
     private Integer type;
 
+    private String timestamp;
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public String getId() {
         return id;
     }

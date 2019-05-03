@@ -24,4 +24,8 @@ public interface SessionEntity extends Serializable {
     public boolean isLook();
 
     public void setLook(boolean look);
+
+    public String getLastTimeStamp();
+
+    public void setLastTimeStamp(String timeStamp);
 }

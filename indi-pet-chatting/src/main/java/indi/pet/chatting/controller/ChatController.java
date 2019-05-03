@@ -14,9 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author <a href="chan@ittx.com.cn">韩超</a>
@@ -96,8 +95,47 @@ public class ChatController {
     }
 
     @GetMapping("/list/{type}/{id}")
-    public LinkedList<SessionEntity> list(@PathVariable("type") int type, @PathVariable("id") String id) {
-        return getChatEndPoint().getList(type, id);
+    public List<InfoWrapper> list(@PathVariable("type") int type, @PathVariable("id") String id) {
+        List<SessionEntity> entities = getChatEndPoint().getList(type, id);
+        Map<Integer,List<String>> typeIdsMap = new HashMap<>();
+        entities.forEach(
+            sessionEntity -> {
+                if(!typeIdsMap.containsKey(sessionEntity.getType()))
+                    typeIdsMap.put(sessionEntity.getType(),new LinkedList<>());
+                List<String> ids=typeIdsMap.get(sessionEntity.getType());
+                ids.add(sessionEntity.getId());
+                typeIdsMap.put(sessionEntity.getType(),ids);
+            }
+        );
+        final Map<String,String> idTimeMap = new HashMap<>();
+        entities.forEach(
+            sessionEntity -> idTimeMap.put(sessionEntity.getId(),sessionEntity.getLastTimeStamp())
+        );
+        List<InfoWrapper> wrappers = new LinkedList<>();
+
+        typeIdsMap.forEach(
+            (key,value)->{
+                if(key==Type.USER){
+                    wrappers.addAll(getUserRepository().findByIdIn(value).map(
+                        user->{
+                            InfoWrapper wrapper = translate(user);
+                            wrapper.setTimestamp(idTimeMap.get(user.getId()));
+                            return wrapper;
+                        }
+                    ).collect(Collectors.toList()));
+                }else if(key==Type.KEEPER){
+                    wrappers.addAll(getShopkeeperRepository().findByIdIn(value).map(
+                        user->{
+                            InfoWrapper wrapper = translate(user);
+                            wrapper.setTimestamp(idTimeMap.get(user.getId()));
+                            return wrapper;
+                        }
+                    ).collect(Collectors.toList()));
+                }
+            }
+        );
+
+        return wrappers;
     }
 
     @GetMapping("/exist/{type}/{id}")

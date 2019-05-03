@@ -10,6 +10,8 @@ import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -68,7 +70,7 @@ public class ChatEndPoint {
         else entity = new KeeperSessionEntity();
         entity.setId(id);
         entity.setSession(session);
-
+        entity.setLastTimeStamp(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd : hh:mm:ss")));
         sessions.add(entity);
     }
 
@@ -135,6 +137,7 @@ public class ChatEndPoint {
                 return;
             }
             SessionEntity entity = findSessionEntity(list, messageEntity.getReceiver(), messageEntity.getReceiverType());
+            entity.setLastTimeStamp(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd : hh:mm:ss")));
             sendMessage(messageEntity, entity);
         } else if (messageEntity.getSenderType() == Type.KEEPER) {//商家发起
             LinkedList<SessionEntity> list = keeperChatList.get(messageEntity.getSender());
@@ -143,6 +146,7 @@ public class ChatEndPoint {
                 return;
             }
             SessionEntity entity = findSessionEntity(list, messageEntity.getReceiver(), messageEntity.getReceiverType());
+            entity.setLastTimeStamp(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd : hh:mm:ss")));
             sendMessage(messageEntity, entity);
         }
     }

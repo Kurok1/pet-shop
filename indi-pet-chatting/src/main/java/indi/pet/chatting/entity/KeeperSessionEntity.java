@@ -14,6 +14,8 @@ public class KeeperSessionEntity implements SessionEntity {
 
     private boolean isLook;
 
+    private String timestamp;
+
     @Override
     public String getId() {
         return keeperId;
@@ -35,7 +37,7 @@ public class KeeperSessionEntity implements SessionEntity {
     }
 
     @Override
-    public boolean isOpen(){
+    public boolean isOpen() {
         return session.isOpen();
     }
 
@@ -52,5 +54,15 @@ public class KeeperSessionEntity implements SessionEntity {
     @Override
     public void setLook(boolean look) {
         this.isLook = look;
+    }
+
+    @Override
+    public String getLastTimeStamp() {
+        return timestamp;
+    }
+
+    @Override
+    public void setLastTimeStamp(String timeStamp) {
+        this.timestamp = timeStamp;
     }
 }

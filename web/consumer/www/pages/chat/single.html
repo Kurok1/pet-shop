@@ -13,9 +13,13 @@
     </div>
     <div class="toolbar messagebar">
         <div class="toolbar-inner">
-            <a class="link toggle-sheet" href="#">
-                <i class="icon f7-icons if-not-md">camera_fill</i>
-            </a>
+            <form id="chat_img_form" enctype="multipart/form-data">
+                <label for="chat-add-img" class="link toggle-sheet" >
+                    <i class="icon f7-icons if-not-md">camera_fill</i>
+                    <i class="icon material-icons md-only">camera_fill</i>
+                </label>
+                <input type="file" name="files" id="chat-add-img" style="display: none;">
+            </form>
             <div class="messagebar-area">
                 <textarea placeholder="Message" id="need-send-message"></textarea>
             </div>

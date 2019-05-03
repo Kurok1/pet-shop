@@ -13,6 +13,8 @@ public class UserSessionEntity implements SessionEntity{
 
     private boolean isLook;
 
+    private String timestamp;
+
     @Override
     public String getId() {
         return userId;
@@ -51,5 +53,15 @@ public class UserSessionEntity implements SessionEntity{
     @Override
     public void setLook(boolean look) {
         this.isLook = look;
+    }
+
+    @Override
+    public String getLastTimeStamp() {
+        return timestamp;
+    }
+
+    @Override
+    public void setLastTimeStamp(String timeStamp) {
+        this.timestamp = timeStamp;
     }
 }
