@@ -1,0 +1,5 @@
+rootProject.name = 'petshop'
+include 'petshop-chatting'
+include 'petshop-consumer'
+include 'petshop-producer'
+
