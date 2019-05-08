@@ -223,3 +223,60 @@ consumer&productor：
 下周计划任务（4-22至4-26）
 
 - [ ] 搭建聊天系统
+
+***
+
+**项目结算**
+
+项目已经全部完成,github上代码结构如下
+
+```shell
+.
+├── _document                                # 产品说明书
+├── _images                                  # 存放README.md文档支持的图片
+├── _indi-pet-chatting                       # 聊天系统工程文件
+|   ├── _src                                 # 聊天系统源代码
+|   |   ├── _main                            # 主程序代码
+|   |   |   ├── _java                        # 源代码 java版本
+|   |   |   └── _resources                   # 配置文件存放位置
+|   |   |       └── application.properties   # 主配置文件
+|   |   └── _test                            # 测试程序主代码
+|   └── pom.xml                              # 聊天系统项目构建文件,依赖...
+├── _indi-pet-consumer                       # 用户模块工程文件
+|   ├── _src                                 # 用户模块源代码
+|   |   ├── _main                            # 主程序代码
+|   |   |   ├── _java                        # 源代码 java版本
+|   |   |   └── _resources                   # 配置文件存放位置
+|   |   |       └── application.properties   # 主配置文件
+|   |   └── _test                            # 测试程序主代码
+|   └── pom.xml                              # 用户模块项目构建文件,依赖...
+├── _indi-pet-producer                       # 商家模块工程文件
+|   ├── _src                                 # 商家模块源代码
+|   |   ├── _main                            # 主程序代码
+|   |   |   ├── _java                        # 源代码 java版本
+|   |   |   └── _resources                   # 配置文件存放位置
+|   |   |       └── application.properties   # 主配置文件
+|   |   └── _test                            # 测试程序主代码
+|   └── pom.xml                              # 商家模块项目构建文件,依赖...
+├── _petshop                                 # 最终程序工程文件
+|   ├── _petshop-chatting                    # 聊天模块
+|   └── _petshop-consumer                    # 用户模块
+|   └── _petshop-producer                    # 商家模块
+|   └── _src                                 # 商家模块源代码
+|       ├── _main                            # 主程序代码
+|       |   ├── _java                        # 源代码 java版本
+|       |   └── _resources                   # 配置文件存放位置
+|       |       └── application.properties   # 主配置文件
+|       └── _test                            # 测试程序主代码
+|   └── build.gradle                         # 项目构建文件,依赖...
+|   └── settings.gradle                      # 项目设置
+├── _web                                     # 前度代码
+|   ├── _consumer                            # 用户前端页面
+|       └── _www                             # 主页面代码
+|   └── _productor                           # 商家前端页面
+|       └── _www                             # 主页面代码
+|   └── _test                                # 测试用
+├── _pet_shop_backup                         # Elasticsearch备份文件
+└── README.md                                # 说明文档
+```
+
