@@ -28,9 +28,9 @@ var ORDER_WORKING = 8;
 var ORDER_FINISHED = 100;
 var ORDER_CANCEL = 99;
 
-var host = "http://localhost:8080/";
+var host = "http://localhost/producer";
 var basicHost = "127.0.0.1";
-var basicPort = 8080;
+var basicPort = 80;
 var chatHost = "localhost";
 var chatPort = 9090;
 var currentShocksPage = 1;//当前为第一页

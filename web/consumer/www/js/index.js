@@ -19,7 +19,7 @@
 
 var $$=Dom7;
 
-var host="http://localhost/";
+var host="http://localhost/consumer/";
 var chatHost = "localhost";
 var chatPort = 9090;
 var connectionType=1;
