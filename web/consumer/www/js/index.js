@@ -21,7 +21,7 @@ var $$=Dom7;
 
 var host="http://localhost/consumer/";
 var chatHost = "localhost";
-var chatPort = 9090;
+var chatPort = 80;
 var connectionType=1;
 var ORDER_BEGIN=1;
 var ORDER_RECEIVED=2;
@@ -29,6 +29,46 @@ var ORDER_HANDLED=4;
 var ORDER_WORKING=8;
 var ORDER_FINISHED=100;
 var ORDER_CANCEL=99;
+
+function init() {
+    // 创建地图
+    document.getElementById('container').style.top=0;
+    var center = new qq.maps.LatLng(39.0920,117.39811);
+    var map = new qq.maps.Map(document.getElementById('container'),{
+        center: center,
+        zoom: 13,
+        draggable:false
+    });
+    var userLocationInfo={
+        "latitude":39.09204,
+        "longitude":117.09813,
+        "accurate":accurate
+    };
+    app.request({url:host+"shock/get?token="+localStorage.getItem("currentUserToken")+"&size="+keeperSize,
+        data:JSON.stringify(userLocationInfo),
+        processData:false,
+        method:"POST",
+        dataType:"json",
+        contentType:"application/json",
+        async:false,
+        success:function(data, status, xhr){
+            if(data instanceof String)
+                data=JSON.parse(data);
+            var shocks=data.shocks;
+            for (var i in shocks){
+                var shock=shocks[i];
+                var infoWin = new qq.maps.InfoWindow({
+                    map: map
+                });
+                infoWin.open();
+                infoWin.setContent("<p class='shock'><a href='/shock/detail/"+shock.shock.id+"'><img src='"+host+"/res/"+shock.shopkeeperLogo+"' width='50'/></a></p>");
+                infoWin.setPosition(new qq.maps.LatLng(shock.latitude,shock.longitude));
+            }
+
+        }}
+    );
+
+}
 
 var userSocket = null;
 
@@ -622,6 +662,7 @@ var app = new Framework7({
                                     data = JSON.parse(data);//转json
                                 var shock = data.shock;
                                 $$('#shock-title').html(shock.title);
+                                $$('#keeper-title').html("<a href='/shock/list/"+shock.shopkeeperId+"'>"+data.shopkeeperName+"</a>")
                                 $$('#shock-shopkeeper').val(shock.shopkeeperId);
                                 $$('#shock_price').html("￥" + shock.price);
                                 $$('#shock-price-total').html("共计：￥"+shock.price);
@@ -678,6 +719,52 @@ var app = new Framework7({
                             }}
                         );
                     });
+                }
+            }
+        },
+        {
+            name:'shocks',
+            path:'/shock/list/:id',
+            url:'pages/shock/list.html',
+            on:{
+                pageInit:function (e,page) {
+                    var keeper = page.route.params.id;
+                    app.request({url:host+"/shock/list/"+keeper+"?token="+localStorage.getItem("currentUserToken"),
+                        processData:false,
+                        method:"GET",
+                        dataType:"json",
+                        contentType:"application/json",
+                        async:false,
+                        success:function(data, status, xhr){
+                            if(data instanceof String)
+                                data=JSON.parse(data);//转json
+                            $$('#shocks-list').find(".toDetail").remove();
+                            var shocks = data.shocks;
+                            for (var i in shocks){
+                                var shock = shocks[i];
+                                var template = "<div class='card toDetail' data-id='"+shock.shock.id+"'>" +
+                                    "<div class='card-header align-items-flex-end'>" +
+                                    "<img src='"+host + "/res/" + shock.shock.logo+"' width='34' height='34' alt=''>"+ shock.shock.title +
+                                    "</div>" +
+                                    "<div class='card-content card-content-padding'>" +
+                                    "<p class='date'>发布时间 ： "+timeUtil(shock.shock.timestamp)+"</p>" +
+                                    "<p>"+shock.shock.text+"</p>" +
+                                    "</div>" +
+                                    "<div class='card-footer'><a href='javascript:' class='f7-color-green link'>￥"+shock.shock.price+"</a></div>" +
+                                    "</div>"
+                                $$('#shocks-list').append(template);
+                            }
+                            $$('.toDetail').on('click',function(){
+                                var id = $$(this).attr("data-id");
+                                mainView.router.navigate({
+                                    name:'shock-detail',
+                                    params:{
+                                        "id":id
+                                    }
+                                })
+                            })
+                        }}
+                    );
                 }
             }
         }
@@ -768,6 +855,11 @@ function addComment(root,messageId,ele) {//root为父级评论id
                     ele.append(html);
                 }
                 app.dialog.alert(data.message);
+                $$('.comments').on('click',function () {
+                    var id=$$(this).attr("data-id");
+                    var appendObj=$$(this).find("ul");
+                    addComment(id,messageId,appendObj);
+                });
             }}
         );
     },function (value) {

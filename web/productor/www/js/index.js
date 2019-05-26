@@ -32,7 +32,7 @@ var host = "http://localhost/producer";
 var basicHost = "127.0.0.1";
 var basicPort = 80;
 var chatHost = "localhost";
-var chatPort = 9090;
+var chatPort = 80;
 var currentShocksPage = 1;//当前为第一页
 var hasNext = true;
 

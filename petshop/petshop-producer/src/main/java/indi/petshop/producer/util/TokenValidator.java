@@ -24,7 +24,7 @@ public class TokenValidator {
 
     static {
         redisTemplate= BeanUtil.getBean("redisTemplate",RedisTemplate.class);
-        shopkeeperService=BeanUtil.getBean("shopkeeperService",ShopkeeperService.class);
+        shopkeeperService=BeanUtil.getBean("producerShopkeeperService",ShopkeeperService.class);
     }
 
     /**

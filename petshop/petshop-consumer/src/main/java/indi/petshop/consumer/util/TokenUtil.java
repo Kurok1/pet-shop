@@ -20,7 +20,7 @@ public class TokenUtil {
 
     static {
         redisTemplate=BeanUtil.getBean("redisTemplate",RedisTemplate.class);
-        userService=BeanUtil.getBean("userService",UserService.class);
+        userService=BeanUtil.getBean("consumerUserService",UserService.class);
     }
 
     /**

@@ -52,7 +52,7 @@ public class ShockController {
         if(!TokenUtil.validate(token))
             throw new TokenExpiredException();
         ShocksApiWrapper shocksApiWrapper=new ShocksApiWrapper();
-        //TODO 处理数据
+
         double maxLat=locationInfoWrapper.getLatitude()+locationInfoWrapper.getAccurate();
         double minLat=locationInfoWrapper.getLatitude()-locationInfoWrapper.getAccurate();
         double maxLng=locationInfoWrapper.getLongitude()+locationInfoWrapper.getAccurate();
@@ -142,5 +142,36 @@ public class ShockController {
         shockWrapper.setLatitude(shopkeeper.getLatitude());
         shockWrapper.setLongitude(shopkeeper.getLongitude());
         return shockWrapper;
+    }
+
+    @GetMapping("/list/{shopkeeperId}")
+    public ShocksApiWrapper getByShopkeeper(@RequestParam("token")String token,@PathVariable("shopkeeperId")String shopkeeperId){
+        if(!TokenUtil.validate(token))
+            throw new TokenExpiredException();
+        List<String> shopkeeperIds = new LinkedList<>();
+        shopkeeperIds.add(shopkeeperId);
+        Shopkeeper shopkeeper = getShopkeeperService().getOne(shopkeeperId);
+        Stream<Shock> shockStream = getShockService().findByShopkeeper(shopkeeperIds);
+        List<ShockWrapper> list = new LinkedList<>();
+        shockStream.forEach(
+            item->{
+                ShockWrapper wrapper = new ShockWrapper();
+
+                wrapper.setShock(item);
+                wrapper.setShopkeeperId(shopkeeperId);
+                wrapper.setShopkeeperLogo(shopkeeper.getLogo());
+                wrapper.setShopkeeperName(shopkeeper.getName());
+                wrapper.setLatitude(shopkeeper.getLatitude());
+                wrapper.setLongitude(shopkeeper.getLongitude());
+
+                list.add(wrapper);
+            }
+        );
+
+        ShocksApiWrapper shocksApiWrapper = new ShocksApiWrapper();
+        shocksApiWrapper.setShocks(list);
+        shocksApiWrapper.setSize(list.size());
+
+        return shocksApiWrapper;
     }
 }

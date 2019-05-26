@@ -11,7 +11,7 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "indi.petshop")
 @EnableElasticsearchRepositories
 public class PetshopApplication {
 
