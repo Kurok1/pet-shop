@@ -2,182 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91f9dbbb-88a0-4dc3-9831-c3f138d530bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../document/产品说明书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../document/产品说明书.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ShockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../indi-pet-consumer/src/main/java/indi/pet/consumer/controller/ShockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/controller/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/controller/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/endpoint/ChatEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/endpoint/ChatEndPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/util/MessageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/java/main/indi/petshop/chatting/util/MessageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/controller/ChatController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/controller/ResourceController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/endpoint/ChatEndPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/KeeperSessionEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/LeaveInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/SessionEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/Shopkeeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/Type.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/entity/UserSessionEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/repository/ResourceRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/repository/ShopkeeperRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/util/MessageUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/classes/main/indi/petshop/chatting/wrapper/InfoWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/libs/petshop-chatting-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/libs/petshop-chatting-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/libs/petshop-chatting-1.0.0.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/libs/petshop-chatting-1.0.0.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/libs/petshop-chatting-1.0.0.RELEASE.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/build/libs/petshop-chatting-1.0.0.RELEASE.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/META-INF/petshop.petshop-chatting.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/controller/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/controller/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/controller/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/endpoint/ChatEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/endpoint/ChatEndPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/util/MessageUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/out/production/classes/indi/petshop/chatting/util/MessageUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/PetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/PetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/ShockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/ShockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/endpoint/UserOrderServerPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/endpoint/UserOrderServerPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/listener/OrderStatusListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/listener/OrderStatusListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/service/ResourceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/util/BeanUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/util/BeanUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/util/TokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/java/main/indi/petshop/consumer/util/TokenUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/CommentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/MessageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/PetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/ResourceController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/ShockController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Pet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Shock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/Shopkeeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/endpoint/UserOrderServerPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/exception/TokenExpiredException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/listener/OrderStatusListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/CommentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/MessageRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/OrderRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/PetRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/ResourceRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/ShockRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/ShopkeeperRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/CommentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/MessageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/PetService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/ResourceService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/ShockService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/ShopkeeperService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/util/BeanUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/util/OrderStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/util/TokenUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/wrapper/LocationInfoWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/wrapper/OrderWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/wrapper/ShockWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/classes/main/indi/petshop/consumer/wrapper/ShocksApiWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/libs/petshop-consumer-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/libs/petshop-consumer-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/libs/petshop-consumer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/build/libs/petshop-consumer-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/META-INF/petshop.petshop-consumer.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/MessageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/PetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/PetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/ShockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/ShockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/endpoint/UserOrderServerPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/endpoint/UserOrderServerPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/listener/OrderStatusListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/listener/OrderStatusListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/service/ResourceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/util/BeanUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/util/BeanUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/util/TokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/out/production/classes/indi/petshop/consumer/util/TokenUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/src/main/java/indi/petshop/consumer/controller/ShockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/src/main/java/indi/petshop/consumer/controller/ShockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-consumer/src/main/java/indi/petshop/consumer/util/TokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-consumer/src/main/java/indi/petshop/consumer/util/TokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/ShockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/ShockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/ShopkeeperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/controller/ShopkeeperController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/endpoint/OrderServerEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/endpoint/OrderServerEndPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/listener/OrderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/listener/OrderListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/service/ResourceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/util/BeanUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/util/BeanUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/util/TokenValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/java/main/indi/petshop/producer/util/TokenValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/controller/HandleExceptionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/controller/PetController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/controller/ResourceController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/controller/ShockController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/controller/ShopkeeperController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Pet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Shock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/Shopkeeper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/endpoint/OrderServerEndPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/exception/TokenAndIdNotEqualsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/exception/TokenExpiredException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/listener/OrderListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/repository/OrderRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/repository/PetRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/repository/ResourceRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/repository/ShockRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/repository/ShopkeeperRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/service/PetService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/service/ResourceService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/service/ShockService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/service/ShopkeeperService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/util/BeanUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/util/OrderStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/util/TokenValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/wrapper/OrderStatusWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/classes/main/indi/petshop/producer/wrapper/OrderWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/libs/petshop-producer-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/libs/petshop-producer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/libs/petshop-producer-1.0.0.RELEASET.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/libs/petshop-producer-1.0.0.RELEASET.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/build/libs/petshop-producer-1.0.0.RELEASET.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/build/libs/petshop-producer-1.0.0.RELEASET.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/META-INF/petshop.petshop-producer.main.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/ResourceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/ShockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/ShockController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/ShopkeeperController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/controller/ShopkeeperController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/endpoint/OrderServerEndPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/endpoint/OrderServerEndPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/listener/OrderListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/listener/OrderListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/service/ResourceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/util/BeanUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/util/BeanUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/util/MD5Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/util/MD5Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/util/TokenValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/out/production/classes/indi/petshop/producer/util/TokenValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/petshop-producer/src/main/java/indi/petshop/producer/util/TokenValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/petshop-producer/src/main/java/indi/petshop/producer/util/TokenValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../petshop/src/main/java/indi/petshop/PetshopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../petshop/src/main/java/indi/petshop/PetshopApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../petshop/petshop-chatting/src/main/java/indi/petshop/chatting/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/pages/shock/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/pages/shock/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../productor/www/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../productor/www/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/pages/friends.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/pages/friends.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -193,31 +20,31 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="35" />
-          <entry key="html" value="1976" />
-          <entry key="js" value="8879" />
+          <entry key="html" value="2035" />
+          <entry key="js" value="9485" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="35" />
-          <entry key="HTML" value="1985" />
-          <entry key="JavaScript" value="8870" />
+          <entry key="HTML" value="2044" />
+          <entry key="JavaScript" value="9476" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="28" />
+          <entry key="html" value="32" />
           <entry key="js" value="10" />
-          <entry key="ts" value="3" />
+          <entry key="ts" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="28" />
+          <entry key="HTML" value="32" />
           <entry key="JavaScript" value="10" />
-          <entry key="TypeScript" value="3" />
+          <entry key="TypeScript" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -230,6 +57,7 @@
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -238,12 +66,12 @@
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.53" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="1" />
+          <entry key="TypeScriptServerServiceImpl" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -253,10 +81,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8781">
-              <caret line="731" column="44" selection-start-line="731" selection-start-column="44" selection-end-line="731" selection-end-column="44" />
+            <state relative-caret-position="480">
+              <caret line="686" column="40" selection-start-line="686" selection-start-column="40" selection-end-line="686" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#5093#5191#0" />
+                <element signature="e#5201#13526#0" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -264,15 +94,22 @@
                 <element signature="e#13536#16534#0" />
                 <element signature="e#16544#20761#0" />
                 <element signature="e#20771#21757#0" />
-                <element signature="e#21767#25893#0" />
                 <element signature="e#25903#28632#0" />
-                <element signature="e#28642#28747#0" />
                 <element signature="n#!!block;n#asyncUploadFiles#0" />
                 <element signature="e#285#291#0" expanded="true" />
                 <element signature="e#291#297#0" expanded="true" />
                 <element signature="e#298#304#0" expanded="true" />
                 <element signature="e#304#310#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/friends.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="48" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -307,13 +144,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2760">
+            <state relative-caret-position="618">
               <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/pages/moment/add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="24" column="14" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="24" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -351,7 +197,6 @@
         <option value="$PROJECT_DIR$/www/js/css/index.css" />
         <option value="$PROJECT_DIR$/www/pages/map.html" />
         <option value="$PROJECT_DIR$/www/pages/chat/single.html" />
-        <option value="$PROJECT_DIR$/www/pages/friends.html" />
         <option value="$PROJECT_DIR$/www/pages/user.html" />
         <option value="$PROJECT_DIR$/www/pages/moment/add.html" />
         <option value="$PROJECT_DIR$/www/pages/moment/detail.html" />
@@ -362,6 +207,7 @@
         <option value="$PROJECT_DIR$/www/pages/order/list.html" />
         <option value="$PROJECT_DIR$/www/pages/order/detail.html" />
         <option value="$PROJECT_DIR$/www/pages/shock/list.html" />
+        <option value="$PROJECT_DIR$/www/pages/friends.html" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
       </list>
     </option>
@@ -386,7 +232,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -442,7 +288,7 @@
               <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="shock" type="462c0819:PsiDirectoryNode" />
+              <item name="moment" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -545,11 +391,12 @@
       <workItem from="1558789601238" duration="761000" />
       <workItem from="1558842133778" duration="358000" />
       <workItem from="1558858610005" duration="630000" />
+      <workItem from="1558961904043" duration="4707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128186000" />
+    <option name="totallyTimeSpent" value="132893000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,6 +409,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -719,13 +567,6 @@
     <entry file="file://$PROJECT_DIR$/www/js/holder.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/friends.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1610">
-          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/components/swipeout/swipeout.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -737,13 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="116" selection-start-line="116" selection-end-line="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/pages/moment/add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="46" column="77" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -790,31 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8781">
-          <caret line="731" column="44" selection-start-line="731" selection-start-column="44" selection-end-line="731" selection-end-column="44" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#13536#16534#0" />
-            <element signature="e#16544#20761#0" />
-            <element signature="e#20771#21757#0" />
-            <element signature="e#21767#25893#0" />
-            <element signature="e#25903#28632#0" />
-            <element signature="e#28642#28747#0" />
-            <element signature="n#!!block;n#asyncUploadFiles#0" />
-            <element signature="e#285#291#0" expanded="true" />
-            <element signature="e#291#297#0" expanded="true" />
-            <element signature="e#298#304#0" expanded="true" />
-            <element signature="e#304#310#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/pages/shock/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -838,12 +647,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
+        <state relative-caret-position="618">
           <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
           <folding>
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/moment/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="24" column="14" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/pages/friends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="48" lean-forward="true" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/components/dialog/dialog.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="126" column="6" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="686" column="40" selection-start-line="686" selection-start-column="40" selection-end-line="686" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#5093#5191#0" />
+            <element signature="e#5201#13526#0" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#13536#16534#0" />
+            <element signature="e#16544#20761#0" />
+            <element signature="e#20771#21757#0" />
+            <element signature="e#25903#28632#0" />
+            <element signature="n#!!block;n#asyncUploadFiles#0" />
+            <element signature="e#285#291#0" expanded="true" />
+            <element signature="e#291#297#0" expanded="true" />
+            <element signature="e#298#304#0" expanded="true" />
+            <element signature="e#304#310#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author <a href="maimengzzz@gmail.com">韩超</a>
@@ -99,5 +100,12 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id")String id){
         getUserService().delete(id);
+    }
+
+    @GetMapping("list/{id}")
+    public Iterable<User> list(@PathVariable("id")String id){
+        Set<String> set = getUserService().getOne(id).getFriends();
+
+        return getUserService().getAll(set);
     }
 }

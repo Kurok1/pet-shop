@@ -507,6 +507,7 @@ var app = new Framework7({
             url:'pages/order/detail.html',
             on:{
                 pageInit:function (e,page) {
+                    mainView.clearPreviousHistory();
                     var id = page.route.params.id;
                     token=localStorage.getItem("currentUserToken");
                     app.request({url:host+"/order/"+id+"?token="+token,
@@ -640,7 +641,93 @@ var app = new Framework7({
         {
             name:'friends',
             path:'/friends',
-            url:'pages/friends.html'
+            url:'pages/friends.html',
+            on:{
+                pageInit:function () {
+
+                    var user = JSON.parse(localStorage.getItem("currentUser"));
+
+                    function doToken(){
+                        var url = "http://"+chatHost+":"+chatPort+"/chatting/user/token/"+user.id;
+                        app.request({
+                            url: url,
+                            processData: false,
+                            method: "GET",
+                            dataType: "json",
+                            contentType: "application/json",
+                            async: false,
+                            success: function (data, status, xhr) {
+                                if(data instanceof String)
+                                    data = JSON.parse(data);
+                                if(data.flag){
+                                    app.dialog.alert("你的用户id："+user.id+"<br>验证码："+data.token,"5分钟之内有效");
+                                }else{
+                                    app.dialog.alert(data.message);
+                                }
+                            }
+                        });
+                    }
+
+                    function doAdd(){
+                        $$('.open-login').on('click', function () {
+                            app.dialog.login('输入用户id和验证码', function (userId, token) {
+                                var url = "http://"+chatHost+":"+chatPort+"/chatting/user/add/"+user.id+"/"+userId+"/"+token;
+                                app.request({
+                                    url: url,
+                                    processData: false,
+                                    method: "GET",
+                                    dataType: "json",
+                                    contentType: "application/json",
+                                    async: false,
+                                    success: function (data, status, xhr) {
+                                        if(data instanceof String)
+                                            data = JSON.parse(data);
+                                        if(data.flag)
+                                            mainView.router.refreshPage();
+                                        app.dialog.alert(data.message);
+
+                                    }
+                                });
+                                app.dialog.alert('Thank you!<br>Username:' + username + '<br>Password:' + password);
+                            });
+                        });
+                    }
+
+                    $$('#add-friend').on('click',function () {
+                        
+                    })
+                    app.request({
+                        url: host + "/shock/" + id + "?token=" + localStorage.getItem("currentUserToken"),
+                        processData: false,
+                        method: "GET",
+                        dataType: "json",
+                        contentType: "application/json",
+                        async: false,
+                        success: function (data, status, xhr) {
+                            if(data instanceof String)
+                                data = JSON.parse(data);
+                            $$('#friends-list').find(".friend-item").remove();
+                            for (var i in data){
+                                var user = data[i];
+                                var template = "<li class='friend-item' data-user='"+user.id+"'>" +
+                                    "<div class='item-content'>" +
+                                    "<div class='item-inner'>" +
+                                    "<div class='item-title'><img src='"+ host + "/res/" + user.logo +"' width='34'/>"+user.username+"</div>" +
+                                    "</div>" +
+                                    "</div>" +
+                                    "</li>";
+                                $$('#friends-list').append(template);
+                            }
+                            $$('.friend-item').on('click',function () {
+                                var id = $$(this).attr("data-user");
+                                registerChat(1,id);
+                            })
+                        }
+                    });
+
+
+                }
+            }
         },
         {
             name:'shock-detail',
@@ -648,6 +735,7 @@ var app = new Framework7({
             url:'pages/shock/detail.html',
             on:{
                 pageInit:function (e,page) {
+
                     var id = page.route.params.id;
                     app.request({
                             url: host + "/shock/" + id + "?token=" + localStorage.getItem("currentUserToken"),
