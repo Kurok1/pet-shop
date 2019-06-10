@@ -24,7 +24,7 @@ public class HandleExceptionController {
         Map<String,Object> map=new HashMap<>();
         map.put("flag",false);
         map.put("timestamp",System.currentTimeMillis()/1000);
-        map.put("message",e.getMessage());
+        map.put("message","系统错误");
         map.put("cause",e.getCause());
         return map;
     }

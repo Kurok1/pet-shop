@@ -41,13 +41,29 @@
         <!--腾讯地图-->
         <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=6LLBZ-QMLCX-HNA4L-T3ADN-4O3V5-BFFLB"></script>
         <link rel="stylesheet" href="css/framework7-icons.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <script src="js/holder.min.js"></script>
         <title>Hello World</title>
         <style>
+            :root {
+                --global-color: #666;
+                --pane-padding: 5px 42px;
+            }
+            .navbar~* .subnavbar, .navbar~.page-with-subnavbar:not(.no-navbar) .subnavbar, .navbar~.subnavbar, .page-with-subnavbar .navbar~* .subnavbar, .page-with-subnavbar .navbar~.subnavbar{
+                top:0px;
+            }
+            .navbar~.page-with-subnavbar:not(.no-navbar) .page-content, .navbar~.subnavbar~* .page-content, .navbar~.subnavbar~.page-content, .navbar~:not(.no-navbar) .subnavbar~* .page-content, .navbar~:not(.no-navbar) .subnavbar~.page-content, .page-with-subnavbar .navbar~* .page-content, .page-with-subnavbar .navbar~.page-content{
+                padding-top:0px;
+            }
+            .navbar~* .page:not(.no-navbar) .page-content, .navbar~.page-content, .navbar~.page:not(.no-navbar) .page-content, .navbar~:not(.page) .page-content{
+                padding-top:0px;
+            }
+            /* .page-with-subnavbar .page-content, .subnavbar~* .page-content, .subnavbar~.page-content {
+                padding-top: 0px;
+            } */
             #container{
                 min-width:600px;
-                min-height:767px;
+                min-height:100vh;
             }
 
             .logo{
@@ -132,83 +148,7 @@
             <div class="statusbar"></div>
             <!-- Your main view, should have "view-main" class -->
             <div class="view view-main">
-                <!-- Initial Page, "data-name" contains page name -->
-                <div class="page">
-                    <div class="subnavbar" id="bar-title">
-                        <div class="subnavbar-inner">
-                            <div class="segmented segmented-raised">
-                                 <a class="button tab-link tab-link-active" href="#nearby">附件的店</a>
-                                 <a class="button tab-link" href="#chats">消息</a>
-                                 <a class="button tab-link" href="#moment">好友动态</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-content hide-navbar-on-scroll">
-                        <div class="tabs">
-                            <div class="tab tab-active" id="nearby">
-
-                                <!--   定义地图显示容器   -->
-                                <div id="container"></div>
-                            </div>
-                            <div class="tab" id="chats">
-                                <div class="list media-list sortable">
-                                    <ul>
-                                        <li>
-                                            <a href="/chat" class="item-link item-content">
-                                                <div class="item-media"><img src="https://cdn.framework7.io/placeholder/fashion-88x88-1.jpg" width="44"/></div>
-                                                <div class="item-inner">
-                                                    <div class="item-title-row">
-                                                        <div class="item-title">Yellow Submarine</div>
-                                                    </div>
-                                                    <div class="item-subtitle">Beatles</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/chat" class="item-link item-content">
-                                                <div class="item-media"><img src="https://cdn.framework7.io/placeholder/fashion-88x88-2.jpg" width="44"/></div>
-                                                <div class="item-inner">
-                                                    <div class="item-title-row">
-                                                        <div class="item-title">Don't Stop Me Now</div>
-                                                    </div>
-                                                    <div class="item-subtitle">Queen</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/chat" class="item-link item-content">
-                                                <div class="item-media"><img src="https://cdn.framework7.io/placeholder/fashion-88x88-3.jpg" width="44"/></div>
-                                                <div class="item-inner">
-                                                    <div class="item-title-row">
-                                                        <div class="item-title">Billie Jean</div>
-                                                    </div>
-                                                    <div class="item-subtitle">Michael Jackson</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tab" id="moment">
-                                <div class="fab fab-extended fab-right-bottom color-green add-shock-btn">
-                                    <a href="/moment/add">
-                                        <i class="icon f7-icons if-not-md">add</i>
-                                        <i class="icon material-icons md-only">add</i>
-                                    </a>
-                                </div>
-                                <div class="fab fab-extended fab-right-bottom color-green refresh-shock-btn">
-                                    <a href="javascript:" title="加载更多" id="loadMoreMoment">
-                                        <i class="icon f7-icons if-not-md">refresh</i>
-                                        <i class="icon material-icons md-only">refresh</i>
-                                    </a>
-                                </div>
-                                <div class="page-content" id="moments">
-                                    <!-- Extended FAB Center Bottom (Red) -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
 

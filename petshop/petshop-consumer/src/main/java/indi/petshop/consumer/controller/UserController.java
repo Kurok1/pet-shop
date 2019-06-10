@@ -105,7 +105,8 @@ public class UserController {
     @GetMapping("list/{id}")
     public Iterable<User> list(@PathVariable("id")String id){
         Set<String> set = getUserService().getOne(id).getFriends();
-
+        if(set==null || set.size()==0)
+            return null;
         return getUserService().getAll(set);
     }
 }

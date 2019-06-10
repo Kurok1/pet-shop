@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -58,13 +55,13 @@ public class UserController {
                 cachedUserToken.put(userId,token);
                 cachedUserExpiredTime.put(userId+token,System.currentTimeMillis()/1000);
                 map.put("flag",true);
-                map.put("message","OK");
+                map.put("message","获取验证码成功");
                 map.put("token",token);
                 return map;
             }catch (Exception e){
                 e.printStackTrace();
                 map.put("flag",false);
-                map.put("message",e.getMessage());
+                map.put("message","系统错误");
                 return map;
             }finally {
                 lock.unlock();
@@ -108,9 +105,9 @@ public class UserController {
                 //删除缓存
                 cachedUserToken.remove(to);
                 cachedUserExpiredTime.remove(to+token);
-
+                doClear();
                 map.put("flag",true);
-                map.put("message","OK");
+                map.put("message","添加好友成功");
 
                 return map;
 
@@ -124,5 +121,20 @@ public class UserController {
             }
         }
         return null;
+    }
+
+    private void doClear(){
+        Set<String> userIds = new HashSet<>();
+        cachedUserExpiredTime.forEach(
+                (k,v)->{
+                    Long current = System.currentTimeMillis()/1000;
+                    if(v==null || (current-v)>5*60){
+                        userIds.add(k.substring(0,k.length()-6));
+                    }
+                }
+        );
+        for (String userId : userIds){
+            cachedUserToken.remove(userId);
+        }
     }
 }

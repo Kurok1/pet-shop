@@ -103,7 +103,7 @@ public class OrderController{
         rtn.put("data",list);
         rtn.put("hasNext",page*10<getOrderService().getCountByShopkeeperAndStatus(id, status));
         rtn.put("flag",true);
-        rtn.put("message","OK");
+        rtn.put("message","查询成功");
         return rtn;
     }
 

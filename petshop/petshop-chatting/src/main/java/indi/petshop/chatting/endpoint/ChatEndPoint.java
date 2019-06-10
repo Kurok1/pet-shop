@@ -64,7 +64,7 @@ public class ChatEndPoint {
     }
 
     private void registerSession(String id, boolean type, Session session) {
-        SessionEntity entity = null;
+        SessionEntity entity;
         if (type)
             entity = new UserSessionEntity();
         else entity = new KeeperSessionEntity();

@@ -78,7 +78,7 @@ public class MessageController {
             Set<String> friends=user.getFriends();
             friends.add(user.getId());
             map.put("flag",true);
-            map.put("message","OK~");
+            map.put("message","查询成功");
             List<Message> messages=getMessageService().findByUserIn(friends,currentPage-1);
             List<Map<String,Object>> data=new ArrayList<>();
             for (Message message:messages){

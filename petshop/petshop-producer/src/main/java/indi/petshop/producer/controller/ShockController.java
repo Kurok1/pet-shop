@@ -68,7 +68,7 @@ public class ShockController {
         rtn.put("data",shocks.getContent());
         rtn.put("hasNext",page*10<getShockService().getCountByShopkeeper(keeper));
         rtn.put("flag",true);
-        rtn.put("message","OK");
+        rtn.put("message","查询成功");
         return rtn;
     }
     @GetMapping("/search/{name}/{page}")

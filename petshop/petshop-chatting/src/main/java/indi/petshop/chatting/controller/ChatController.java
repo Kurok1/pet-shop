@@ -98,6 +98,8 @@ public class ChatController {
     public List<InfoWrapper> list(@PathVariable("type") int type, @PathVariable("id") String id) {
         List<SessionEntity> entities = getChatEndPoint().getList(type, id);
         Map<Integer,List<String>> typeIdsMap = new HashMap<>();
+        if(entities==null)
+            return new ArrayList<>();
         entities.forEach(
             sessionEntity -> {
                 if(!typeIdsMap.containsKey(sessionEntity.getType()))

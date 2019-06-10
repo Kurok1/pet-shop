@@ -74,7 +74,7 @@ public class ShockController {
             Stream<Shock> shockStream=getShockService().findByShopkeeper(infos.map(
                     item->item.get("id").toString()
             ).collect(Collectors.toList()));
-            Stream<Map<String,Object>> newInfos=shopkeepers.stream().map(
+            List<Map<String,Object>> newInfos=shopkeepers.stream().map(
                 shopkeeper -> {
                     Map<String,Object> map=new HashMap<>();
                     map.put("id",shopkeeper.getId());
@@ -84,7 +84,7 @@ public class ShockController {
                     map.put("longitude",shopkeeper.getLongitude());
                     return map;
                 }
-            ).limit(size);
+            ).limit(size).collect(Collectors.toList());
             //根据商家号进行分组
             Map<String, List<Shock>> collect = shockStream.collect(Collectors.groupingBy(Shock::getShopkeeperId));
             List<ShockWrapper> shockWrappers=new LinkedList<>();
@@ -92,7 +92,7 @@ public class ShockController {
                 (key,value)-> {
                     ShockWrapper wrapper=new ShockWrapper();
                     wrapper.setShopkeeperId(key);
-                    final Optional<Map<String, Object>> keeper = newInfos.filter(
+                    final Optional<Map<String, Object>> keeper = newInfos.stream().filter(
                         item -> key.equals(item.get("id"))
                     ).findFirst();
                     if(keeper.isPresent()){

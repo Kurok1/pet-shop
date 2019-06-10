@@ -123,7 +123,7 @@ public class OrderController {
                 order.setStatus(OrderStatus.USER_CONFIRM);
                 getOrderService().save(order);
                 map.put("flag",true);
-                map.put("message","OK");
+                map.put("message","操作成功");
             }
         }else throw new TokenExpiredException();
         return map;

@@ -94,7 +94,7 @@ var app = new Framework7({
     // App root element
     root: '#app',
     // App Name
-    name: 'Productor App',
+    name: '',
     //侧滑菜单栏
     panel: {
         swipe: 'left'
@@ -109,9 +109,35 @@ var app = new Framework7({
     // Add default routes
     routes: [
         {
-            path: '/',
+            path: '/main',
             name: "main",
-            url: 'index.html'
+            url: 'main.html',
+            on:{
+                pageInit:function(){
+                    $$('#shocks').find(".toManage").remove();
+                    currentShocksPage = 1;//当前为第一页
+                    hasNext = true;
+                    renderShocks();
+                    $$('#loadMoreShock').on('click', function () {
+                        if (hasNext === false) {
+                            app.dialog.alert("没有更多数据了","");
+                        } else {
+                            app.dialog.preloader('加载中');
+                            currentShocksPage++;
+                            renderShocks();
+                            app.dialog.close();
+                        }
+                    });
+
+                    $$('.toManage').on('click', function () {
+                        var id = $$(this).attr("data-id");
+                        mainView.router.navigate({
+                            name: 'manage-shock',
+                            params: { id: id },
+                        });
+                    });
+                }
+            }
         },
         {
             name: "add-shock",
@@ -171,12 +197,9 @@ var app = new Framework7({
                                         data = JSON.parse(data);//转json
                                     app.dialog.alert(data.message);
                                     if (data.flag === true) {
-                                        currentShocksPage++;
-                                        $$('#shocks').find(".toManage").remove();
-                                        hasNext = true;
-                                        renderShocks();
-
-                                        mainView.router.back();
+                                        mainView.router.navigate({
+                                            name:"main"
+                                        });
                                     }
 
                                 }
@@ -296,7 +319,7 @@ var app = new Framework7({
                                         mainView.router.navigate({
                                             name: "main"
                                         });
-                                    app.dialog.alert(data.message);
+                                    app.dialog.alert(data.message,"");
 
                                 }
                             }
@@ -374,7 +397,7 @@ var app = new Framework7({
                                     data = JSON.parse(data);
                                 flag = data.flag;
                                 if (!data.flag) {
-                                    app.dialog.alert(data.message);
+                                    app.dialog.alert(data.message,"");
                                     mainView.router.back();
                                 }
 
@@ -401,7 +424,7 @@ var app = new Framework7({
                                         type = data.info.type;
                                         afterGetInfo();
                                     }else {
-                                        app.dialog.alert("系统错误");
+                                        app.dialog.alert("系统错误","");
                                         mainView.router.back();
                                     }
 
@@ -542,7 +565,7 @@ var app = new Framework7({
 
                     $$('#loadMoreOrder').on('click', function () {
                         if (orderHasNext === false) {
-                            app.dialog.alert("没有更多数据了");
+                            app.dialog.alert("没有更多数据了","");
                         } else {
                             app.dialog.preloader('加载中');
                             orderCurrentPage++;
@@ -640,7 +663,7 @@ var app = new Framework7({
                                     success: function (data, status, xhr) {
                                         if (data instanceof String)
                                             data = JSON.parse(data);//转json
-                                        app.dialog.alert(data.message);
+                                        app.dialog.alert(data.message,"");
                                         if (data.flag === true) {
                                             mainView.router.back();
                                         }
@@ -709,8 +732,8 @@ var app = new Framework7({
                                     if (data instanceof String)
                                         data = JSON.parse(data);//转json
                                     localStorage.setItem("currentKeeper", JSON.stringify(data));
+                                    app.dialog.alert("修改完成", "");
                                     afterLogin(data);
-                                    app.dialog.alert("修改完成");
                                 }
                             }
                         )
@@ -784,11 +807,15 @@ function afterLogin(keeper) {
     //注册websocket
     registerWebSocket(keeper.id);
     initUserConnection(keeper);
-    mainView.router.refreshPage();
+    mainView.router.navigate({
+        name: "main"
+    })
 }
 
 var mainView = app.views.create('.view-main');
-
+mainView.router.navigate({
+    name:"main"
+})
 var dialog = app.dialog;
 
 $$(document).on('page:init', '.page[data-name="shocks"]', function (e) {
@@ -860,7 +887,7 @@ $$('#login #login-btn').on('click', function () {
         success: function (data, status, xhr) {
             data = JSON.parse(data);//转json
             if (data.flag == false)
-                app.dialog.alert(data.message == null ? "用户名和密码不正确，请重试" : data.message);
+                app.dialog.alert(data.message == null ? "用户名和密码不正确，请重试" : data.message,"");
             else {
                 localStorage.setItem("currentKeeperToken", data.token);
                 localStorage.setItem("currentKeeper", JSON.stringify(data.keeper));
@@ -884,7 +911,7 @@ $$('#register #register-btn').on('click', function () {
     if (repassword != password) {
         $$('#register [name="password"]').val("");
         $$('#register [name="re-password"]').val("")
-        app.dialog.alert("两次密码不一致,请重新输入!!!");
+        app.dialog.alert("两次密码不一致,请重新输入!!!","输入错误");
 
         return;
     }
@@ -892,7 +919,7 @@ $$('#register #register-btn').on('click', function () {
         $$('#register [name="email"]').val("");
         $$('#register [name="password"]').val("");
         $$('#register [name="repassword"]').val("");
-        app.dialog.alert("用户名不能为空,请重新输入");
+        app.dialog.alert("用户名不能为空,请重新输入", "输入错误");
         return
     }
 
@@ -915,7 +942,7 @@ $$('#register #register-btn').on('click', function () {
         success: function (data, status, xhr) {
             // data=JSON.parse(data);//转json
             if (data.flag == false) {
-                app.dialog.alert(data.message);
+                app.dialog.alert(data.message,"注册失败");
                 $$('#register [name="email"]').val("")
             } else {
                 localStorage.setItem("currentKeeperToken", data.token);
@@ -985,26 +1012,8 @@ function renderShocks(clear = false) {
     }
 }
 
-renderShocks();
 
-$$('#loadMoreShock').on('click', function () {
-    if (hasNext === false) {
-        app.dialog.alert("没有更多数据了");
-    } else {
-        app.dialog.preloader('加载中');
-        currentShocksPage++;
-        renderShocks();
-        app.dialog.close();
-    }
-});
 
-$$('.toManage').on('click', function () {
-    var id = $$(this).attr("data-id");
-    mainView.router.navigate({
-        name: 'manage-shock',
-        params: {id: id},
-    });
-});
 
 function renderSingleShock(id) {
     app.request({

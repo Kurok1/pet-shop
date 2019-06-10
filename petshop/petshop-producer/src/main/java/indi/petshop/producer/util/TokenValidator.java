@@ -74,7 +74,7 @@ public class TokenValidator {
         if(!redisTemplate.hasKey(token))
             throw new TokenExpiredException();
         else {
-            String object=redisTemplate.opsForValue().get("token");
+            String object=redisTemplate.opsForValue().get(token);
             if(id.equals(object))
                 return object;
             else throw new TokenAndIdNotEqualsException();

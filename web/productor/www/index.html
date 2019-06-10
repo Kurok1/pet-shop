@@ -39,10 +39,14 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!-- Path to Framework7 Library Bundle JS-->
     <script src="js/js/framework7.bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/holder.min.js"></script>
     <title>Hello World</title>
     <style>
+        .navbar~* .page:not(.no-navbar) .page-content, .navbar~.page-content, .navbar~.page:not(.no-navbar) .page-content, .navbar~:not(.page) .page-content {
+            padding-top: 0;
+        }
+        
         #container{
             min-width:600px;
             min-height:767px;
@@ -100,36 +104,7 @@
     </div>
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
-        <!-- Initial Page, "data-name" contains page name -->
-        <div class="page">
-            <div class="page-content hide-toolbar-on-scroll" data-name="shocks" id="shocks">
-                <!-- Extended FAB Center Bottom (Red) -->
-                <div class="fab fab-extended fab-right-bottom color-red add-shock-btn">
-                    <a href="/add-shock">
-                        <i class="icon f7-icons if-not-md">add</i>
-                        <i class="icon material-icons md-only">add</i>
-                    </a>
-                </div>
-                <div class="fab fab-extended fab-right-bottom color-green refresh-shock-btn">
-                    <a href="javascript:" title="加载更多" id="loadMoreShock">
-                        <i class="icon f7-icons if-not-md">refresh</i>
-                        <i class="icon material-icons md-only">refresh</i>
-                    </a>
-                </div>
-
-                
-            </div>
-            <br><br><br><br><br>
-            <!-- Bottom Toolbar -->
-            <div class="toolbar toolbar-bottom">
-                <div class="toolbar-inner f7-color-blue">
-                    <!-- Toolbar links -->
-                    <a href="/" class="link">库存</a>
-                    <a href="/chats" class="link">聊天</a>
-                    <a href="/orders" class="link">订单</a>
-                </div>
-            </div>
-        </div>
+        
 
     </div>
 </div>

@@ -30,45 +30,9 @@ var ORDER_WORKING=8;
 var ORDER_FINISHED=100;
 var ORDER_CANCEL=99;
 
-function init() {
-    // 创建地图
-    document.getElementById('container').style.top=0;
-    var center = new qq.maps.LatLng(39.0920,117.39811);
-    var map = new qq.maps.Map(document.getElementById('container'),{
-        center: center,
-        zoom: 13,
-        draggable:false
-    });
-    var userLocationInfo={
-        "latitude":39.09204,
-        "longitude":117.09813,
-        "accurate":accurate
-    };
-    app.request({url:host+"shock/get?token="+localStorage.getItem("currentUserToken")+"&size="+keeperSize,
-        data:JSON.stringify(userLocationInfo),
-        processData:false,
-        method:"POST",
-        dataType:"json",
-        contentType:"application/json",
-        async:false,
-        success:function(data, status, xhr){
-            if(data instanceof String)
-                data=JSON.parse(data);
-            var shocks=data.shocks;
-            for (var i in shocks){
-                var shock=shocks[i];
-                var infoWin = new qq.maps.InfoWindow({
-                    map: map
-                });
-                infoWin.open();
-                infoWin.setContent("<p class='shock'><a href='/shock/detail/"+shock.shock.id+"'><img src='"+host+"/res/"+shock.shopkeeperLogo+"' width='50'/></a></p>");
-                infoWin.setPosition(new qq.maps.LatLng(shock.latitude,shock.longitude));
-            }
 
-        }}
-    );
 
-}
+
 
 var userSocket = null;
 
@@ -100,7 +64,7 @@ function registerChat(toType,toId) {
                         params: {id: toId, type: toType},
                     });
                 }else {
-                    app.dialog.alert(data.message);
+                    app.dialog.alert(data.message,"");
                 }
                 
             }
@@ -143,7 +107,7 @@ var app = new Framework7({
     // App root element
     root: '#app',
     // App Name
-    name: 'My App',
+    name: '',
     //侧滑菜单栏
     panel: {
         swipe: 'left'
@@ -155,27 +119,124 @@ var app = new Framework7({
         swipe: 'left',
     },
     // Add default routes
+    language: navigator.language,
     routes: [
         {
-            path: '/',
-            url: 'index.html',
+            name:"main",
+            path: '/main',
+            url: 'main.html',
+            reloadAll:true,
             on:{
-                pageInit:function (e,page) {
-                   init();
-                },
-                pageReinit:function (e,page) {
+                pageInit:function(){
+                    function init() {
+                        // 创建地图
+                        document.getElementById('container').style.top = 0;
+                        var center = new qq.maps.LatLng(39.09204, 117.09813);
+                        var map = new qq.maps.Map(document.getElementById('container'), {
+                            center: center,
+                            zoom: 13,
+                            draggable: false
+                        });
+                        var userLocationInfo = {
+                            "latitude": 39.09204,
+                            "longitude": 117.09813,
+                            "accurate": accurate
+                        };
+                        app.request({
+                            url: host + "shock/get?token=" + localStorage.getItem("currentUserToken") + "&size=" + keeperSize,
+                            data: JSON.stringify(userLocationInfo),
+                            processData: false,
+                            method: "POST",
+                            dataType: "json",
+                            contentType: "application/json",
+                            async: false,
+                            success: function (data, status, xhr) {
+                                if (data instanceof String)
+                                    data = JSON.parse(data);
+                                var shocks = data.shocks;
+                                for (var i in shocks) {
+                                    var shock = shocks[i];
+                                    var infoWin = new qq.maps.InfoWindow({
+                                        map: map
+                                    });
+                                    infoWin.open();
+                                    infoWin.setContent("<p class='shock'><a href='/shock/detail/" + shock.shock.id + "'><img src='" + host + "/res/" + shock.shopkeeperLogo + "' width='50'/></a></p>");
+                                    infoWin.setPosition(new qq.maps.LatLng(shock.latitude, shock.longitude));
+                                }
+
+                            }
+                        }
+                        );
+
+                    }
+
                     init();
+
+                    currentMessagePage = 1;//当前为第一页
+                    hasNext = true;
+                    renderMessage();
+
+                    $$('#loadMoreMoment').on('click', function () {
+                        if (hasNext === false) {
+                            app.dialog.alert("没有更多数据了");
+                        } else {
+                            app.dialog.preloader('加载中');
+                            currentMessagePage++;
+                            renderMessage();
+                            app.dialog.close();
+                        }
+                    });
+
+                    $$('.moment-card').on('click', function () {
+                        var id = $$(this).attr("data-id");
+                        mainView.router.navigate({
+                            name: 'moment',
+                            params: { id: id },
+                        });
+                    });
+
+                    var user = JSON.parse(localStorage.getItem("currentUser"));
+                    app.request({
+                        url: "http://" + chatHost + ":" + chatPort + "/list/" + connectionType + "/" + user.id,
+                        processData: false,
+                        method: "GET",
+                        dataType: "json",
+                        contentType: "application/json",
+                        async: false,
+                        success: function (data, status, xhr) {
+                            if (data instanceof String)
+                                data = JSON.parse(data);
+                            $$('#chats-list').find("li").remove();
+                            for (var i in data) {
+                                var item = data[i];
+                                var template = "<li>" +
+                                    "<a href='/chat/" + item.type + "/" + item.id + "' class='item-link item-content to-chat-detail'>" +
+                                    "<div class='item-media'><img src='" + host + "/res/" + item.logo + "' width='44'/></div>" +
+                                    "<div class='item-inner'>" +
+                                    "<div class='item-title-row'>" +
+                                    "<div class='item-title'>" + item.name + "</div>" +
+                                    "</div>" +
+                                    "<div class='item-subtitle'>" + item.timestamp + "</div>" +
+                                    "</div>" +
+                                    "</a>" +
+                                    "</li>";
+                                $$('#chats-list').append(template);
+                            }
+                        }
+                    })
                 }
             }
         },
         {
             name: 'about',
             path: '/about/',
+            reloadAll: true,
             url: 'about.html',
         },
         {
             name:'chat',
             path:'/chat/:id/:type',
+            reloadAll: true,
             url:'pages/chat/single.html',
             on:{
                 pageInit:function (e,page){
@@ -194,7 +255,7 @@ var app = new Framework7({
                                     data = JSON.parse(data);
                                 flag = data.flag;
                                 if (!data.flag) {
-                                    app.dialog.alert(data.message);
+                                    app.dialog.alert(data.message,"");
                                     mainView.router.back();
                                 }
 
@@ -222,7 +283,7 @@ var app = new Framework7({
                                         type = data.info.type;
                                         afterGetInfo();
                                     }else {
-                                        app.dialog.alert("系统错误");
+                                        app.dialog.alert("系统错误","");
                                         mainView.router.back();
                                     }
 
@@ -334,6 +395,7 @@ var app = new Framework7({
         {
             name:'moment',
             path:'/moment/detail/:id',
+            reloadAll: true,
             url:"pages/moment/detail.html",
             on:{
                 pageInit:function (e,page) {
@@ -378,7 +440,7 @@ var app = new Framework7({
 
 
                     $$('#add-root-comment').on('click',function () {
-                        addComment(null,messageId,$("#root-comments ul"))
+                        addComment(null,messageId,$("#root-comments").find("#root"))
                     });
 
                     $$('.comments').on('click',function () {
@@ -393,6 +455,7 @@ var app = new Framework7({
         {
             name:'moment-add',
             path:'/moment/add',
+            reloadAll: true,
             url:'pages/moment/add.html',
             on:{
                 pageInit:function (e,page) {
@@ -475,9 +538,11 @@ var app = new Framework7({
         {
             name: 'orders',
             path: '/orders',
+            reloadAll: true,
             url: 'pages/order/list.html',
             on: {
                 pageInit:function (e,page) {
+                    // mainView.router.clearPreviousPages();
                     $$('#order-list').find("li").remove();
                     renderOrders()
 
@@ -504,10 +569,11 @@ var app = new Framework7({
         {
             name:'order',
             path:'/order/:id',
+            reloadAll: true,
             url:'pages/order/detail.html',
             on:{
                 pageInit:function (e,page) {
-                    mainView.clearPreviousHistory();
+                    // mainView.router.clearPreviousPages();
                     var id = page.route.params.id;
                     token=localStorage.getItem("currentUserToken");
                     app.request({url:host+"/order/"+id+"?token="+token,
@@ -585,6 +651,7 @@ var app = new Framework7({
         {
             name: 'user',
             path: '/profile',
+            reloadAll: true,
             url: 'pages/user.html',
             on: {
                 pageInit: function (e, page) {
@@ -641,6 +708,7 @@ var app = new Framework7({
         {
             name:'friends',
             path:'/friends',
+            reloadAll: true,
             url:'pages/friends.html',
             on:{
                 pageInit:function () {
@@ -669,35 +737,54 @@ var app = new Framework7({
                     }
 
                     function doAdd(){
-                        $$('.open-login').on('click', function () {
-                            app.dialog.login('输入用户id和验证码', function (userId, token) {
-                                var url = "http://"+chatHost+":"+chatPort+"/chatting/user/add/"+user.id+"/"+userId+"/"+token;
-                                app.request({
-                                    url: url,
-                                    processData: false,
-                                    method: "GET",
-                                    dataType: "json",
-                                    contentType: "application/json",
-                                    async: false,
-                                    success: function (data, status, xhr) {
-                                        if(data instanceof String)
-                                            data = JSON.parse(data);
-                                        if(data.flag)
-                                            mainView.router.refreshPage();
-                                        app.dialog.alert(data.message);
-
-                                    }
-                                });
-                                app.dialog.alert('Thank you!<br>Username:' + username + '<br>Password:' + password);
+                        app.dialog.login('输入用户id和验证码',"添加好友", function (userId, token) {
+                            var url = "http://"+chatHost+":"+chatPort+"/chatting/user/add/"+user.id+"/"+userId+"/"+token;
+                            app.request({
+                                url: url,
+                                processData: false,
+                                method: "POST",
+                                dataType: "json",
+                                contentType: "application/json",
+                                async: false,
+                                success: function (data, status, xhr) {
+                                    app.dialog.close()
+                                    if(data instanceof String)
+                                        data = JSON.parse(data);
+                                    if(data.flag)
+                                        mainView.router.refreshPage();
+                                    app.dialog.alert(data.message);
+                                    
+                                }
                             });
+                            
                         });
                     }
 
                     $$('#add-friend').on('click',function () {
-                        
+                        var dialog = app.dialog.create({
+                            text: '请选择添加好友方式',
+                            title:"添加好友",
+                            buttons: [{
+                                text:"我加别人",
+                                onClick:function () {
+                                    doAdd();
+                                }
+                            },{
+                                text:"别人加我",
+                                onClick: function () {
+                                    doToken();
+                                }
+                            }]
+                        })
+                        dialog.open();
+                        // app.dialog.confirm("请选择添加好友方式", "添加好友", function(){
+                        //     doToken();
+                        // },function(){
+                        //     doAdd();
+                        // })
                     })
                     app.request({
-                        url: host + "/shock/" + id + "?token=" + localStorage.getItem("currentUserToken"),
+                        url: host + "/user/list/" + user.id ,
                         processData: false,
                         method: "GET",
                         dataType: "json",
@@ -732,6 +819,7 @@ var app = new Framework7({
         {
             name:'shock-detail',
             path:'/shock/detail/:id',
+            reloadAll: true,
             url:'pages/shock/detail.html',
             on:{
                 pageInit:function (e,page) {
@@ -813,6 +901,7 @@ var app = new Framework7({
         {
             name:'shocks',
             path:'/shock/list/:id',
+            reloadAll: true,
             url:'pages/shock/list.html',
             on:{
                 pageInit:function (e,page) {
@@ -924,7 +1013,7 @@ function addComment(root,messageId,ele) {//root为父级评论id
             contentType:"application/json",
             async:false,
             success:function(data, status, xhr){
-                app.dialog.close();
+                // app.dialog.close();
                 if(data instanceof String)
                     data=JSON.parse(data);//转json
                 if(data.flag===true){
@@ -942,17 +1031,22 @@ function addComment(root,messageId,ele) {//root为父级评论id
                         html+="<ul></ul></li>";
                     ele.append(html);
                 }
-                app.dialog.alert(data.message);
-                $$('.comments').on('click',function () {
-                    var id=$$(this).attr("data-id");
-                    var appendObj=$$(this).find("ul");
-                    addComment(id,messageId,appendObj);
-                });
+                return ;
+                
+                
             }}
         );
+        $$('.comments').on('click', function () {
+            var id = $$(this).attr("data-id");
+            var appendObj = $$(this).find("ul");
+            addComment(id, messageId, appendObj);
+        });
+        app.dialog.close();
+        app.dialog.alert("评论成功");
     },function (value) {
-        
+        app.dialog.close();
     },"")
+    
 }
 
 function renderComments(data) {
@@ -1014,6 +1108,9 @@ function afterLogin(user) {
 }
 
 var mainView = app.views.create('.view-main');
+mainView.router.navigate({
+    name:"main"
+})
 
 $$('.moment-card').on('click',function () {
     mainView.router.navigate({
