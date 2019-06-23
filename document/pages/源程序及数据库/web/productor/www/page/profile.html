@@ -1,0 +1,47 @@
+<div class="page">
+    <div class="page-content login-screen-content hide-toolbar-on-scroll">
+        <div class="list">
+            <ul>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-title item-label">头像（点击头像即可修改）</div>
+                        <div class="item-input-wrap">
+
+                            <form id="profile_logo_form" enctype="multipart/form-data">
+                                <label for="profile_logo" style="display: block;width: 75px;height: 75px"><img id="profile_logo_img" width="75" height="75" src="http://localhost/res/AWnZMyLbriJvVEJa90O3" class="logo" alt=""></label>
+                                <input type="file" name="files" multiple id="profile_logo" style="display: none;">
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-title item-label">店名：</div>
+                        <div class="item-input-wrap">
+                            <input type="text" name="name" id="profile_name" value="" placeholder="店名">
+                        </div>
+                    </div>
+                </li>
+                <li style="padding-left: 16px">
+                    <p class="item-title item-label">位置</p>
+                    <a href="/location" id="profile_location" class="item-link item-content">选择位置</a>
+                </li>
+                <li class="item-content item-input">
+                    <div class="item-inner">
+                        <div class="item-input-wrap">
+                            <div id="profile_description" contentEditable="true"> 加点描述吧.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="list">
+            <ul>
+                <li>
+                    <a href="#" id="update-user-btn" class="item-link list-button update-button">修改</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

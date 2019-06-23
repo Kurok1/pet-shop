@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#2196f3">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="js/css/framework7.bundle.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- Path to Framework7 Library Bundle JS-->
+        <script src="js/js/framework7.bundle.js"></script>
+        <!--腾讯地图-->
+        <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=6LLBZ-QMLCX-HNA4L-T3ADN-4O3V5-BFFLB"></script>
+        <link rel="stylesheet" href="css/framework7-icons.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/holder.min.js"></script>
+        <title>Hello World</title>
+        <style>
+            :root {
+                --global-color: #666;
+                --pane-padding: 5px 42px;
+            }
+            .navbar~* .subnavbar, .navbar~.page-with-subnavbar:not(.no-navbar) .subnavbar, .navbar~.subnavbar, .page-with-subnavbar .navbar~* .subnavbar, .page-with-subnavbar .navbar~.subnavbar{
+                top:0px;
+            }
+            .navbar~.page-with-subnavbar:not(.no-navbar) .page-content, .navbar~.subnavbar~* .page-content, .navbar~.subnavbar~.page-content, .navbar~:not(.no-navbar) .subnavbar~* .page-content, .navbar~:not(.no-navbar) .subnavbar~.page-content, .page-with-subnavbar .navbar~* .page-content, .page-with-subnavbar .navbar~.page-content{
+                padding-top:0px;
+            }
+            .navbar~* .page:not(.no-navbar) .page-content, .navbar~.page-content, .navbar~.page:not(.no-navbar) .page-content, .navbar~:not(.page) .page-content{
+                padding-top:0px;
+            }
+            /* .page-with-subnavbar .page-content, .subnavbar~* .page-content, .subnavbar~.page-content {
+                padding-top: 0px;
+            } */
+            #container{
+                min-width:600px;
+                min-height:100vh;
+            }
+
+            .logo{
+                border-radius: 50%;
+            }
+            .profile .name{
+                font-weight: bold;
+                font-size: 24px;
+            }
+            .side-bar{
+                background: rgb(46,46,46);
+            }
+            .fab[class*="-bottom"] {
+                position: fixed;
+                z-index: 999;
+                bottom: 55px;
+            }
+            .fab[class*="refresh-shock-btn"]{
+                bottom: 110px;
+            }
+            .moment-card .card-header {
+                display: block;
+                padding: 10px;
+            }
+            .moment-card .demo-facebook-avatar {
+                float: left;
+            }
+            .moment-card .demo-facebook-name {
+                margin-left: 44px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .moment-card .demo-facebook-date {
+                margin-left: 44px;
+                font-size: 13px;
+                color: #8e8e93;
+            }
+            .moment-card .card-content{
+                max-height: 300px;
+                overflow: hidden;
+            }
+            .moment-card .card-footer a {
+                color: #81848b;
+                font-weight: 500;
+            }
+            .moment-card .card-content img {
+                display: block;
+            }
+            .card-content-padding>p:first-child {
+                margin-top: 0;
+                font-size: 14px;
+            }
+            .tab .block{
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .message:not(.message-last) .message-avatar {
+                 opacity: 1;
+            }
+        </style>
+    </head>
+    <body class="color-theme-deeporange">
+        <!-- App root element -->
+        <div id="app">
+            <div class="panel panel-left panel-cover side-bar theme-dark">
+                <div class="block profile">
+                    <p><img src="" width="75" height="75" class="logo" id="panel_user_logo" alt=""></p>
+                    <p class="block color-gray name" id="panel_user_name">用户名</p>
+                </div>
+                <div class="list links-list">
+                    <ul>
+                        <li><a href="/profile">用户资料</a></li>
+                        <li><a href="/friends">好友列表</a></li>
+                        <li><a href="/orders">查看订单</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">关于此APP</a></li>
+                        <li><a href="#"><span class="color-red">退出登录</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Statusbar overlay -->
+            <div class="statusbar"></div>
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                
+            </div>
+        </div>
+
+        <div class="login-screen" id="login">
+            <div class="view">
+                <div class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="login-screen-title">登录</div>
+                        <div class="list">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">用户名</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="username" placeholder="用户名">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">密码</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" name="password" placeholder="密码">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#" id="login-btn" class="item-link list-button login-button">登 录</a>
+                                    <a href="#" class="item-link list-button login-screen-open color-green" data-login-screen="#register">没有账号?点击注册</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-screen" id="register">
+            <div class="view">
+                <div class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="login-screen-title">注册</div>
+                        <div class="list">
+                            <ul>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">用户名</div>
+                                        <div class="item-input-wrap">
+                                            <input type="text" name="username" placeholder="用户名">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">密码</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" name="password" placeholder="密码">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input">
+                                    <div class="item-inner">
+                                        <div class="item-title item-label">确认密码</div>
+                                        <div class="item-input-wrap">
+                                            <input type="password" name="re-password" placeholder="确认密码">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#" id="register-btn" class="item-link list-button login-button">注 册</a>
+                                </li>
+                            </ul>
+                            <!--<div class="block-footer">Some text about login information.<br>Click "Sign In" to close Login Screen</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script src="js/map.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        
+    </body>
+</html>

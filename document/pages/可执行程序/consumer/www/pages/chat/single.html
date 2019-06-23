@@ -1,0 +1,35 @@
+<div class="page">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a class="link back">
+                    <i class="icon icon-back"></i>
+                    <span class="if-not-md">Back</span>
+                </a>
+            </div>
+            <div class="title" id="name-title">Message</div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="toolbar messagebar">
+        <div class="toolbar-inner">
+            <form id="chat_img_form" enctype="multipart/form-data">
+                <label for="chat-add-img" class="link toggle-sheet" >
+                    <i class="icon f7-icons if-not-md">camera_fill</i>
+                    <i class="icon material-icons md-only">camera_fill</i>
+                </label>
+                <input type="file" name="files" id="chat-add-img" style="display: none;">
+            </form>
+            <div class="messagebar-area">
+                <textarea placeholder="Message" id="need-send-message"></textarea>
+            </div>
+            <a class="link" href="javascript:" id="send-chat-message">发送</a>
+        </div>
+        <div class="messagebar-sheet"></div>
+    </div>
+    <div class="page-content messages-content" style="padding-top: 44px">
+        <div class="messages" id="message-record">
+            
+        </div>
+    </div>
+</div>

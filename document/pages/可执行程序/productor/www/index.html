@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#2196f3">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="js/css/framework7.bundle.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script src="js/js/framework7.bundle.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    <title>Hello World</title>
+    <style>
+        .navbar~* .page:not(.no-navbar) .page-content, .navbar~.page-content, .navbar~.page:not(.no-navbar) .page-content, .navbar~:not(.page) .page-content {
+            padding-top: 0;
+        }
+        
+        #container{
+            min-width:600px;
+            min-height:767px;
+        }
+        .card{
+            max-height: 400px;
+            overflow: hidden;
+        }
+        .card .card-header {
+            color: #fff;
+        }
+        .card .card-content-padding .date{
+            color: #8e8e93;
+        }
+        .fab[class*="-bottom"] {
+            position: fixed;
+            z-index: 999;
+            bottom: 55px;
+        }
+        .fab[class*="refresh-shock-btn"]{
+            bottom: 110px;
+        }
+        .profile .logo{
+            border-radius: 50%;
+        }
+        .profile .name{
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .side-bar{
+            background: rgb(46,46,46);
+        }
+        .message:not(.message-last) .message-avatar {
+             opacity: 1;
+        }
+    </style>
+</head>
+<body  class="theme-dark" >
+<!-- App root element -->
+<div id="app">
+    <div class="statusbar"></div>
+    <div class="panel panel-left panel-cover side-bar">
+        <div class="block profile">
+            <p><img src="holder.js/75x75" class="logo" id="keeper_logo" alt=""></p>
+            <p class="block color-gray name" id="keeper_name">XXX宠物店</p>
+        </div>
+        <div class="list links-list">
+            <ul>
+                <li><a href="/profile">商家信息</a></li>
+                <li><a href="#">服务条款</a></li>
+                <li><a href="#">关于此APP</a></li>
+                <li><a href="#"><span class="color-red">退出登录</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+        
+
+    </div>
+</div>
+
+<div class="login-screen" id="login">
+    <div class="view">
+        <div class="page">
+            <div class="page-content login-screen-content">
+                <div class="login-screen-title">登录</div>
+                <div class="list">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">邮箱</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="email" placeholder="邮箱">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">密码</div>
+                                <div class="item-input-wrap">
+                                    <input type="password" name="password" placeholder="密码">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="#" id="login-btn" class="item-link list-button login-button">登 录</a>
+                            <a href="#" class="item-link list-button login-screen-open color-green" data-login-screen="#register">没有账号?点击注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="login-screen" id="register">
+    <div class="view">
+        <div class="page">
+            <div class="page-content login-screen-content">
+                <div class="login-screen-title">注册</div>
+                <div class="list">
+                    <ul>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">邮箱</div>
+                                <div class="item-input-wrap">
+                                    <input type="text" name="email" placeholder="邮箱">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">密码</div>
+                                <div class="item-input-wrap">
+                                    <input type="password" name="password" placeholder="密码">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content item-input">
+                            <div class="item-inner">
+                                <div class="item-title item-label">确认密码</div>
+                                <div class="item-input-wrap">
+                                    <input type="password" name="re-password" placeholder="确认密码">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="#" id="register-btn" class="item-link list-button login-button">注 册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>

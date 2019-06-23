@@ -1,0 +1,50 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE'
+	}
+}
+
+plugins {
+	id 'java'
+}
+
+//apply plugin: 'org.springframework.boot'
+group = 'indi.petshop'
+version = '1.0.0.RELEASE'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+}
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'maven'
+	apply plugin: 'org.springframework.boot'
+	
+	dependencies {
+		compile fileTree(dir: 'libs')
+		compile 'org.springframework.boot:spring-boot-starter-actuator'
+		compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+		compile 'org.springframework.boot:spring-boot-starter-data-redis'
+		compile 'org.springframework.boot:spring-boot-starter-web'
+		compile 'org.springframework.boot:spring-boot-starter-websocket'
+		compile 'org.springframework.kafka:spring-kafka'
+		testCompile 'org.springframework.boot:spring-boot-starter-test'
+		testCompile 'org.springframework.kafka:spring-kafka-test'
+	}
+	
+}
+
+dependencies {
+	
+	compile project(':petshop-chatting')
+	compile project(':petshop-consumer')
+	compile project(':petshop-producer')
+}
